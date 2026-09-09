@@ -111,9 +111,8 @@ src="https://www.facebook.com/tr?id=455931766974774&ev=PageView&noscript=1"
   .brand-row .nav-cta{
     margin-left:auto;
     display:inline-block;
-    background:transparent;
-    border:1.5px solid var(--amber);
-    color:var(--amber);
+    background:var(--amber);
+    color:var(--ink);
     font-weight:600;
     font-size:15px;
     letter-spacing:0.01em;
@@ -121,9 +120,9 @@ src="https://www.facebook.com/tr?id=455931766974774&ev=PageView&noscript=1"
     border-radius:3px;
     text-decoration:none;
     white-space:nowrap;
-    transition:transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+    transition:transform 0.15s ease, background 0.15s ease;
   }
-  .brand-row .nav-cta:hover{ background:var(--amber); color:var(--ink); transform:translateY(-1px); }
+  .brand-row .nav-cta:hover{ background:#e5aa3d; transform:translateY(-1px); }
 
   .brand-row .mark{
     width:22px; height:22px;
@@ -395,6 +394,30 @@ src="https://www.facebook.com/tr?id=455931766974774&ev=PageView&noscript=1"
   .final .cta:hover{ background:#233a2b; }
   .final .cta-note{ color:#6b6553; }
 
+  .cta-group{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    justify-content:center;
+    margin-top:26px;
+  }
+  .cta-group .cta,
+  .cta-group .cta-secondary{ margin-top:0; }
+
+  .final .cta-secondary{
+    display:inline-block;
+    background:transparent;
+    border:1.5px solid var(--canopy);
+    color:var(--canopy);
+    font-weight:600;
+    font-size:16px;
+    padding:16px 30px;
+    border-radius:3px;
+    text-decoration:none;
+    transition:transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .final .cta-secondary:hover{ background:var(--canopy); color:var(--parchment); transform:translateY(-1px); }
+
   footer{
     padding:28px 0 40px;
     text-align:center;
@@ -542,12 +565,10 @@ src="https://www.facebook.com/tr?id=455931766974774&ev=PageView&noscript=1"
   <div class="wrap">
     <div class="kicker">Ready when you are</div>
     <h2>Your next hundred photos can look different.</h2>
-    <div class="price-row">
-      <span class="price">₹471</span>
-      <span class="price-note">One-time purchase, yours to keep</span>
+    <div class="cta-group">
+      <a href="https://amzn.in/d/0cKrGJgQ" class="cta" onclick="trackBuyClick()">Get the book on Amazon</a>
+      <a href="/store.html" class="cta-secondary">Shop My Gear &amp; Storefront</a>
     </div>
-    <br>
-    <a href="https://amzn.in/d/0cKrGJgQ" class="cta" onclick="trackBuyClick()">Get the book on Amazon</a>
     <div class="cta-note">Available on Kindle and paperback, India-wide delivery.</div>
   </div>
 </section>

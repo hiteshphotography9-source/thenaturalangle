@@ -90,6 +90,8 @@ src="https://www.facebook.com/tr?id=455931766974774&ev=PageView&noscript=1"
   .brand-row{
     display:flex;
     align-items:center;
+    flex-wrap:wrap;
+    row-gap:14px;
     gap:10px;
     font-size:14px;
     letter-spacing:0.02em;
@@ -110,14 +112,21 @@ src="https://www.facebook.com/tr?id=455931766974774&ev=PageView&noscript=1"
     background:var(--amber);
   }
 
-  .brand-row .nav-link{
+  .brand-row .nav-cta{
     margin-left:auto;
-    color:var(--amber);
+    display:inline-block;
+    background:var(--amber);
+    color:var(--ink);
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:0.01em;
+    padding:13px 24px;
+    border-radius:3px;
     text-decoration:none;
-    font-weight:500;
-    letter-spacing:0.02em;
+    white-space:nowrap;
+    transition:transform 0.15s ease, background 0.15s ease;
   }
-  .brand-row .nav-link:hover{ text-decoration:underline; }
+  .brand-row .nav-cta:hover{ background:#e5aa3d; transform:translateY(-1px); }
 
   .store-center{
     flex:1;
@@ -194,7 +203,7 @@ src="https://www.facebook.com/tr?id=455931766974774&ev=PageView&noscript=1"
 
 <section class="store-hero">
   <div class="wrap">
-    <div class="brand-row"><span class="mark"></span> THE NATURAL ANGLE <a href="/" class="nav-link">&larr; Back to the book</a></div>
+    <div class="brand-row"><span class="mark"></span> THE NATURAL ANGLE <a href="https://amzn.in/d/0cKrGJgQ" class="nav-cta" onclick="trackBuyClick()">Buy My Ebook</a></div>
 
     <div class="store-center">
       <div class="kicker">The complete collection</div>
