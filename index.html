@@ -106,14 +106,24 @@ src="https://www.facebook.com/tr?id=455931766974774&ev=PageView&noscript=1"
     color:rgba(241,236,220,0.72);
   }
 
-  .brand-row .nav-link{
+  .brand-row{ flex-wrap:wrap; row-gap:14px; }
+
+  .brand-row .nav-cta{
     margin-left:auto;
+    display:inline-block;
+    background:transparent;
+    border:1.5px solid var(--amber);
     color:var(--amber);
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:0.01em;
+    padding:13px 24px;
+    border-radius:3px;
     text-decoration:none;
-    font-weight:500;
-    letter-spacing:0.02em;
+    white-space:nowrap;
+    transition:transform 0.15s ease, background 0.15s ease, color 0.15s ease;
   }
-  .brand-row .nav-link:hover{ text-decoration:underline; }
+  .brand-row .nav-cta:hover{ background:var(--amber); color:var(--ink); transform:translateY(-1px); }
 
   .brand-row .mark{
     width:22px; height:22px;
@@ -408,7 +418,7 @@ src="https://www.facebook.com/tr?id=455931766974774&ev=PageView&noscript=1"
 <section class="hero">
   <div class="wrap">
     <div>
-      <div class="brand-row"><span class="mark"></span> THE NATURAL ANGLE <a href="/store.html" class="nav-link">All Books &rarr;</a></div>
+      <div class="brand-row"><span class="mark"></span> THE NATURAL ANGLE <a href="/store.html" class="nav-cta">Shop My Gear &amp; Storefront</a></div>
       <h1>Wildlife photography<br><em>from Panna to the Himalayas.</em></h1>
       <p class="sub">A complete field guide to DSLR and mirrorless wildlife photography: the exposure triangle, lenses, and light, plus the fieldcraft chapter most photography books skip entirely, reading behavior and positioning yourself before the moment happens.</p>
 
