@@ -399,10 +399,19 @@ src="https://www.facebook.com/tr?id=455931766974774&ev=PageView&noscript=1"
     flex-wrap:wrap;
     gap:16px;
     justify-content:center;
+    align-items:flex-start;
     margin-top:26px;
   }
   .cta-group .cta,
   .cta-group .cta-secondary{ margin-top:0; }
+
+  .cta-col{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+  }
+  .cta-col .cta-note{ margin-top:0; }
 
   .final .cta-secondary{
     display:inline-block;
@@ -565,10 +574,12 @@ src="https://www.facebook.com/tr?id=455931766974774&ev=PageView&noscript=1"
     <div class="kicker">Ready when you are</div>
     <h2>Your next hundred photos can look different.</h2>
     <div class="cta-group">
-      <a href="https://amzn.in/d/0cKrGJgQ" class="cta" onclick="trackBuyClick()">Get the book on Amazon</a>
+      <div class="cta-col">
+        <a href="https://amzn.in/d/0cKrGJgQ" class="cta" onclick="trackBuyClick()">Get the book on Amazon</a>
+        <div class="cta-note">Available on Kindle and paperback, India-wide delivery.</div>
+      </div>
       <a href="/store.html" class="cta-secondary">Shop My Gear &amp; Storefront</a>
     </div>
-    <div class="cta-note">Available on Kindle and paperback, India-wide delivery.</div>
   </div>
 </section>
 
