@@ -47,3 +47,7 @@ Claims in the video, and how sure they are:
 `code/video/`: map and scene renderer, audio mix and encode scripts. To rebuild the video, download `ne_10m_land.geojson` and `ne_10m_bathymetry_K_200.geojson` from Natural Earth, run `geo.py`, `audio.py`, then `render.py`. Photo and audio paths inside the scripts point to the original upload folder and need updating.
 
 Original photographs are not stored here.
+
+## Pilibhit Short (with voiceover)
+
+`video/pilibhit_short/`: 71 s, 1080x1920, Hinglish voiceover by Hitesh Chawla. Story: tigers 25 (2014) to 65 (2018), the earlier fall, what NTCA credits, 57 resident plus 8 transit, TX2 award, conflict at the edge. `stem_music_sfx_no_vo.mp3` is the music and effects without voice. Facts and sources are in the chat research notes; the 2010 and 2013 counts are reported estimates and sources differ.
