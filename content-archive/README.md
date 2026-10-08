@@ -23,6 +23,9 @@ Carousels, video and build code made with Claude. All wildlife photographs are b
 
 ## Video
 
+Version 2 (current): `video/NoTigersSriLanka_V2_HQ_90MB.mp4` (upload this one) and `NoTigersSriLanka_V2_share_25MB.mp4`. Real shaded-relief map, 3D-parallax tigers, kinetic text, synthesized sound design and music. Code in `video/v2_code/`. Version 1 files are listed below.
+
+
 `video/NoTigersSriLanka_share_25MB.mp4` (1080x1920, 80 s, -14.4 LUFS) and `NoTigersSriLanka_HQ_76MB.mp4` (same cut, higher bitrate, use this one for upload).
 
 Title: Why Are There No Tigers in Sri Lanka? The Answer Isn't Distance
