@@ -37,6 +37,10 @@ Claims in the video, and how sure they are:
 - Hypothesis: a small isolated island population was not sustained after the bridge flooded; the leopard held the top-predator role.
 - Map depth shading is illustrative.
 
+## Panna reel (Tourist vs Photographer), version 3
+
+`video/panna_reel/PannaReel_TouristVsPhotographer_V3.mp4` (56 s, 1080x1920). Re-edit of the original reel: hook cut, split screen, kinetic captions, callouts, autofocus-hunting graphic, sound effects layered over the original audio. Code in `video/panna_reel/code/` (needs `video/v2_code/eng.py`; source frames were extracted from the original reel).
+
 ## Code
 
 `code/carousels/`: Python (Pillow, NumPy, OpenCV) used to render the slides. `code/fonts/`: Anton, Barlow, Barlow Condensed, Cormorant Garamond.
