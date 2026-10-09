@@ -1,6 +1,15 @@
 import json
 exec(open('audio_head.py').read())
 TL={r[0]:(r[1],r[2]) for r in json.load(open('tl.json'))}
+# softer SFX: shimmer (bells/pings/pops) down and darkened, impacts and sweeps rounded off
+_bell,_ping,_pop,_tick,_impact,_riser,_whoosh=bell,ping,pop,tick,impact,riser,whoosh
+bell=lambda t0,g=-18,f=880: lp(_bell(t0,g-9,f),2200)
+ping=lambda t0,g=-20,f=1250: lp(_ping(t0,g-9,f),2000)
+pop=lambda t0,f=700,g=-20: lp(_pop(t0,f,g-7),2000)
+tick=lambda t0,g=-26,f=2200: lp(_tick(t0,g-10,f),2500)
+impact=lambda t0,g=-6,big=1.0: lp(_impact(t0,g-4,big*0.8),900)
+riser=lambda t0,t1,g=-18: lp(_riser(t0,t1,g-7),1800)
+whoosh=lambda t0,dur=0.9,up=True,g=-14,wet=0.35: lp(_whoosh(t0,dur,up,g-5,wet),2500)
 T=lambda k:TL[k][0]
 sfx=np.zeros(N,np.float32); mus=np.zeros(N,np.float32); amb=np.zeros(N,np.float32)
 x=tt(0,D)
@@ -93,8 +102,11 @@ env=np.abs(voice); k=int(0.06*SR); env=np.convolve(env,np.ones(k)/k,mode='same')
 act=env>0.3
 def rms(z): return float(np.sqrt(np.mean(z[act]**2))+1e-9)
 rv=rms(voice); mb=mus*(1-0.55*env); sb=sfx*(1-0.3*env); ab=amb*(1-0.6*env)
-mb*=min(1.0,rv*db(-13)/rms(mb)); sb*=min(1.0,rv*db(-10)/rms(sb))
+mb*=min(1.0,rv*db(-16)/rms(mb)); sb*=min(1.0,rv*db(-24)/rms(sb))
+vmax=float(np.abs(voice).max()); cs=0.20*vmax; cm=0.30*vmax
+sb=cs*np.tanh(sb/cs); mb=cm*np.tanh(mb/cm)
 end=np.interp(x,[0,0.08,D-1.2,D],[0,1,1,0]).astype(np.float32)
+print("peak dB rel voice: sfx %.1f music %.1f amb %.1f"%(20*np.log10(np.abs(sb).max()/vmax),20*np.log10(np.abs(mb).max()/vmax),20*np.log10(np.abs(ab).max()/vmax)))
 musfx=np.tanh(mb+sb+ab)*end
 wf.write("stem_raw.wav",SR,(np.clip(np.stack([musfx,musfx],1),-1,1)*32767).astype(np.int16))
 mix=np.tanh(voice+mb+sb+ab)*end
