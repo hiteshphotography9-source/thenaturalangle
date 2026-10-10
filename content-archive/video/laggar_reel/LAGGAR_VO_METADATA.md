@@ -1,5 +1,5 @@
 # Laggar Falcon: "Birds only?" reel (65.5 s, 1080x1920, with your voice-over)
-Built from the 8-slide Laggar carousel facts and your falcon photos. Every number comes from the carousel copy (study of one nest in 2019, 79% lizard, 16 kinds of prey, 4,360 m Ladakh, 20-29% suspected decline, Schedule I).
+Built from the 8-slide Laggar carousel facts and your falcon photos. Every number comes from the carousel copy (study of one nest in 2019, 79% lizard, 16 kinds of prey, 4,360 m Ladakh, 20-29% suspected decline).
 
 ## YouTube Shorts
 **Title options**
