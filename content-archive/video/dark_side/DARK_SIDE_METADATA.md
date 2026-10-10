@@ -8,7 +8,7 @@ Voice-over unchanged from the original. New: reduced footage window, top chapter
 3. I Almost Crossed the Line on Safari
 
 **Description**
-A wildlife photographer's honest look at where tracking an animal turns into disturbing it. Footage from my own safari. Recent cases mentioned in the video (reported, not from this footage): Tadoba Andhari, May 2024 and Umred-Paunil-Karhandla, Dec 2024.
+A wildlife photographer's honest look at where tracking an animal turns into disturbing it. Footage from my own safari. Recent cases mentioned in the video (reported, not from this footage): Tadoba Andhari, May 2024 and Umred-Pauni-Karhandla, Dec 2024.
 Full video on the channel. Where is YOUR line? Tell me below.
 Sources: Deccan Herald (Tadoba, 2024), The Hitavada (Jan 2025).
 
