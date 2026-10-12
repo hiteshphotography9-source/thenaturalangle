@@ -23,7 +23,7 @@ Did you ever see Dotty? Tell me in the comments.
 **Hashtags:** #Dotty #Bandhavgarh #Tigress #TigerNews #TheNaturalAngle #Shorts
 **Keywords:** dotty tigress bandhavgarh, bandhavgarh tigress death, dotty d mark tigress, bandhavgarh tiger news
 **Pinned comment:** Did you ever see Dotty in Magadhi or Tala? Share your memory below.
-**Thumbnail:** YT_Dotty_thumb.jpg
+**Thumbnail (portrait, Shorts):** YT_Dotty_cover_portrait.jpg
 **Settings:** Category News & Politics or Pets & Animals. Not made for kids. Language Hindi.
 
 ## Instagram Reel

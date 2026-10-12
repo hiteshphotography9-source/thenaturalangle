@@ -52,6 +52,15 @@ def photo_win(img,src,box,rect,a,rad=26,border=GOLD):
     pim=Image.fromarray(ph).convert("RGBA"); pim.putalpha(mk); img.alpha_composite(pim,(int(wx),int(wy)))
     ImageDraw.Draw(img,"RGBA").rounded_rectangle((wx-2,wy-2,wx+ww+1,wy+wh+1),radius=rad,outline=border+(int(170*a),),width=3)
     return img
+def mark(img,cx,cy,rx,ry,a,t):
+    # soft glow + crisp ellipse over the area just above the eyes
+    L=Image.new("L",img.size,0); dl=ImageDraw.Draw(L); dl.ellipse((cx-rx,cy-ry,cx+rx,cy+ry),fill=255)
+    g=np.array(L).astype(np.float32)/255; gb=cv2.GaussianBlur(g,(0,0),max(4,rx*0.35))
+    arr=np.array(img).astype(np.float32); pul=0.85+0.15*math.sin(t*5)
+    arr[...,:3]=np.clip(arr[...,:3]*(1+gb[...,None]*0.35*a*pul)+gb[...,None]*np.array((60,30,0))*a,0,255)
+    img=Image.fromarray(arr.astype(np.uint8)); d=ImageDraw.Draw(img,"RGBA")
+    d.ellipse((cx-rx*1.08,cy-ry*1.12,cx+rx*1.08,cy+ry*1.12),outline=AMB+(int(255*a),),width=4)
+    return img
 def shot(img,src,cx,cy,sc,rot,a):
     if a<=0.01: return img
     h,w=src.shape[:2]; pim=Image.fromarray(src).convert("RGBA").resize((int(w*sc),int(h*sc)),Image.LANCZOS).rotate(rot,expand=True,resample=Image.BICUBIC)
@@ -129,7 +138,7 @@ def frame(t):
     if si==0:
         k=eo3(seg(t,0.1,0.7)); d.text((W/2,230+int((1-k)*20)),"BANDHAVGARH TIGER RESERVE",font=F("BarlowCondensed-SemiBold.ttf",42),fill=GOLD+(int(255*k),),anchor="ms")
         # Ken Burns from full tiger to forehead, then ease back
-        DX,DY=488,338
+        DX,DY=486,365
         full=(330,178,820,804); tight=(DX-150,180,DX+150,550)
         z=ease(seg(t,0.3,3.2))-0.45*ease(seg(t,T['dotty']-0.2,T['dotty']+1.6))
         box=tuple(lerp(f_,t_,z) for f_,t_ in zip(full,tight))
@@ -137,14 +146,14 @@ def frame(t):
         img=photo_win(img,P34,box,rect,eo3(seg(t,0.0,0.5)))
         d=ImageDraw.Draw(img,"RGBA")
         sx=rect[0]+(DX-box[0])/(box[2]-box[0])*rect[2]; sy=rect[1]+(DY-box[1])/(box[3]-box[1])*rect[3]
-        ra=eo3(seg(t,2.4,2.9))*(1-seg(t,T['dotty']+0.8,T['dotty']+1.4)); rr=40*rect[2]/(box[2]-box[0])
+        ra=eo3(seg(t,2.4,2.9))*(1-seg(t,T['dotty']+0.8,T['dotty']+1.4)); sc_=rect[2]/(box[2]-box[0])
         if ra>0:
-            pul=1+0.06*math.sin(t*6)
-            for k_,wid in ((1.25,10),(1.0,5)):
-                d.ellipse((sx-rr*pul*k_,sy-rr*pul*k_,sx+rr*pul*k_,sy+rr*pul*k_),outline=AMB+(int((120 if wid==10 else 255)*ra),),width=wid)
-            lx=sx-160; ly=max(rect[1]+70,sy-rr*1.35-20)
-            d.rounded_rectangle((lx-10,ly-48,lx+330,ly+14),radius=16,fill=(16,12,8,int(220*ra)),outline=AMB+(int(255*ra),),width=3)
-            d.text((lx+160,ly-6),"HER \"D\" MARK (APPROX.)",font=F("Anton-Regular.ttf",40),fill=CREAM+(int(255*ra),),anchor="ms")
+            img=mark(img,sx,sy,40*sc_,22*sc_,ra,t)
+            d=ImageDraw.Draw(img,"RGBA")
+            lx=sx; ly=max(rect[1]+60,sy-150*sc_)
+            d.line((sx,sy-24*sc_,lx,ly+14),fill=AMB+(int(230*ra),),width=3)
+            d.rounded_rectangle((lx-170,ly-48,lx+170,ly+14),radius=16,fill=(16,12,8,int(220*ra)),outline=AMB+(int(255*ra),),width=3)
+            d.text((lx,ly-6),"HER \"D\" MARK",font=F("Anton-Regular.ttf",40),fill=CREAM+(int(255*ra),),anchor="ms")
         d.text((rect[0]+rect[2],rect[1]+rect[3]+34),"Photo: \u00a9 Ashish Tirkey / Pugdundee Safaris",font=F("BarlowCondensed-Medium.ttf",26),fill=GREY+(int(230*eo3(seg(t,0.5,1.0))),),anchor="rs")
         ta=eo3(seg(t,T['dotty']-0.05,T['dotty']+0.45))
         if ta>0:
