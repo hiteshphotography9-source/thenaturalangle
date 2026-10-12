@@ -1,0 +1,20 @@
+import sys; sys.path.insert(0,'.')
+from scenes import *
+fr=pwin("260a7220",0.36,0.50,0.33).astype(np.uint8); gradv(fr,0,620,0.85,0.0); gradv(fr,1180,H,0.0,0.85)
+o=Ov(); brand(o)
+o.text((W/2,250),"TIGERS SWIM.",anton(120),CREAM)
+o.text((W/2,400),"SO WHY NOT",anton(120),GOLD); o.text((W/2,530),"EVERY ISLAND?",anton(120),GOLD)
+cam=Cam(115.55,-8.45,300,w=860,h=420); m=map_img(cam,level=1.0)
+fr=o.apply(fr); o=Ov()
+mk=Image.new("L",(860,420),0); ImageDraw.Draw(mk).rounded_rectangle((0,0,859,419),radius=26,fill=255)
+mp=Image.fromarray(m).convert("RGBA"); mp.putalpha(mk); o.im.alpha_composite(mp,(110,1260))
+o.d.rounded_rectangle((108,1258,972,1682),radius=26,outline=GOLD+(255,),width=3)
+top=cam.px(115.73,-7.9); bot=cam.px(115.73,-9.0)
+o.dash([(110+top[0],1260+top[1]),(110+bot[0],1260+bot[1])],RED,1.0,w=6,dl=14,gap=10)
+for nm,lo,la in (("BALI",115.1,-8.05),("LOMBOK",116.25,-8.15)):
+    x,y=cam.px(lo,la); o.text((110+x,1260+y),nm,anton(44),CREAM)
+x,y=cam.px(115.62,-8.42); x+=110;y+=1260
+o.d.line((x-24,y-24,x+24,y+24),fill=RED+(255,),width=8); o.d.line((x-24,y+24,x+24,y-24),fill=RED+(255,),width=8)
+o.pill((W/2,1258),"TIGERS NEVER CROSSED THIS LINE",bcs(40),1.0,fg=(255,236,230),bg=(120,36,28))
+fr=o.apply(fr)
+Image.fromarray(finish(fr.astype(np.float32),0)).save("Tiger_Island_cover.jpg",quality=94)
