@@ -1,5 +1,5 @@
 # Dotty of Bandhavgarh: tribute Short (58.6 s, 1080x1920)
-Your cleaned VO (76 s raw, dead air cut to 55 s). No third-party photos: illustrated "D" mark, India location map, family tree, zone diagram (not a map), recreated news-headline cards, cubs graphics.
+Your cleaned VO (76 s raw, dead air cut to 55 s). Real photos with credits: Dotty portrait (Ashish Tirkey / Pugdundee Safaris), news photo (NBT via The Hans India), news screenshots (The Hans India, Hindi report). Plus India map, family tree, zone diagram (not a map), cubs graphics.
 
 ## YouTube Shorts
 **Title (pick one)**
@@ -12,7 +12,8 @@ Dotty, one of Bandhavgarh Tiger Reserve's most famous tigresses, was found dead 
 
 Named for the "D" mark on her forehead. Born about 2012 in Magadhi zone to Sukhi Patiha, sister of Spotty. Pushed out of her territory by her own daughters, she moved to Tala and became a mother again. D1, the dominant male of Khitauli, is reported to be her son.
 
-Notes: Family details come from safari records and are not official. The zone diagram is not a map. Headline cards quote published headlines in a recreated layout. No photos of Dotty are used.
+Image credits: Dotty portrait, Ashish Tirkey / Pugdundee Safaris. News photo, NBT as published by The Hans India. Screenshots: The Hans India (11 Oct 2026) and a Hindi news report (10 Oct 2026). Images belong to their respective owners; DM for credit or removal.
+Notes: Family details come from safari records and are not official. The zone diagram is not a map.
 Sources: The Hans India, NewsBytes, Amar Ujala, ETV Bharat, People's Update, Univarta (Oct 2026); bandhavgarh.net and safari records (lineage).
 
 Did you ever see Dotty? Tell me in the comments.
@@ -35,7 +36,8 @@ On 9 October 2026 she was found dead in the Manpur buffer range, about 14 years 
 
 Did you ever see Dotty? Tell me below.
 
-Family details from safari records, not official. No photos of Dotty used.
+Photos: Ashish Tirkey / Pugdundee Safaris; NBT via The Hans India. Images belong to their respective owners. DM for credit or removal.
+Family details from safari records, not official.
 
 #Dotty #Bandhavgarh #BandhavgarhTigerReserve #Tigress #TigerNews #WildlifeIndia #MadhyaPradesh #SaveTigers #TheNaturalAngle #IndianWildlife
 **Cover:** IG_cover_Dotty.jpg | **Location:** Bandhavgarh Tiger Reserve
