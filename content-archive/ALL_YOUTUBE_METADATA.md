@@ -26,8 +26,8 @@ Photos: Hitesh Chawla, The Natural Angle. Map data: Natural Earth.
 
 ---
 
-## 2. Tiger Island: Tigers Can Swim. So Why Aren't They on Every Island? (76 s) | NEEDS VO
-**File:** video/tiger_island/ (final HQ after VO)
+## 2. Tiger Island: Tigers Can Swim. So Why Aren't They on Every Island? (100.7 s, with VO) | READY
+**File:** video/tiger_island/TigerIsland_Final_HQ.mp4
 **Title options:** 1. Tigers Can Swim. So Why Aren't They on Every Island? (recommended) 2. Can a Tiger Swim Across the Sea? The Answer Surprised Me 3. Why Tigers Never Reached Lombok (Just 20 km From Bali)
 **Thumbnail:** Tiger_Island_cover.jpg (portrait)
 **Description:**
@@ -68,22 +68,33 @@ Did you ever see Dotty? Tell me in the comments.
 
 ---
 
-## 4. Dhole: India's Forgotten Predator (about 70 s) | NEEDS VO + reel build
-**Title options:** 1. India's Forgotten Predator Is Showing Up Again 2. Dhole: The Wild Dog That Chases Tigers Off Their Kill 3. Gone for 30 Years. Then a Camera Trap Caught This.
-**Description:**
-Tiger and leopard get the attention. The dhole, India's wild dog, is the predator people forget. It hunts in packs of 5 to 12 (sometimes 30+), talks in whistles in thick forest, and packs have been recorded chasing tigers off their kills.
+## 4. Dhole: The Predator People Forget (84 s, with VO) | READY (add binocular link and photographer name)
+**File:** video/dhole/reel/Dhole_Reel_Final_HQ.mp4 | **Thumbnail:** Dhole_Reel_cover_portrait.jpg
+**Title options**
+1. India's Forgotten Predator Is Showing Up Again (recommended)
+2. Dhole: The Wild Dog That Chases Tigers Off Their Kill
+3. Gone for 30 Years. Then a Camera Trap Caught This.
 
-It has vanished from over 75% of its historic range, was hunted as "vermin" in India until 1972, and only about 949 to 2,215 breeding adults are estimated worldwide (2015 estimate).
+**Thumbnail (portrait):** Dhole_Reel_cover_portrait.jpg
 
-Now new records are coming in: Assam's Kaziranga-Karbi Anglong landscape (camera trap, Oct 2022, about 30 years after dholes were thought gone there), Manipur's first ever camera-trap record (Shirui, July 2026), and Ratapani Tiger Reserve's first record (Jan 2026). A comeback? Not yet. Every new record is a reason to protect that forest.
+**Description**
+Tiger and leopard get the attention. The dhole, India's wild dog, is the predator people forget. It weighs 10 to 20 kg, hunts in packs of 5 to 12 (sometimes 30+), whistles to talk in thick forest, and brings down prey many times its size. Packs have been recorded chasing tigers off their kills (rare, documented by researchers).
+
+It has vanished from over 75% of its historic range, was hunted as "vermin" in India until the Wildlife Protection Act of 1972, and only about 949 to 2,215 breeding adults are estimated worldwide (2015 estimate).
+
+Now new records are coming in: Assam's Kaziranga-Karbi Anglong landscape (camera trap on 31 Oct 2022, about 30 years after dholes were thought gone there; WII study published June 2025), Manipur's first ever camera-trap record (Shirui, July 2026), and Ratapani Tiger Reserve's first record (Jan 2026, as reported). A comeback? Not yet. Every new record is a reason to protect that forest.
 
 Binoculars I use on safari: [BINOCULAR LINK]
 
-Images belong to their respective owners. DM for credit or removal.
-Sources: IUCN / Canid Specialist Group; Journal of Threatened Taxa (June 2025); Mongabay India; EastMojo; ETV Bharat; Srivathsa et al. 2020.
+Notes: the range map is illustrative and approximate, not an IUCN map. The view through the binoculars is an illustration made from my own photo.
+Images belong to their respective owners. DM for credit or removal. Photos: Wikimedia Commons ([AUTHOR NAME]); Scroll.in (Bandipur); India Today NE; Imphal Times / ENFOGAL camera trap; tiger and forest photos: Hitesh Chawla.
+Sources: IUCN / Canid Specialist Group; Journal of Threatened Taxa (June 2025); Mongabay India; EastMojo (23 July 2026); ETV Bharat (Jan 2026); Srivathsa et al. 2020.
 #Shorts #Dhole #IndianWildDog #WildlifeIndia #TheNaturalAngle
-**Tags:** dhole, indian wild dog, asiatic wild dog, dhole vs tiger, dhole pack hunting, dhole india, dhole kaziranga, dhole manipur, endangered animals india, wild dog india, cuon alpinus, the natural angle, ढोल जंगली कुत्ता, जंगली कुत्ता
-**Pinned comment:** Have you ever seen a dhole pack in the wild? Tell me where.
+
+**Tags:** dhole, indian wild dog, asiatic wild dog, dhole vs tiger, dhole pack hunting, dhole india, dhole kaziranga, dhole manipur, endangered animals india, wild dog india, cuon alpinus, binoculars for safari, the natural angle, ढोल जंगली कुत्ता, जंगली कुत्ता
+**Keywords:** dhole india, indian wild dog facts, dhole chases tiger, dhole comeback
+**Pinned comment:** Have you ever seen a dhole pack in the wild? Tell me where, and what they were doing.
+**Settings:** Category Pets & Animals. Not made for kids. Language Hindi. Altered or synthetic content: No (real photos; the map and binocular view are labelled illustrations).
 
 ---
 

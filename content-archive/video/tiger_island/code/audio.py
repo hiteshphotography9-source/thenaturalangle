@@ -88,8 +88,8 @@ if VO:
     act=voice[np.abs(voice)>0.01]; vr=np.sqrt((act**2).mean())
     env=np.sqrt(np.maximum(sg.fftconvolve(voice**2,np.ones(int(0.06*SR))/int(0.06*SR),'same'),0)); env=lp(env,8,1)
     duck=np.clip(1/(1+(env/(np.percentile(env,90)+1e-6))*1.6)*1.1,0.35,1)
-    m2=mus*(vr*db(-19)/r_(mus)); s2=sfx*(vr*db(-11)/r_(sfx))
-    mixed=voice+m2*duck+s2*(0.6+0.4*duck)
+    m2=mus*(vr*db(-19)/r_(mus)); s2=sfx*(vr*db(-7.5)/r_(sfx))
+    mixed=voice+m2*duck+s2*(0.7+0.3*duck)
     out='mix_vo_raw.wav'; final='mix_vo.wav'
 else:
     mixed=mus*0.8+sfx*1.0; out='mix_na_raw.wav'; final='mix_na.wav'

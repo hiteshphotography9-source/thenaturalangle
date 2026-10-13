@@ -25,7 +25,7 @@ All tiger photos: Hitesh Chawla. Map is illustrative (Natural Earth coastlines, 
 
 ---
 
-## A2. Tiger Island | NEEDS VO
+## A2. Tiger Island (100.7 s, with VO) | READY
 **Cover:** Tiger_Island_cover.jpg
 Tigers are strong swimmers. So why aren't they on every island?
 
@@ -60,22 +60,23 @@ Family details from safari records, not official.
 
 ---
 
-## A4. Dhole reel | NEEDS VO + build
-**Cover:** to be made with the reel
+## A4. Dhole reel (84 s, with VO) | READY (add binocular link)
+**Cover:** Dhole_Reel_cover_portrait.jpg
 Tiger and leopard get the attention. The dhole is the predator people forget.
 
-Packs of 5 to 12, sometimes 30+. They talk in whistles in thick forest, take down sambar many times their size, and have been recorded chasing tigers off their kills.
+10 to 20 kg. Packs of 5 to 12, sometimes 30+. They whistle to talk in thick forest and bring down prey many times their size. Packs have even been recorded chasing tigers off their kills.
 
 Gone from over 75% of their historic range. Hunted as "vermin" in India until 1972. About 949 to 2,215 breeding adults left worldwide (2015 estimate).
 
-Now new records: Assam (after about 30 years), Manipur's first ever, Ratapani's first. A comeback? Not yet.
+Now new records are coming in: Assam after about 30 years, Manipur's first ever, Ratapani's first. A comeback? Not yet. Every new record is a reason to protect that forest.
 
-Have you seen a dhole pack? Tell me where.
+Have you seen a dhole? Comment DHOLE and tell me where.
 
-Binoculars I use on safari: link in bio.
+My safari binoculars: link in bio.
 Images belong to their respective owners. DM for credit or removal.
 
 #Dhole #IndianWildDog #AsiaticWildDog #WildlifeIndia #EndangeredSpecies #IndianWildlife #Kaziranga #SafariIndia #WildlifePhotography #TheNaturalAngle
+**First comment:** Binoculars I use: [BINOCULAR LINK]
 
 ---
 
