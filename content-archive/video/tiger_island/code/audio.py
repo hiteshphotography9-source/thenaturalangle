@@ -51,6 +51,10 @@ def pad(fr,a,b,g=-24):
     s=sum((np.sin(2*np.pi*f*x)+0.4*np.sin(2*np.pi*2*f*x+0.4))*(1+0.1*np.sin(2*np.pi*(0.07+0.011*i)*x)) for i,f in enumerate(fr)).astype(np.float32)
     return place(lp(s,1100)*e/len(fr),a,g)
 T=M
+OLD=dict(hook=0.0,swim=5.0,sing=14.5,idea=24.5,bali=37.0,isl=51.0,punch=60.5,cta=69.5,end=76.0)
+_K=['hook','swim','sing','idea','bali','isl','punch','cta','end']
+def SF(k):
+    i=_K.index(k); return (M[_K[i+1]]-M[k])/(OLD[_K[i+1]]-OLD[k])
 Dm=[36.7,55,73.4,87.3]; Fm=[43.7,65.4,87.3,130.8]; Am=[55,82.4,110,130.8]; C=[65.4,98,130.8,164.8]; Gm=[49,73.4,98,116.5]; Bb=[58.3,87.3,116.5,146.8]
 mus=np.zeros(N,np.float32)
 for a,b,ch in ((0,T['swim'],Dm),(T['swim'],T['sing'],Fm),(T['sing'],T['idea'],Am),(T['idea'],T['bali'],Gm),(T['bali'],T['isl'],Dm),(T['isl'],T['punch'],Bb),(T['punch'],T['cta'],Fm),(T['cta'],D,Dm)): mus+=pad(ch,a,b)
@@ -62,29 +66,30 @@ sfx=np.zeros(N,np.float32)
 # hook
 sfx+=splash(0.05,-11)+bubbles(0.3,1.5,-20)+water(0,T['swim']+0.5,-24)+riser(0.6,2.1,-17)+boom(2.1,-9)
 for k in ['swim','sing','idea','bali','isl','punch','cta']: sfx+=whoosh(T[k],0.7,-15)
-s=T['swim']; sfx+=water(s,T['sing'],-27)+tick(s+2.6,-15)+riser(s+4.3,s+6.3,-22)+bubbles(s+4.6,1.6,-21)+thump(s+5.0,-13)+boom(s+7.0,-12)
-s=T['sing']; sfx+=water(s,T['idea'],-28)+tick(s+2.8,-16)+splash(s+3.4,-15,0.9)+tick(s+3.8,-15)+tick(s+6.0,-14)+riser(s+6.0,s+7.4,-20)+thump(s+7.4,-11)+pluck(s+8.2,220,-18)
-s=T['idea']; sfx+=splash(s+0.6,-17,1.6)+bubbles(s+0.8,1.6,-22)+thump(s+2.4,-13)
-for d_ in (3.5,5.5,7.5): sfx+=tick(s+d_,-14)+pluck(s+d_,659.3,-22,0.8)
-sfx+=pluck(s+3.6,523.3,-19)+riser(s+5.7,s+7.2,-21)
-for i in range(8): sfx+=tick(s+7.7+i*0.05,-22)
-sfx+=boom(s+9.2,-10)+thump(s+10.4,-10)+thump(s+10.6,-13)
-s=T['bali']; sfx+=tick(s+1.8,-15)+drain(s+2.4,2.4,-12)+tick(s+2.6,-15)+bubbles(s+4.8,1.8,-23)+riser(s+6.0,s+7.0,-20)+thump(s+7.0,-10)+boom(s+9.7,-9)+drain(s+11.6,1.8,-16)+tick(s+12.4,-14)
-s=T['isl']
-for d_ in (0.9,2.3,3.7,5.1): sfx+=tick(s+d_,-13)+pluck(s+d_,440 if d_>1 else 392,-20,0.9)
-sfx+=riser(s+5.4,s+6.6,-18)+boom(s+6.6,-9)
-s=T['punch']; sfx+=riser(s+1.0,s+2.6,-16)+boom(s+2.6,-8)+thump(s+5.5,-12)+boom(s+6.6,-12)
-s=T['cta']; sfx+=pluck(s+1.2,587.3,-18)+pluck(s+1.5,880,-21)+tick(s+2.2,-15)
+s=T['swim'];F=SF('swim'); sfx+=water(s,T['sing'],-27)+tick(s+F*2.6,-15)+riser(s+F*4.3,s+F*6.3,-22)+bubbles(s+F*4.6,1.6,-21)+thump(s+F*5.0,-13)+boom(s+F*7.0,-12)
+s=T['sing'];F=SF('sing'); sfx+=water(s,T['idea'],-28)+tick(s+F*2.8,-16)+splash(s+F*3.4,-15,0.9)+tick(s+F*3.8,-15)+tick(s+F*6.0,-14)+riser(s+F*6.0,s+F*7.4,-20)+thump(s+F*7.4,-11)+pluck(s+F*8.2,220,-18)
+s=T['idea'];F=SF('idea'); sfx+=splash(s+F*0.6,-17,1.6)+bubbles(s+F*0.8,1.6,-22)+thump(s+F*2.4,-13)
+for d_ in (3.5,5.5,7.5): sfx+=tick(s+F*d_,-14)+pluck(s+F*d_,659.3,-22,0.8)
+sfx+=pluck(s+F*3.6,523.3,-19)+riser(s+F*5.7,s+F*7.2,-21)
+for i in range(8): sfx+=tick(s+F*7.7+i*0.05,-22)
+sfx+=boom(s+F*9.2,-10)+thump(s+F*10.4,-10)+thump(s+F*10.6,-13)
+s=T['bali'];F=SF('bali'); sfx+=tick(s+F*1.8,-15)+drain(s+F*2.4,2.4,-12)+tick(s+F*2.6,-15)+bubbles(s+F*4.8,1.8,-23)+riser(s+F*6.0,s+F*7.0,-20)+thump(s+F*7.0,-10)+boom(s+F*9.7,-9)+drain(s+F*11.6,1.8,-16)+tick(s+F*12.4,-14)
+s=T['isl'];F=SF('isl')
+for d_ in (0.9,2.3,3.7,5.1): sfx+=tick(s+F*d_,-13)+pluck(s+F*d_,440 if d_>1 else 392,-20,0.9)
+sfx+=riser(s+F*5.4,s+F*6.6,-18)+boom(s+F*6.6,-9)
+s=T['punch'];F=SF('punch'); sfx+=riser(s+F*1.0,s+F*2.6,-16)+boom(s+F*2.6,-8)+thump(s+F*5.5,-12)+boom(s+F*6.6,-12)
+s=T['cta'];F=SF('cta'); sfx+=pluck(s+F*1.2,587.3,-18)+pluck(s+F*1.5,880,-21)+tick(s+F*2.2,-15)
 x=np.arange(N)/SR
 if VO:
     sr,v=wf.read(VO); v=v.astype(np.float32)/32768
     if v.ndim>1: v=v.mean(1)
-    voice=np.zeros(N,np.float32); voice[:min(N,len(v))]=v[:N]
-    vr=20*np.log10(np.sqrt((voice**2).mean())+1e-9)
+    voice=np.zeros(N,np.float32); o_=int(0.5*SR); n_=min(len(v),N-o_); voice[o_:o_+n_]=v[:n_]
+    def r_(a): return np.sqrt((a**2).mean())+1e-9
+    act=voice[np.abs(voice)>0.01]; vr=np.sqrt((act**2).mean())
     env=np.sqrt(np.maximum(sg.fftconvolve(voice**2,np.ones(int(0.06*SR))/int(0.06*SR),'same'),0)); env=lp(env,8,1)
     duck=np.clip(1/(1+(env/(np.percentile(env,90)+1e-6))*1.6)*1.1,0.35,1)
-    ref=10**((vr+14)/20)
-    mixed=voice+(mus*0.8+sfx*1.0)*ref*duck
+    m2=mus*(vr*db(-19)/r_(mus)); s2=sfx*(vr*db(-11)/r_(sfx))
+    mixed=voice+m2*duck+s2*(0.6+0.4*duck)
     out='mix_vo_raw.wav'; final='mix_vo.wav'
 else:
     mixed=mus*0.8+sfx*1.0; out='mix_na_raw.wav'; final='mix_na.wav'

@@ -1,4 +1,4 @@
-# Can a Tiger Swim Across the Sea? (YT Short / IG Reel, ~76 s, 1080x1920)
+# Can a Tiger Swim Across the Sea? (YT Short / IG Reel, 100.8 s final with VO, 1080x1920)
 Follow-up to "Why Are There No Tigers in Sri Lanka?"
 
 ## Hinglish VO script (record in this order; each block = one scene)
@@ -91,3 +91,12 @@ Tiger photos: Hitesh Chawla. Maps: Natural Earth, illustrative.
 #Tiger #TigerFacts #WallaceLine #Sundarbans #BaliTiger #WildlifeIndia #IndianWildlife #Biogeography #WildlifePhotography #TheNaturalAngle
 **Cover:** Tiger_Island_cover.jpg
 **Facebook line:** Tigers can swim. So why aren't they on every island? The answer is not about swimming.
+
+
+## VO edit report (Recording_44, 141.2 s raw -> 98.7 s clean)
+- Removed: 4 s lead-in silence, tail silence, 33 long pauses (each cut to about 0.28 s).
+- Removed one sentence in the Bali block: "Aakhri baar 1927 mein confirm hue". Both speech decodes heard 1927; the last confirmed Bali tiger is 1937. The correct year stays on screen ("BALI'S OWN TIGERS: LAST CONFIRMED 1937").
+- Sped up 1.12x (pitch preserved) to keep the Short under about 100 s.
+- Noise reduction, EQ (low cut 75 Hz, presence lift 3.2 kHz), compression, loudness -16 LUFS on voice; final mix -14 LUFS.
+- Scene timings follow your blocks: hook 0, Sundarbans 4.7, Singapore 21.4, swimming vs settling 35.3, Bali vs Lombok 52.2, fossil islands 71.3, punchline 83.0, CTA 91.9, end 100.8 s.
+- Could not verify by ear: in block 5 one decode heard "200 meter" where the script says 250. The on-screen card says 250 m+. If you said 200, tell me and I will change the card to match.

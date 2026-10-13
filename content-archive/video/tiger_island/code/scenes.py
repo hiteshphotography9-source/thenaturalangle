@@ -5,6 +5,10 @@ import json, os
 M=dict(hook=0.0,swim=5.0,sing=14.5,idea=24.5,bali=37.0,isl=51.0,punch=60.5,cta=69.5,end=76.0)
 if os.path.exists(SP+"island/marks.json"): M.update(json.load(open(SP+"island/marks.json")))
 TOTAL=M['end']
+OLD=dict(hook=0.0,swim=5.0,sing=14.5,idea=24.5,bali=37.0,isl=51.0,punch=60.5,cta=69.5,end=76.0)
+_K=['hook','swim','sing','idea','bali','isl','punch','cta','end']
+def SC(k):
+    i=_K.index(k); return (OLD[_K[i+1]]-OLD[k])/(M[_K[i+1]]-M[k])
 rng=np.random.default_rng(11)
 VIG=None; GR=None
 def finish(fr,t):
@@ -32,7 +36,7 @@ def S_hook(t):
 # ---------------- SUNDARBANS
 SW_PATH=[(88.70,21.92),(88.95,21.80),(89.20,21.88),(89.45,22.02),(89.62,22.08)]
 def S_swim(t):
-    lt_=t-M['swim']; p=ease(seg(lt_,0,2.6))
+    lt_=(t-M['swim'])*SC('swim'); p=ease(seg(lt_,0,2.6))
     cam=Cam(lerp(85.5,89.15,p),lerp(19.5,22.0,p),lerp(34,300,p**1.3)); fr=map_img(cam)
     gradv(fr,0,520,0.7,0.0); gradv(fr,1350,H,0.0,0.7)
     o=Ov(); brand(o); maptag(o,eo3(seg(lt_,2.0,2.5)))
@@ -55,7 +59,7 @@ def S_swim(t):
     return o.apply(fr)
 # ---------------- SINGAPORE
 def S_sing(t):
-    lt_=t-M['sing']; p=ease(seg(lt_,0,3.2))
+    lt_=(t-M['sing'])*SC('sing'); p=ease(seg(lt_,0,3.2))
     cam=Cam(lerp(102.2,103.80,p),lerp(3.2,1.45,p),lerp(110,2300,p**2.2)); fr=map_img(cam)
     gradv(fr,0,560,0.75,0.0); gradv(fr,1300,H,0.0,0.75)
     o=Ov(); brand(o); maptag(o,eo3(seg(lt_,1,1.5)))
@@ -84,7 +88,7 @@ ang=np.linspace(0,2*np.pi,90,endpoint=False); rr=1+0.10*np.sin(ang*3+1)+0.06*np.
 ISL=[(540+300*r*math.cos(a),1060+230*r*math.sin(a)) for a,r in zip(ang,rr)]
 PREY=[(540+rng.uniform(-220,220),1060+rng.uniform(-150,150)) for _ in range(14)]
 def S_idea(t):
-    lt_=t-M['idea']
+    lt_=(t-M['idea'])*SC('idea')
     base=np.zeros((H,W,3),np.float32)+OCEAN*1.6; base*=1+0.12*TEXL[...,None]+0.05*np.sin(TEXN[...,None]*3+t)
     fr=np.clip(base,0,255).astype(np.uint8)
     o=Ov(); brand(o)
@@ -116,7 +120,7 @@ def S_idea(t):
     return o.apply(fr)
 # ---------------- BALI vs LOMBOK
 def S_bali(t):
-    lt_=t-M['bali']; p=ease(seg(lt_,0,2.0))
+    lt_=(t-M['bali'])*SC('bali'); p=ease(seg(lt_,0,2.0))
     lev=ease(seg(lt_,2.4,4.6))*(1-ease(seg(lt_,11.6,13.2)))
     cam=Cam(lerp(113.0,115.55,p),lerp(-6.0,-8.45,p),lerp(110,420,p**1.5)); fr=map_img(cam,level=lev)
     gradv(fr,0,560,0.75,0.0); gradv(fr,1380,H,0.0,0.7)
@@ -155,7 +159,7 @@ PINS=[(0.9,"ANDAMANS",92.75,11.6,"NO TIGER RECORD",GREY,(28,-40),"ls"),
       (3.7,"BORNEO",114.2,0.6,"FOSSILS",GOLD,(-30,70),"rs"),
       (5.1,"PALAWAN",118.6,9.7,"BONES ~20,000 YRS OLD",GOLD,(-30,-46),"rs")]
 def S_isl(t):
-    lt_=t-M['isl']; p=ease(seg(lt_,0,1.2))
+    lt_=(t-M['isl'])*SC('isl'); p=ease(seg(lt_,0,1.2))
     cam=Cam(lerp(105,99.3,p),lerp(2,6.5,p),lerp(32,23.6,p)); fr=map_img(cam,level=0.55*ease(seg(lt_,0.3,1.2)))
     gradv(fr,0,560,0.75,0.0); gradv(fr,1380,H,0.0,0.7)
     o=Ov(); brand(o); maptag(o,eo3(seg(lt_,1,1.5)),"SHELF SHOWN: SEA SHALLOWER THAN 200 m. ILLUSTRATIVE.")
@@ -175,7 +179,7 @@ def S_isl(t):
     return o.apply(fr)
 # ---------------- PUNCH
 def S_punch(t):
-    lt_=t-M['punch']; fr=pwin("a4bcbe52",0.5,0.5,lerp(1.0,0.86,ease(lt_/9))).astype(np.uint8)
+    lt_=(t-M['punch'])*SC('punch'); fr=pwin("a4bcbe52",0.5,0.5,lerp(1.0,0.86,ease(lt_/9))).astype(np.uint8)
     gradv(fr,0,700,0.8,0.0); gradv(fr,1300,H,0.0,0.6)
     o=Ov(); brand(o)
     a1=eo3(seg(lt_,0.4,0.9))*(1-seg(lt_,5.0,5.4)); a2=eo3(seg(lt_,2.6,3.1))*(1-seg(lt_,5.0,5.4))
@@ -187,7 +191,7 @@ def S_punch(t):
     return o.apply(fr)
 # ---------------- CTA
 def S_cta(t):
-    lt_=t-M['cta']; fr=pwin("454eb397",0.62,0.45,lerp(0.36,0.31,ease(lt_/6.5))).astype(np.float32)*0.8
+    lt_=(t-M['cta'])*SC('cta'); fr=pwin("454eb397",0.62,0.45,lerp(0.36,0.31,ease(lt_/6.5))).astype(np.float32)*0.8
     fr=fr.astype(np.uint8); gradv(fr,0,700,0.85,0.0); gradv(fr,1250,H,0.0,0.8)
     o=Ov(); brand(o)
     o.text((W/2,280),"WHICH ISLAND SHOULD",anton(90),CREAM,eo3(seg(lt_,0.2,0.7)),rise=30)
