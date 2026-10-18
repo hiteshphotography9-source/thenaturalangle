@@ -6,7 +6,7 @@ import core as IC
 W,H=1080,1920
 AMB=(255,170,60); SAND=(240,200,140); TERRA=(214,106,58); NIGHT=(14,18,44); COOL=(120,190,220); LEAF=(110,170,90)
 # ---------- timeline
-ENT=[("S1",9),("S2",12),("S3a",6),("S3b",6),("S4a",6.5),("S4b",6.5),("S5",12),("S6a",7),("S6b",6),("S7",12),("S8",9)]
+ENT=[("S1",9),("S2",12),("S3a",6),("S3b",6),("S4a",4.0),("S4b",9.0),("S5",12),("S6a",7),("S6b",6),("S7",12),("S8",15)]
 DES={}; _c=0
 for n,l in ENT: DES[n]=(_c,l); _c+=l
 DTOT=_c
@@ -127,11 +127,11 @@ def S1(lt,t):
         tmp=Image.new("RGBA",(W,H),(0,0,0,0)); fwin(tmp,"f1",(0.02,0.18,0.98,0.95),(60,600,960,560),z=1.0+0.05*seg(lt,0,9),desat=0.55,warm=(1.18,1.08,0.92),shim=7+4*seg(lt,0,4),t=t,border=(120,34,10))
         comp(img,tmp,a)
     l1=glayer((W/2,1330),"WHERE DOES A FOX",A(100),top=(255,250,240),bot=(255,214,160)); l2=glayer((W/2,1440),"HIDE FROM THIS?",A(100),top=(255,250,240),bot=(255,214,160))
-    for l,t0 in ((l1,3.2),(l2,3.7)):
+    for l,t0 in ((l1,4.4),(l2,4.9)):
         aa=eo3(seg(lt,t0,t0+0.5)); comp(img,glow(l,(110,30,10),22,0.9),aa*0.7); comp(img,l,aa,dy=(1-aa)*30)
-    pa=eo3(seg(lt,6.0,6.5)); pill(img,(W/2,1565),"THE ANSWER IS UNDER YOUR FEET",B(46),pa,fg=CREAM,bg=(110,30,10),sc=lerp(0.8,1,eob(seg(lt,6.0,6.6))))
-    if lt>6.6:
-        d=ImageDraw.Draw(img,"RGBA"); by=1655+10*math.sin((lt-6.6)*6); d.polygon([(W/2-34,by-14),(W/2+34,by-14),(W/2,by+30)],fill=(110,30,10,255))
+    pa=eo3(seg(lt,6.6,7.1)); pill(img,(W/2,1565),"THE ANSWER IS UNDER YOUR FEET",B(46),pa,fg=CREAM,bg=(110,30,10),sc=lerp(0.8,1,eob(seg(lt,6.6,7.2))))
+    if lt>7.2:
+        d=ImageDraw.Draw(img,"RGBA"); by=1655+10*math.sin((lt-7.2)*6); d.polygon([(W/2-34,by-14),(W/2+34,by-14),(W/2,by+30)],fill=(110,30,10,255))
     return img
 TUN=[(540,880),(540,1000),(520,1090),(600,1170),(560,1260),(500,1320),(540,1380)]
 def S2(lt,t):
@@ -211,42 +211,43 @@ def waves(d,cx,cy,t,col,a,n=3,r0=190,r1=26,per=1.4):
         u=((t/per)+k/n)%1; r=lerp(r0,r1,u); al=int(a*255*math.sin(math.pi*u)); d.arc((cx-r,cy-r,cx+r,cy+r),start=200,end=340,fill=col+(al,),width=5)
 def S4a(lt,t):
     img=night_bg(t); brand(img,CREAM,150); tchip(img,"9:15 PM  ·  LISTENING",eo3(seg(lt,0.1,0.5)),y=150)
-    fwin(img,"f6",(0.0,0.0,1.0,1.0),(60,330,960,900),z=1.0+0.07*seg(lt,0,6.5),spot=(0.5,0.52,0.45,0.5),k=eo3(seg(lt,0.4,1.4)),border=AMB)
+    fwin(img,"f6",(0.0,0.0,1.0,1.0),(60,330,960,900),z=1.0+0.07*seg(lt,0,4.0),spot=(0.5,0.52,0.45,0.5),k=eo3(seg(lt,0.4,1.4)),border=AMB)
     d=ImageDraw.Draw(img,"RGBA"); tp=[(60+0.30*960,330+0.22*900),(60+0.74*960,330+0.24*900)]
-    wa=eo3(seg(lt,1.4,2.0))
+    wa=eo3(seg(lt,0.9,1.4))
     for (cx,cy) in tp: waves(d,cx,cy-10,lt,AMB,wa)
     comp(img,glayer((W/2,290),"BIG EARS",A(120)),eo3(seg(lt,0.2,0.8)),sc=lerp(1.3,1,eob(seg(lt,0.2,0.9),1.3)))
-    comp(img,glayer((W/2,1470),"A RADAR FOR",A(84)),eo3(seg(lt,2.4,3.0)),dy=(1-eo3(seg(lt,2.4,3.0)))*24); comp(img,glayer((W/2,1570),"ANYTHING UNDERGROUND",A(84)),eo3(seg(lt,3.2,3.8)),dy=(1-eo3(seg(lt,3.2,3.8)))*24)
+    comp(img,glayer((W/2,1470),"A RADAR FOR",A(84)),eo3(seg(lt,1.6,2.1)),dy=(1-eo3(seg(lt,1.6,2.1)))*24); comp(img,glayer((W/2,1570),"ANYTHING UNDERGROUND",A(84)),eo3(seg(lt,2.4,2.9)),dy=(1-eo3(seg(lt,2.4,2.9)))*24)
     return img
 def S4b(lt,t):
     img=night_bg(t); brand(img,CREAM,150); tchip(img,"11:00 PM  ·  THE POUNCE",eo3(seg(lt,0.1,0.5)),y=150)
-    fwin(img,"f8",(0.06,0.24,0.60,0.82),(60,340,960,560),z=1.0+0.05*seg(lt,0,6.5),spot=(0.29,0.60,0.15,0.11),k=eo3(seg(lt,0.3,1.2)),border=AMB)
+    fwin(img,"f8",(0.06,0.24,0.60,0.82),(60,340,960,560),z=1.0+0.05*seg(lt,0,9),spot=(0.29,0.60,0.15,0.11),k=eo3(seg(lt,0.3,1.2)),border=AMB)
     d=ImageDraw.Draw(img,"RGBA"); sy=1050; g=grad((86,60,40),(30,22,24),"gnd2"); 
     d.rectangle((60,sy,1020,1480),fill=(60,42,32,255)); d.rectangle((60,sy,1020,sy+8),fill=SAND+(255,)); d.rectangle((60,sy+8,1020,1480),fill=(48,34,30,255))
     rx,ry=360,1290; fx0,fy0=760,sy-8
     # rodent
-    ra=eo3(seg(lt,1.4,1.9)); d.ellipse((rx-26,ry-16,rx+26,ry+18),fill=SAND+(int(255*ra),)); d.ellipse((rx+14,ry-26,rx+30,ry-10),fill=SAND+(int(255*ra),)); d.line((rx-26,ry,rx-56,ry-12),fill=SAND+(int(255*ra),),width=3)
+    ra=eo3(seg(lt,0.8,1.3)); d.ellipse((rx-26,ry-16,rx+26,ry+18),fill=SAND+(int(255*ra),)); d.ellipse((rx+14,ry-26,rx+30,ry-10),fill=SAND+(int(255*ra),)); d.line((rx-26,ry,rx-56,ry-12),fill=SAND+(int(255*ra),),width=3)
     txt(d,(rx,ry+60),"RODENT UNDERGROUND",B(30),SAND,255*ra)
     # fox on surface
-    fa=eo3(seg(lt,1.4,1.9)); 
-    leap=ease(seg(lt,4.2,5.4))
+    fa=eo3(seg(lt,0.8,1.3)); 
+    leap=ease(seg(lt,3.6,4.8))
     if leap<=0: fox_icon(d,fx0,fy0-18,20,AMB,int(255*fa))
     else:
         x=lerp(fx0,rx,leap); y=fy0-18-math.sin(math.pi*leap)*260
         if leap<0.97: fox_icon(d,x,y,20,AMB,255)
         else: 
-            fl=seg(lt,5.4,5.9); d.ellipse((rx-60-fl*40,sy-40-fl*20,rx+60+fl*40,sy+30+fl*10),outline=AMB+(int(255*(1-fl)),),width=5)
+            fl=seg(lt,4.8,5.3); d.ellipse((rx-60-fl*40,sy-40-fl*20,rx+60+fl*40,sy+30+fl*10),outline=AMB+(int(255*(1-fl)),),width=5)
         # dashed arc
         pts=[(lerp(fx0,rx,u/20),fy0-18-math.sin(math.pi*u/20)*260) for u in range(21)]
         for i in range(0,20,2): d.line((pts[i],pts[i+1]),fill=AMB+(200,),width=4)
     # sound rings rising
-    sa=eo3(seg(lt,2.0,2.4))*(1-seg(lt,4.1,4.4))
+    sa=eo3(seg(lt,1.0,1.4))*(1-seg(lt,3.5,3.8))
     if sa>0:
         for k in range(4):
-            u=((lt-2.0)/1.2+k/4)%1; r=lerp(20,330,u); d.arc((rx-r,ry-r,rx+r,ry+r),start=235,end=305,fill=COOL+(int(230*sa*(1-u)),),width=5)
+            u=((lt-1.0)/1.2+k/4)%1; r=lerp(20,330,u); d.arc((rx-r,ry-r,rx+r,ry+r),start=235,end=305,fill=COOL+(int(230*sa*(1-u)),),width=5)
     txt(d,(W/2,1700),"",B(10),CREAM)
     comp(img,glayer((W/2,290),"LISTEN. LOCK. LEAP.",A(88)),eo3(seg(lt,0.2,0.8)),dy=(1-eo3(seg(lt,0.2,0.8)))*20)
-    d=ImageDraw.Draw(img,"RGBA"); txt(d,(W/2,1560),"Foxes locate prey by sound, then pounce",B(34),CREAM,255*eo3(seg(lt,3.0,3.6))); txt(d,(W/2,1605),"Red fox family behaviour",BM(28),GREY,255*eo3(seg(lt,3.0,3.6)))
+    d=ImageDraw.Draw(img,"RGBA"); txt(d,(W/2,1560),"Foxes locate prey by sound, then pounce",B(34),CREAM,255*eo3(seg(lt,2.4,3.0))*(1-seg(lt,5.8,6.2))); txt(d,(W/2,1605),"Red fox family behaviour",BM(28),GREY,255*eo3(seg(lt,2.4,3.0))*(1-seg(lt,5.8,6.2)))
+    ka=eo3(seg(lt,6.4,7.0)); comp(img,glayer((W/2,1540),"THE RED FOX FAMILY'S",A(70)),ka,dy=(1-ka)*20); kb=eo3(seg(lt,6.9,7.5)); comp(img,glayer((W/2,1625),"SIGNATURE MOVE",A(84)),kb,dy=(1-kb)*20)
     return img
 ICONS=[("INSECTS",ic_insect),("FRUIT + PLANTS",ic_fruit),("SMALL MAMMALS",ic_mammal),("REPTILES",ic_reptile),("BIRDS",ic_bird)]
 def S5(lt,t):
@@ -303,20 +304,20 @@ def S7(lt,t):
     return img
 def S8(lt,t):
     img=night_bg(t,(10,12,32),(40,30,60)); brand(img,CREAM,150)
-    comp(img,glayer((W/2,300),"NEXT TIME,",A(100)),eo3(seg(lt,0.2,0.7))); comp(img,glayer((W/2,420),"AT DUSK, LOOK BACK.",A(100)),eo3(seg(lt,0.8,1.4)),sc=lerp(1.2,1,eob(seg(lt,0.8,1.5),1.3)))
-    fwin(img,"f1",(0.03,0.22,0.98,0.95),(60,520,960,540),z=1.0+0.05*seg(lt,0,9),spot=(0.40,0.60,0.34,0.26),k=eo3(seg(lt,0.6,1.6)),warm=(0.85,0.92,1.12),border=AMB)
+    comp(img,glayer((W/2,300),"NEXT TIME,",A(100)),eo3(seg(lt,1.3,1.8))); comp(img,glayer((W/2,420),"AT DUSK, LOOK BACK.",A(100)),eo3(seg(lt,2.4,3.0)),sc=lerp(1.2,1,eob(seg(lt,2.4,3.1),1.3)))
+    fwin(img,"f1",(0.03,0.22,0.98,0.95),(60,520,960,540),z=1.0+0.05*seg(lt,0,15),spot=(0.40,0.60,0.34,0.26),k=eo3(seg(lt,0.6,1.6)),warm=(0.85,0.92,1.12),border=AMB)
     d=ImageDraw.Draw(img,"RGBA")
-    q=eo3(seg(lt,3.2,3.8)); comp(img,glayer((W/2,1210),"HAVE YOU SEEN A DESERT FOX?",A(66)),q,dy=(1-q)*24)
+    q=eo3(seg(lt,7.7,8.3)); comp(img,glayer((W/2,1210),"HAVE YOU SEEN A DESERT FOX?",A(66)),q,dy=(1-q)*24)
     btn=L(); ImageDraw.Draw(btn,"RGBA").rounded_rectangle((W/2-330,1260,W/2+330,1352),radius=46,fill=AMB+(250,))
     f=B(44); s1_="COMMENT \""; s2_="FOX"; s3_="\" + WHERE"; tw=f.getlength(s1_+s2_+s3_); x0=W/2-tw/2
     a1=L(); txt(ImageDraw.Draw(a1,"RGBA"),(x0,1323),s1_,f,INK,255,"ls"); x2=x0+f.getlength(s1_); w2=f.getlength(s2_); a3=L(); txt(ImageDraw.Draw(a3,"RGBA"),(x2+w2,1323),s3_,f,INK,255,"ls")
-    ba=eo3(seg(lt,4.2,4.6)); comp(img,btn,ba,sc=lerp(0.6,1,eob(seg(lt,4.2,4.8)))); comp(img,a1,eo3(seg(lt,4.6,4.9))); comp(img,a3,eo3(seg(lt,4.6,4.9)))
-    n=int(3*seg(lt,5.0,5.9)+0.999) if lt>5.0 else 0
+    ba=eo3(seg(lt,10.4,10.8)); comp(img,btn,ba,sc=lerp(0.6,1,eob(seg(lt,10.4,11.0)))); comp(img,a1,eo3(seg(lt,10.8,11.1))); comp(img,a3,eo3(seg(lt,10.8,11.1)))
+    n=int(3*seg(lt,12.0,12.9)+0.999) if lt>12.0 else 0
     if n>0:
         w=L(); txt(ImageDraw.Draw(w,"RGBA"),(x2,1323),s2_[:n],f,(120,40,10),255,"ls"); comp(img,w,1)
     cl=L(); dc=ImageDraw.Draw(cl,"RGBA")
     for i,s in enumerate(["A typical night, based on field studies of desert foxes. Not one animal's story.","Photos: Hitesh Chawla. Different foxes shown. Maps: Natural Earth, illustrative."]): txt(dc,(W/2,1470+i*40),s,BM(27),GREY,235)
-    comp(img,cl,eo3(seg(lt,6.2,7.0)))
+    comp(img,cl,eo3(seg(lt,13.2,14.0)))
     return img
 FN={"S1":S1,"S2":S2,"S3a":S3a,"S3b":S3b,"S4a":S4a,"S4b":S4b,"S5":S5,"S6a":S6a,"S6b":S6b,"S7":S7,"S8":S8}
 VIGN=None;GRN=None

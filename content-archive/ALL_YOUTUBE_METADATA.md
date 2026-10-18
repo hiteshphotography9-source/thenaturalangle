@@ -254,3 +254,10 @@ Footage and edit: Hitesh Chawla | The Natural Angle
 
 ## Carousels on YouTube
 YouTube has no carousel format for Shorts. If your channel has the Community tab (now "Posts"), post the best 3 slides as an image post with the first two lines of the Instagram caption and a link to the related Short. Best candidates: Dotty, Dhole, Mausi, Laggar.
+
+
+---
+
+## 16. Desert Fox: A Night in the Thar (97.6 s, with VO) | READY
+**File:** video/desert_fox/DesertFox_Final_HQ.mp4
+Full title options, description, tags and pinned comment: video/desert_fox/DESERT_FOX_METADATA.md

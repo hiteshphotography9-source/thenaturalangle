@@ -519,3 +519,10 @@ Save this for your next safari.
 2. Dhole carousel (B2) once the photographer credit is filled.
 3. Tiger Island reel (A2) as soon as the VO is in, pinned to the Sri Lanka reel.
 4. Mausi (B12) and Mohan (B11) a week apart: same reserve, two very different stories.
+
+
+---
+
+## Desert Fox Reel (97.6 s, with VO) | READY
+**File:** video/desert_fox/DesertFox_Final_HQ.mp4
+Caption, hashtags and cover: video/desert_fox/DESERT_FOX_METADATA.md

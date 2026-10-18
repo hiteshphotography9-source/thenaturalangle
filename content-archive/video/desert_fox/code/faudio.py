@@ -100,7 +100,7 @@ for n in ENT[1:]: sfx+=whoosh(F.START[n],0.7,-12)
 # S1
 sfx+=windy(0,AT("S1",9),-24)+riser(AT("S1",0.2),AT("S1",2.6),-16)
 for i in range(11): sfx+=tick2(AT("S1",0.3+i*0.21),1000+i*70,-15)
-sfx+=boom(AT("S1",2.6),-8)+tick(AT("S1",3.2),-12)+tick(AT("S1",3.7),-12)+pluck(AT("S1",6.0),220,-14)+thump(AT("S1",6.6),-12)
+sfx+=boom(AT("S1",2.6),-8)+tick(AT("S1",4.4),-12)+tick(AT("S1",4.9),-12)+pluck(AT("S1",6.6),220,-14)+thump(AT("S1",7.2),-12)
 # S2
 sfx+=tick(AT("S2",0.1),-13)+sand(AT("S2",1.0),AT("S2",5.5),-20)+windy(F.START["S2"],AT("S2",6),-30)
 for i in range(8): sfx+=tick2(AT("S2",1.5+i*0.28),650,-20)
@@ -114,12 +114,12 @@ for t_,f_ in ((3.6,1250),(4.2,1480),(4.8,1250)): sfx+=ping(AT("S3b",t_),f_,-11)
 for t_ in (2.0,2.6,3.0): sfx+=tick2(AT("S3b",t_),1300,-15)
 sfx+=pluck(AT("S3b",3.2),392,-14)
 # S4a
-for t_ in (1.4,2.0): sfx+=ping(AT("S4a",t_),1800,-12)
-for i in range(6): sfx+=popf(AT("S4a",1.4+i*0.55),1400,-20)
-sfx+=tick(AT("S4a",2.4),-12)+tick(AT("S4a",3.2),-12)+boom(AT("S4a",0.2),-11)
+for t_ in (0.9,1.4): sfx+=ping(AT("S4a",t_),1800,-12)
+for i in range(5): sfx+=popf(AT("S4a",0.9+i*0.4),1400,-20)
+sfx+=tick(AT("S4a",1.6),-12)+tick(AT("S4a",2.4),-12)+boom(AT("S4a",0.2),-11)
 # S4b
-for i in range(8): sfx+=chirp(AT("S4b",2.0+i*0.28),3000+(i%3)*300,4500+(i%2)*400,0.07,-15)
-sfx+=riser(AT("S4b",3.2),AT("S4b",4.2),-14)+whoosh(AT("S4b",4.2),0.9,-10)+thump(AT("S4b",5.4),-8)+sand(AT("S4b",5.4),AT("S4b",5.9),-16,0.1)+ping(AT("S4b",5.5),900,-12)
+for i in range(8): sfx+=chirp(AT("S4b",1.0+i*0.28),3000+(i%3)*300,4500+(i%2)*400,0.07,-15)
+sfx+=riser(AT("S4b",2.6),AT("S4b",3.6),-14)+whoosh(AT("S4b",3.6),0.9,-10)+thump(AT("S4b",4.8),-8)+sand(AT("S4b",4.8),AT("S4b",5.3),-16,0.1)+ping(AT("S4b",4.9),900,-12)+tick(AT("S4b",6.4),-12)+tick(AT("S4b",6.9),-12)
 # S5
 for i,(fnc) in enumerate((lambda t_:buzz(t_,0.5,-16),lambda t_:crunch(t_,-13),lambda t_:chirp(t_,3200,4800,0.08,-14)+chirp(t_+0.14,3200,4800,0.08,-14),lambda t_:rustle(t_,0.45,-14),lambda t_:chirp(t_,2400,3600,0.12,-14)+chirp(t_+0.18,2800,3900,0.1,-14))):
     t0=AT("S5",1.6+i*1.5); sfx+=popf(t0,900+i*80,-13)+fnc(t0+0.08)
@@ -134,9 +134,9 @@ sfx+=noise_rumble(AT("S7",2.8),AT("S7",6.0),-24) if False else sfx*0
 sfx+=riser(AT("S7",7.2),AT("S7",7.6),-14)+boom(AT("S7",7.6),-8)+pluck(AT("S7",8.6),220,-14)
 x_=tt(0,AT("S7",6.0)-AT("S7",2.8)); sfx+=place(lp(nz(len(x_)),180)*np.sin(np.pi*x_/(x_[-1]+1e-6)),AT("S7",2.8),-18)
 # S8
-sfx+=boom(AT("S8",0.8),-10)+pluck(AT("S8",3.2),587.3,-13)+tick(AT("S8",4.2),-12)
-for i in range(3): sfx+=tick2(AT("S8",5.0+i*0.3),1600+i*60,-13)
-sfx+=chord(AT("S8",5.9),[293.7,370,440,587],-14,3.5)
+sfx+=pluck(AT("S8",1.3),440,-14)+boom(AT("S8",2.4),-10)+pluck(AT("S8",7.7),587.3,-13)+tick(AT("S8",10.4),-12)
+for i in range(3): sfx+=tick2(AT("S8",12.0+i*0.3),1600+i*60,-13)
+sfx+=chord(AT("S8",12.9),[293.7,370,440,587],-14,3.5)
 x=np.arange(N)/SR
 def r_(a): return np.sqrt((a**2).mean())+1e-9
 if VO:
