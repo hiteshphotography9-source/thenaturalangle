@@ -265,6 +265,6 @@ Full title options, description, tags and pinned comment: video/desert_fox/DESER
 
 ---
 
-## 17. S3 (Surai 3 / Manag) of Pilibhit (94 s, no VO yet) | NEEDS VO
-**File:** video/s3_story/S3_NoVO_HQ.mp4
+## 17. S3 (Surai 3 / Monarch) of Pilibhit (57.8 s, with VO) | READY
+**File:** video/s3_story/S3_Final_HQ.mp4
 Titles, description, tags, pinned comment: video/s3_story/S3_METADATA.md
