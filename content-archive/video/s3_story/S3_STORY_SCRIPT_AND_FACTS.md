@@ -1,56 +1,55 @@
-# S3 of Pilibhit: "What do we actually know?" Short / Reel (about 92 s, 1080x1920)
+# S3 of Pilibhit (Surai 3 / Manag): "How big is he, and how did he survive?" (about 94 s, 1080x1920)
 
-## Research result (read this first)
-I searched English and Hindi, forest-department style sources, news, research papers and photographer vlogs.
-**Nothing public exists on S3's biography.** No source gives his origin, mother, age, height, weight, rivals, fights or how he survived any fight. Two earlier searches (for the first S3 edit) found the same.
-The only public mentions: photographer vlogs naming "Rocket and S3" among Pilibhit sightings, and a YouTube Short asking "India's biggest tiger?" with no measurement.
-So the story is built only on verified context plus the honest gap. Nothing about S3 is invented. If you have details from guides or the forest staff, send them and I will add an "as told by guides" scene.
+## Verification result (honest version)
+I searched for every claim you gave, in English and Hindi: the names "Surai 3" and "Manag", S2 as the rival, the near-death attack, the forest-official rescue, the 280 to 300 kg weight and the 10 ft height.
+**None of them appears in any public source I can reach** (news, forest-department material, research papers, vlog descriptions). The only related items: a tiger rescued from an Athkona village near Pilibhit in Dec 2023 (unnamed), and a YouTube title "India's Biggest Tiger?" with no measurement. I cannot open YouTube or Instagram, so videos and comments are invisible to me.
+So these claims are **not proven, not disproven**. They are in the video as "as told by local safari sources / reported", labelled on screen and in the VO. That is accurate and protects your credibility. If you can link one source (a guide's post, a news article, a forest-department note), send it and I will drop the "reported" labels for that claim.
 
-## VO script (Hinglish). Record one block per scene, 1 s pause between blocks.
+## Sanity check on the numbers
+- Wild adult Bengal males: 200 to 260 kg typical. Central India study (42 males): mean 190 kg, mean length 282 cm (about 9 ft 3 in). Chitwan: 7 males mean 235 kg, two males over 270 kg, the heaviest free-ranging tigers reported.
+- 280 to 300 kg would be above every measured wild male in those studies. Possible, but extraordinary, so the video says "reported, needs a scale".
+- "10 feet": 305 cm. Measured male lengths are usually 267 to 312 cm nose to tail tip. It is plausible only if counted nose to tail, not shoulder height. The video says "about 10 feet (reported)" and does not call it height. In the VO, please say "lambai" (length), not "height".
+
+## VO script (Hinglish). One block per scene, 1 s pause between blocks.
 **1. Hook (about 8 s)**
-Pilibhit ka S3. Kehte hain ye India ke sabse bade baagh mein se ek hai. Lekin sach ye hai, ki hum uske baare mein kitna jaante hain?
+Ye hai S3. Isse Surai 3 aur Manag bhi kaha jaata hai. Pilibhit ke sabse bade baaghon mein se ek. Itna bada kitna? Aur ye abhi tak zinda kaise hai?
 
-**2. ID card (about 12 s)**
-Naam, S3. Jagah, Pilibhit Tiger Reserve, Uttar Pradesh. Nar baagh. Lekin umar? Maa? Kisi ka bhi koi public record nahi. Aur size, kabhi officially naapa hi nahi gaya.
+**2. ID card (about 14 s)**
+Naam, S3. Jagah, Pilibhit Tiger Reserve. Nar baagh. Local guides ke mutabik uska vazan do sau assi se teen sau kilo ke beech hai, aur lambai lagbhag das feet. Lekin ye official naap nahi hai. Umar aur maa ke baare mein koi public record nahi.
 
-**3. Map (about 12 s)**
+**3. Map (about 11 s)**
 Pilibhit, Himalaya ki talhati ke Terai jungle mein hai. Saat sau tees square kilometre ka tiger reserve, jo 2014 mein ghoshit hua. Aur ye Dudhwa ke saath ek hi badi tiger aabadi ka hissa hai.
 
-**4. Comeback (about 9 s)**
-Jab ye tiger reserve bana, tab yahan kareeb 25 se 30 baagh the. Aaj alag alag sources mein 65 se lekar 79 se bhi zyada ka andaaza hai. 2020 mein, tigers double karne par ise TX2 award mila.
+**4. Comeback (about 8 s)**
+Jab ye tiger reserve bana, yahan kareeb 25 se 30 baagh the. Aaj alag alag sources 65 se 79 se zyada batate hain. 2020 mein tigers double karne par TX2 award bhi mila.
 
-**5. How big is big (about 12 s)**
-Ab sawaal, bada matlab kitna? Jungle mein baalig nar Bengal baagh aam taur par do sau se do sau saath kilo ke hote hain. Central India ke naron ka average, ek sau nabbe kilo. Aur Chitwan mein kuch nar, do sau sattar kilo se bhi bhaari paaye gaye. S3 ka vazan? Kisi ne naapa hi nahi.
+**5. How big is big (about 11 s)**
+Ab dekhiye, jungle mein baalig nar aam taur par do sau se do sau saath kilo ke hote hain. Chitwan ke kuch nar do sau sattar se upar naape gaye. Agar S3 ka vazan sach mein do sau assi se teen sau hai, toh wo in sabse bhaari hoga. Lekin bina taraazu ke, ye sirf andaaza hai.
 
-**6. Why photos mislead (about 9 s)**
-Jungle mein baagh ko taraazu par nahi rakh sakte. Aur camera dhokha deta hai. Kareeb se, neeche se, ya long lens se li gayi tasveer, baagh ko aur bada dikha deti hai.
+**6. The rival (about 9 s)**
+Nar baagh apna ilaaka khud banate hain. S3 ka sabse bada rival hai S2. Local guides ke mutabik, dono ke beech ilaake ki jung chalti rahi hai.
 
-**7. The rival question (about 10 s)**
-Nar baagh apna ilaaka rakhte hain. Jawan nar ko aksar bade nar ilaake se bahar kar dete hain. Pilibhit mein bhi 2017 mein aisa ek maamla report hua tha. Par S3 ka rival kaun hai, usne kisse ladai ladi? Iska koi public record nahi.
+**7. The fight (about 13 s)**
+Kehte hain ek baar S2 ne S3 par aisa hamla kiya, ki wo lagbhag mar hi gaya tha. Forest officials ne use bachaya. Aur wo survive kar gaya. Ye kahani local logon se aayi hai, iska koi public report humein nahi mila.
 
-**8. What the photo shows (about 8 s)**
-Toh camera hume kya dikhata hai? Mazboot gardan, bhaari agle pair, aur ghana, sehatmand coat. Ye naap nahi hai. Ye ek taakatwar nar ki jhalak hai.
+**8. The photo (about 7 s)**
+Aur aaj? Mazboot gardan, bhaari agle pair, ghana coat. Ek survivor ki jhalak.
 
-**9. Verdict + CTA (about 12 s)**
-Toh kya S3 India ka sabse bada baagh hai? Pakka kehna mushkil hai. Lekin prabhavshaali? Bilkul. Agar aapne S3 ko dekha hai, comment mein batayiye kab aur kahan. Aur agar aapke paas uski pakki jaankari hai, mujhe DM kijiye.
+**9. CTA (about 13 s)**
+Toh kya S3 India ke sabse bade baaghon mein se ek hai? Daave yahi kehte hain. Agar aap use apni aankhon se dekhna chahte hain, toh mere saath Pilibhit safari par aaiye. Instagram par mujhse sampark kijiye.
 
 ## Fact table
 | Claim in video | Status | Source |
 |---|---|---|
-| Pilibhit Tiger Reserve is about 730 sq km (602.79 core + 127.45 buffer) | Verified | Wikipedia (Pilibhit TR), WII MEE-TR portal |
-| Sanctuary Feb 2014, tiger reserve June 2014 | Verified | Wikipedia (Pilibhit TR) |
-| Part of Terai Arc, India-Nepal border | Verified | Wikipedia (Terai Arc Landscape) |
-| Dudhwa and Pilibhit form one connected tiger population | Verified | WII study as summarised on Dudhwa TR page |
-| About 25 to 30 tigers around 2014 | Sources conflict (blogs) | Labelled "about" |
-| 65 to 79+ tigers in later estimates | Sources vary, partly blog claims | Labelled "sources vary"; official figure: NTCA / reserve |
-| 2020 TX2 award for doubling tigers | Per Wikipedia | Wikipedia (Pilibhit TR) |
-| Adult wild Bengal male 200 to 260 kg | Verified | Wikipedia (Bengal tiger) |
-| Central India: 42 adult males, mean 190 kg, mean length 282 cm | Verified | Wikipedia (Bengal tiger) citing the study |
-| Chitwan: 7 males mean 235 kg; two males over 270 kg, heaviest free-ranging reported | Verified | Wikipedia (Bengal tiger) |
-| Young males pushed out by dominant males; Pilibhit case 2017 | Verified as a news report | Business Standard / IANS, Oct 2017 |
-| Camera angle and lens change apparent size | General photography fact | n/a |
-| S3 origin, mother, age, size, rivals, fights | NOT PUBLISHED | Stated as such on screen |
+| Also known as Surai 3 and Manag | Your information; no public source found | Labelled "also known as" |
+| Weight 280 to 300 kg, length about 10 ft | Your information; no public source found | Labelled "REPORTED" on screen and in VO |
+| Biggest rival is S2 | Your information; no public source found | "As told by local safari sources" |
+| S2 attacked him, he nearly died, forest officials rescued him | Your information; no public source found | "No public report found" on screen |
+| Pilibhit about 730 sq km (602.79 core + 127.45 buffer), tiger reserve June 2014 | Verified | Wikipedia (Pilibhit TR), WII MEE-TR |
+| Dudhwa and Pilibhit one connected tiger population | Verified | WII study via Dudhwa TR page |
+| About 25 to 30 tigers at 2014; 65 to 79+ later; TX2 award 2020 | Sources vary / Wikipedia | Labelled "sources vary" |
+| Wild Bengal male weights (200 to 260; 190 Central India; 235 Chitwan; 270+ record) | Verified | Wikipedia (Bengal tiger) citing studies |
+| Age, mother | Not published | Stated as such |
 
-Avoided on purpose: "10 feet", "Kulhadi Ram / Axe" nickname, any weight or length for S3, any rival name.
-Maps are illustrative (Terai band and pins), data: Natural Earth.
-Photos: all Hitesh Chawla.
+CTA: "Join me during my Pilibhit safaris. Get in touch on Instagram @thenaturalangle."
+Maps illustrative (Natural Earth). Photos: Hitesh Chawla.

@@ -4,7 +4,7 @@ sys.path.insert(0,SPD+"fox")
 from fscenes import *   # helpers: view, fb, fwin, grad, scrim, brand, tchip, pill, shimmer, txt, glayer, comp ...
 import fscenes as FS
 GRN=(110,205,125); RED2=(240,104,84); GOLD2=(255,190,60); FOR=(10,26,20)
-ENT=[("S1",8),("S2",12),("S3",12),("S4",9),("S5",12),("S6",9),("S7",10),("S8",8),("S9",12)]
+ENT=[("S1",8),("S2",14),("S3",11),("S4",8),("S5",11),("S6",9),("S7",13),("S8",7),("S9",13)]
 DES={}; _c=0
 for n,l in ENT: DES[n]=(_c,l); _c+=l
 START={n:DES[n][0] for n,_ in ENT}; START["end"]=_c
@@ -28,27 +28,29 @@ def S1(lt,t):
     a=fb("t5",0.5,0.9,z=1.0+0.06*seg(lt,0,8),pan=(0,0.01*seg(lt,0,8))); a=a*np.array((1.05,1.0,0.92),np.float32)
     img=arr2img(a); scrim(img,1280,1920,0.0,0.86,(4,10,8)); scrim(img,0,330,0.7,0.0,(4,10,8)); brand(img,CREAM,170); head(img,"PILIBHIT TIGER RESERVE",lt)
     ia=eo3(seg(lt,0.5,1.1)); comp(img,glayer((W/2,1590),"THE TIGER CALLED S3",A(104),top=(255,250,240),bot=(255,208,120)),ia,sc=lerp(1.25,1,eob(seg(lt,0.5,1.2),1.3)))
-    d=ImageDraw.Draw(img,"RGBA"); a2=eo3(seg(lt,2.6,3.2)); txt(d,(W/2,1670),"CALLED ONE OF INDIA'S BIGGEST",B(50),CREAM,255*a2)
-    pa=eo3(seg(lt,5.0,5.5)); pill(img,(W/2,1780),"BUT HOW MUCH DO WE REALLY KNOW?",B(44),pa,fg=INK,bg=GOLD2,sc=lerp(0.8,1,eob(seg(lt,5.0,5.6))))
+    d=ImageDraw.Draw(img,"RGBA"); a2=eo3(seg(lt,2.6,3.2)); txt(d,(W/2,1670),"ONE OF PILIBHIT'S BIGGEST TIGERS",B(50),CREAM,255*a2)
+    ak=eo3(seg(lt,1.2,1.8)); txt(d,(W/2,238),"ALSO KNOWN AS  SURAI 3  ·  MANAG",B(38),GOLD2,255*ak)
+    pa=eo3(seg(lt,5.0,5.5)); pill(img,(W/2,1780),"HOW BIG IS HE? HOW DID HE SURVIVE?",B(44),pa,fg=INK,bg=GOLD2,sc=lerp(0.8,1,eob(seg(lt,5.0,5.6))))
     return img
 # ---------------- S2
-ROWS=[("NAME","S3",GRN,1),("PLACE","PILIBHIT TIGER RESERVE, UP",GRN,1),("SEX","MALE",GRN,1),("AGE","NOT PUBLISHED",RED2,0),("MOTHER","NOT PUBLISHED",RED2,0),("SIZE","NEVER OFFICIALLY MEASURED",RED2,0)]
+AMBR=(255,196,70)
+ROWS=[("NAME","S3  ·  SURAI 3  ·  MANAG",GRN,"ok"),("PLACE","PILIBHIT TIGER RESERVE, UP",GRN,"ok"),("WEIGHT","280 TO 300 KG  (REPORTED)",AMBR,"rep"),("LENGTH","ABOUT 10 FEET  (REPORTED)",AMBR,"rep"),("AGE","NOT PUBLISHED",RED2,"no"),("MOTHER","NOT PUBLISHED",RED2,"no")]
 def S2(lt,t):
     img=fbg(t); brand(img,CREAM,150); head(img,"THE ID CARD",lt)
-    fwin(img,"t2",wbox("t2",0.52,0.48,0.52,(60,200,960,620)),(60,200,960,620),z=1.0+0.04*seg(lt,0,12),spot=(0.52,0.45,0.2,0.28),k=eo3(seg(lt,0.3,1.2)),border=GOLD2)
+    fwin(img,"t2",wbox("t2",0.52,0.48,0.52,(60,200,960,620)),(60,200,960,620),z=1.0+0.04*seg(lt,0,14),spot=(0.52,0.45,0.2,0.28),k=eo3(seg(lt,0.3,1.2)),border=GOLD2)
     d=ImageDraw.Draw(img,"RGBA")
-    for i,(lab,val,col,ok) in enumerate(ROWS):
-        t0=1.2+i*1.5; a=eo3(seg(lt,t0,t0+0.45)); y=905+i*125
+    for i,(lab,val,col,kind) in enumerate(ROWS):
+        t0=1.2+i*1.7; a=eo3(seg(lt,t0,t0+0.45)); y=905+i*125
         if a<=0: continue
         x0=60+(1-a)*60
         d.rounded_rectangle((x0,y-52,x0+960,y+52),radius=22,fill=(14,34,28,int(225*a)),outline=col+(int(200*a),),width=3)
         txt(d,(x0+34,y-8),lab,BM(28),GREY,255*a,"ls")
-        f=B(54) if len(val)<20 else B(44)
-        txt(d,(x0+34,y+36),val,f,col if ok else col,255*a,"ls")
+        f=B(54) if len(val)<20 else (B(46) if len(val)<26 else B(42)); txt(d,(x0+34,y+36),val,f,col,255*a,"ls")
         cx,cy=x0+900,y
-        if ok: d.ellipse((cx-24,cy-24,cx+24,cy+24),fill=GRN+(int(255*a),)); d.line((cx-11,cy,cx-3,cy+9,cx+13,cy-10),fill=(10,26,20,int(255*a)),width=6,joint="curve")
+        if kind=="ok": d.ellipse((cx-24,cy-24,cx+24,cy+24),fill=GRN+(int(255*a),)); d.line((cx-11,cy,cx-3,cy+9,cx+13,cy-10),fill=(10,26,20,int(255*a)),width=6,joint="curve")
+        elif kind=="rep": d.ellipse((cx-24,cy-24,cx+24,cy+24),outline=col+(int(255*a),),width=4); txt(d,(cx,cy+14),"i",B(40),col,255*a)
         else: d.ellipse((cx-24,cy-24,cx+24,cy+24),outline=RED2+(int(255*a),),width=4); txt(d,(cx,cy+14),"?",B(40),RED2,255*a)
-    ka=eo3(seg(lt,10.2,10.8)); txt(d,(W/2,1790),"Searched public sources. No official record found.",BM(32),GREY,255*ka)
+    ka=eo3(seg(lt,11.6,12.2)); txt(d,(W/2,1790),"Weight and length: local safari sources. Not officially measured.",BM(30),GREY,255*ka)
     return img
 # ---------------- S3 map
 def _tmap(key,lon,lat,k):
@@ -151,53 +153,52 @@ def S5(lt,t):
         d.rounded_rectangle((x0,y-8,max(x0+30,x1),y+36),radius=22,fill=col+(int(255*a),)); txt(d,(X1,y-26),val,B(38),col if col!=(150,170,150) else CREAM,255*a,"rs")
     s0=1.6+4*1.7; sa=eo3(seg(lt,s0,s0+0.5)); y=950+4*112
     if sa>0:
-        txt(d,(X0,y-26),"S3",B(36),RED2,255*sa,"ls"); d.rounded_rectangle((X0,y-8,X1,y+36),radius=22,outline=RED2+(int(255*sa),),width=3)
-        pu=0.5+0.5*math.sin(lt*5); txt(d,(540,y+30),"?   NEVER WEIGHED   ?",B(36),RED2,(150+100*pu)*sa)
-    ka=eo3(seg(lt,10.0,10.6)); txt(d,(W/2,1640),"A wild tiger cannot be put on a scale.",B(44),CREAM,255*ka); txt(d,(W/2,1700),"Figures: published studies, Wikipedia summary.",BM(28),GREY,230*ka)
+        txt(d,(X0,y-26),"S3  (LOCAL REPORTS)",BM(28),AMBR,255*sa,"ls"); txt(d,(X1,y-26),"280 to 300 kg ?",B(38),AMBR,255*sa,"rs"); d.rounded_rectangle((X0,y-8,X1,y+36),radius=22,fill=(20,44,36,int(230*sa)))
+        pp=ease(seg(lt,s0+0.3,s0+1.2)); xa=X0+280/300*(X1-X0); xb=X0+lerp(280,300,pp)/300*(X1-X0)
+        for k_ in range(0,int(xb-xa)+1,14): d.rounded_rectangle((xa+k_,y-8,xa+k_+8,y+36),radius=3,fill=AMBR+(int(255*sa),))
+        d.rounded_rectangle((X0,y-8,xa,y+36),radius=22,outline=AMBR+(int(200*sa),),width=3)
+        pu=0.5+0.5*math.sin(lt*5); txt(d,(540,y+82),"UNVERIFIED. NEEDS A SCALE.",B(36),RED2,(150+100*pu)*sa)
+    ka=eo3(seg(lt,9.4,10.0)); txt(d,(W/2,1640),"If true, he is heavier than every male above.",B(44),CREAM,255*ka); txt(d,(W/2,1700),"Studies via Wikipedia. S3 figure: local safari sources.",BM(28),GREY,230*ka)
     return img
-# ---------------- S6 camera trick
+# ---------------- S6 rival
 def S6(lt,t):
-    img=fbg(t); brand(img,CREAM,150); head(img,"WHY PHOTOS MISLEAD",lt)
-    fwin(img,"t1",wbox("t1",0.5,0.45,0.95,(60,200,960,640)),(60,200,960,640),z=1.0+0.06*seg(lt,0,9),spot=(0.5,0.5,0.25,0.3),k=eo3(seg(lt,0.3,1.2)),border=GOLD2)
-    d=ImageDraw.Draw(img,"RGBA")
-    # diagram: ground, tiger block, camera far vs near
-    gy=1330; d.line((90,gy,990,gy),fill=GRN+(255,),width=5)
-    tx,tw,th=800,200,190
-    ta=eo3(seg(lt,1.0,1.6)); d.rounded_rectangle((tx-tw/2,gy-th,tx+tw/2,gy),radius=30,fill=GOLD2+(int(255*ta),)); d.polygon([(tx-tw/2+14,gy-th+8),(tx-tw/2+30,gy-th-26),(tx-tw/2+50,gy-th+4)],fill=GOLD2+(int(255*ta),))
-    txt(d,(tx,gy+56),"SAME TIGER",B(30),CREAM,255*ta)
-    def cam(cxx,t0,lab,col):
-        a=eo3(seg(lt,t0,t0+0.4)); 
-        if a<=0: return
-        cyy=gy-24; d.rounded_rectangle((cxx-40,cyy-30,cxx+40,cyy+24),radius=10,fill=col+(int(255*a),)); d.rectangle((cxx+40,cyy-12,cxx+62,cyy+10),fill=col+(int(255*a),))
-        p=ease(seg(lt,t0+0.3,t0+1.2)); 
-        for ty in (gy-th-20,gy):
-            d.line((cxx+62,cyy,lerp(cxx+62,tx-tw/2,p),lerp(cyy,ty,p)),fill=col+(int(220*a),),width=4)
-        ang=math.degrees(math.atan2(th+20,(tx-tw/2)-(cxx+46)))
-        txt(d,(cxx,gy+50),lab,B(30),col,255*a)
-    cam(150,2.2,"FAR: LOOKS SMALLER",CREAM); cam(470,4.2,"CLOSE + LOW: LOOKS BIGGER",GOLD2)
-    pa=eo3(seg(lt,6.2,6.8)); pill(img,(W/2,1500),"NO SCALE IN THE FRAME = NO MEASUREMENT",B(38),pa,fg=INK,bg=GOLD2,sc=lerp(0.85,1,eob(seg(lt,6.2,6.9))))
-    txt(d,(W/2,1600),"Wide-angle, low angle and long lens all change how big he looks.",BM(30),GREY,230*eo3(seg(lt,7.2,7.8)))
-    return img
-# ---------------- S7 territory
-def S7(lt,t):
-    img=fbg(t); brand(img,CREAM,150); head(img,"THE RIVAL QUESTION",lt)
-    fwin(img,"t3",wbox("t3",0.5,0.55,0.95,(60,200,960,400)),(60,200,960,400),z=1.0+0.04*seg(lt,0,10),spot=(0.5,0.55,0.2,0.2),k=eo3(seg(lt,0.3,1.2)),border=GOLD2)
-    d=ImageDraw.Draw(img,"RGBA"); cx,cy=540,900
+    img=fbg(t); brand(img,CREAM,150); head(img,"THE RIVAL",lt)
+    fwin(img,"t3",wbox("t3",0.5,0.55,0.95,(60,200,960,400)),(60,200,960,400),z=1.0+0.04*seg(lt,0,9),spot=(0.5,0.55,0.2,0.2),k=eo3(seg(lt,0.3,1.2)),border=GOLD2)
+    cx,cy=540,900
     ta=eo3(seg(lt,0.8,1.6)); tl_=L(); dtl=ImageDraw.Draw(tl_,"RGBA"); dtl.ellipse((cx-300,cy-210,cx+300,cy+210),fill=(110,205,125,40),outline=GRN+(240,),width=4); comp(img,tl_,ta); d=ImageDraw.Draw(img,"RGBA")
     txt(d,(cx,cy-250),"A MALE HOLDS A TERRITORY",B(36),GRN,255*ta)
-    d.ellipse((cx-20,cy-14,cx+20,cy+26),fill=GOLD2+(int(255*ta),)); txt(d,(cx,cy+66),"RESIDENT MALE",B(30),GOLD2,255*ta)
-    for (fx,fy) in ((cx-140,cy+70),(cx+130,cy-70)):
-        fa=eo3(seg(lt,1.6,2.2)); d.ellipse((fx-12,fy-10,fx+12,fy+14),fill=CREAM+(int(230*fa),))
-    txt(d,(cx-140,cy+120),"female",BM(26),CREAM,230*eo3(seg(lt,1.8,2.4)))
-    # rival
-    ra=ease(seg(lt,3.0,4.6)); push=ease(seg(lt,5.2,6.4))
+    d.ellipse((cx-24,cy-16,cx+24,cy+30),fill=GOLD2+(int(255*ta),)); txt(d,(cx,cy+8+4),"S3",B(30),INK,255*ta); txt(d,(cx,cy+70),"S3",B(32),GOLD2,255*ta)
+    ra=ease(seg(lt,2.6,4.2)); pulse=0.5+0.5*math.sin(lt*6)
     if ra>0:
-        rx=lerp(960,cx+230,ra)+push*170; ry=cy+lerp(120,40,ra)+push*60
-        d.ellipse((rx-18,ry-12,rx+18,ry+22),fill=RED2+(255,)); txt(d,(rx,ry+60),"YOUNGER MALE",B(28),RED2,255)
-        if push>0.02: d.line((cx+230,cy+60,rx-30,ry-5),fill=RED2+(200,),width=4)
-    pa=eo3(seg(lt,5.4,6.0)); txt(d,(W/2,1250),"Young males are often pushed out by dominant males.",B(38),CREAM,255*pa); txt(d,(W/2,1302),"Reported in Pilibhit, 2017 (news report)",BM(28),GREY,255*pa)
-    ka=eo3(seg(lt,7.0,7.6)); l=L(); dl=ImageDraw.Draw(l,"RGBA"); dl.rounded_rectangle((70,1400,1010,1650),radius=28,fill=(10,26,20,240),outline=RED2+(255,),width=4); comp(img,l,ka,sc=lerp(0.92,1,eob(seg(lt,7.0,7.8))))
-    d=ImageDraw.Draw(img,"RGBA"); txt(d,(W/2,1500),"WHO IS S3'S RIVAL?",A(72),RED2,255*ka); txt(d,(W/2,1570),"No public record of his fights or rivals.",B(40),CREAM,255*eo3(seg(lt,8.0,8.6))); txt(d,(W/2,1620),"Anyone claiming one is guessing.",BM(30),GREY,255*eo3(seg(lt,8.6,9.2)))
+        rx=lerp(960,cx+260,ra); ry=cy+lerp(110,50,ra); d.ellipse((rx-24,ry-16,rx+24,ry+30),fill=RED2+(255,)); txt(d,(rx,ry+12),"S2",B(30),INK,255); txt(d,(rx,ry+70),"RIVAL",B(30),RED2,255)
+        if ra>0.95: d.line((cx+30,cy+10,rx-30,ry+10),fill=RED2+(int(120+100*pulse),),width=5)
+    pa=eo3(seg(lt,4.6,5.2)); txt(d,(W/2,1250),"TWO BIG MALES. ONE TERRITORY.",B(46),CREAM,255*pa)
+    ka=eo3(seg(lt,5.6,6.2)); l=L(); dl=ImageDraw.Draw(l,"RGBA"); dl.rounded_rectangle((70,1370,1010,1640),radius=28,fill=(10,26,20,240),outline=RED2+(255,),width=4); comp(img,l,ka,sc=lerp(0.92,1,eob(seg(lt,5.6,6.4))))
+    d=ImageDraw.Draw(img,"RGBA"); txt(d,(W/2,1470),"S3'S BIGGEST RIVAL: S2",A(68),RED2,255*ka); txt(d,(W/2,1540),"As told by local safari sources.",B(38),CREAM,255*eo3(seg(lt,6.6,7.2))); txt(d,(W/2,1592),"No public report on this rivalry found.",BM(30),GREY,255*eo3(seg(lt,7.2,7.8)))
+    return img
+# ---------------- S7 the fight
+def S7(lt,t):
+    img=fbg(t); brand(img,CREAM,150); head(img,"THE NEAR-DEATH FIGHT",lt)
+    hit=seg(lt,1.8,2.0)
+    fwin(img,"t4",wbox("t4",0.58,0.55,0.8,(60,200,960,500)),(60,200,960,500),z=1.0+0.05*seg(lt,0,13),spot=(0.57,0.62,0.18,0.3),k=eo3(seg(lt,0.3,1.2)),border=RED2 if 1.8<lt<6.5 else GOLD2,desat=0.6*ease(seg(lt,2.0,3.6))*(1-ease(seg(lt,7.0,9.0))))
+    d=ImageDraw.Draw(img,"RGBA")
+    ev=eo3(seg(lt,0.8,1.4)); txt(d,(W/2,800),"S3'S HEALTH",B(40),CREAM,255*ev)
+    # bar value: 1 -> 0.06 after attack, rescue, recover to 0.8
+    v=1.0-0.94*ease(seg(lt,1.9,3.4)); v=v+0.0 if lt<7.0 else 0.06+0.74*ease(seg(lt,7.0,10.0))
+    col=GRN if v>0.55 else (AMBR if v>0.25 else RED2)
+    d.rounded_rectangle((90,840,990,920),radius=40,fill=(20,44,36,int(230*ev))); 
+    if ev>0: d.rounded_rectangle((90,840,90+max(40,860*v+40),920),radius=40,fill=col+(255,))
+    if 1.8<lt<2.4: txt(d,(W/2,1010),"S2 ATTACKS",A(90),RED2,255*(1-seg(lt,2.2,2.4)))
+    na=eo3(seg(lt,3.6,4.2))*(1-eo3(seg(lt,6.2,6.8)))
+    if na>0.01: pu=0.6+0.4*math.sin(lt*7); comp(img,glayer((W/2,1080),"NEARLY DIED",A(120),top=(255,170,150),bot=RED2),na*pu,sc=lerp(1.2,1,eob(seg(lt,3.6,4.3),1.3)))
+    d=ImageDraw.Draw(img,"RGBA")
+    ra=eo3(seg(lt,5.4,6.0))
+    if ra>0:
+        l=L(); dl=ImageDraw.Draw(l,"RGBA"); dl.rounded_rectangle((90,1130,990,1330),radius=30,fill=(10,30,24,245),outline=GRN+(255,),width=4); comp(img,l,ra,sc=lerp(0.9,1,eob(seg(lt,5.4,6.1))))
+        d=ImageDraw.Draw(img,"RGBA"); cx_,cy_=190,1230; d.ellipse((cx_-46,cy_-46,cx_+46,cy_+46),fill=GRN+(int(255*ra),)); d.rectangle((cx_-8,cy_-28,cx_+8,cy_+28),fill=(10,26,20,int(255*ra))); d.rectangle((cx_-28,cy_-8,cx_+28,cy_+8),fill=(10,26,20,int(255*ra)))
+        txt(d,(260,1215),"FOREST OFFICIALS STEP IN",B(48),CREAM,255*ra,"ls"); txt(d,(260,1275),"And bring him back from the edge.",B(34),GRN,255*eo3(seg(lt,6.4,7.0)),"ls")
+    sv=eo3(seg(lt,9.4,10.0)); comp(img,glayer((W/2,1520),"HE SURVIVED.",A(128),top=(255,250,240),bot=GOLD2),sv,sc=lerp(1.3,1,eob(seg(lt,9.4,10.1),1.3)))
+    d=ImageDraw.Draw(img,"RGBA"); txt(d,(W/2,1610),"As told by local safari sources. No public report found.",BM(30),GREY,255*eo3(seg(lt,10.6,11.2)))
     return img
 # ---------------- S8 what the camera shows
 def S8(lt,t):
@@ -210,19 +211,19 @@ def S8(lt,t):
         if a<=0: continue
         d.rounded_rectangle((120,y-40,960,y+40),radius=24,fill=(14,34,28,int(230*a)),outline=GRN+(int(220*a),),width=3); d.ellipse((140,y-20,180,y+20),fill=GRN+(int(255*a),)); d.line((149,y,158,y+9,172,y-9),fill=(10,26,20,int(255*a)),width=5)
         txt(d,(206+(1-a)*40,y+14),s,B(46),CREAM,255*a,"ls")
-    ka=eo3(seg(lt,6.2,6.8)); txt(d,(W/2,1560),"This is what we can see.",A(64),GOLD2,255*ka); txt(d,(W/2,1625),"Not a measurement. Just a healthy, strong male.",B(36),CREAM,255*ka)
+    ka=eo3(seg(lt,6.2,6.8)); txt(d,(W/2,1560),"A SURVIVOR'S BUILD.",A(64),GOLD2,255*ka); txt(d,(W/2,1625),"What the photo shows. Not a measurement.",B(36),CREAM,255*ka)
     return img
-# ---------------- S9 verdict
+# ---------------- S9 CTA
 def S9(lt,t):
-    a=fb("t1",0.5,0.9,z=1.0+0.05*seg(lt,0,12)); a=a*np.array((1.05,1.0,0.92),np.float32)*(1-0.15*seg(lt,0,12))
-    img=arr2img(a); scrim(img,1000,1920,0.0,0.92,(4,10,8)); scrim(img,0,330,0.7,0.0,(4,10,8)); brand(img,CREAM,170); head(img,"THE VERDICT",lt)
+    a=fb("t1",0.5,0.9,z=1.0+0.05*seg(lt,0,13)); a=a*np.array((1.05,1.0,0.92),np.float32)*(1-0.15*seg(lt,0,13))
+    img=arr2img(a); scrim(img,1000,1920,0.0,0.93,(4,10,8)); scrim(img,0,330,0.7,0.0,(4,10,8)); brand(img,CREAM,170); head(img,"THE VERDICT",lt)
     d=ImageDraw.Draw(img,"RGBA")
-    q=eo3(seg(lt,0.6,1.2)); txt(d,(W/2,1170),"INDIA'S BIGGEST?",B(60),CREAM,255*q); w=eo3(seg(lt,1.8,2.4)); comp(img,glayer((W/2,1290),"UNPROVEN.",A(110),top=(255,170,150),bot=RED2),w,sc=lerp(1.3,1,eob(seg(lt,1.8,2.5),1.3)))
-    q=eo3(seg(lt,3.8,4.4)); txt(d,(W/2,1385),"IMPRESSIVE?",B(60),CREAM,255*q); w=eo3(seg(lt,5.0,5.6)); comp(img,glayer((W/2,1500),"ABSOLUTELY.",A(110),top=(255,250,240),bot=GOLD2),w,sc=lerp(1.3,1,eob(seg(lt,5.0,5.7),1.3)))
-    btn=L(); ImageDraw.Draw(btn,"RGBA").rounded_rectangle((W/2-420,1600,W/2+420,1692),radius=46,fill=GOLD2+(250,)); ba=eo3(seg(lt,7.0,7.5)); comp(img,btn,ba,sc=lerp(0.6,1,eob(seg(lt,7.0,7.6))))
-    d=ImageDraw.Draw(img,"RGBA"); txt(d,(W/2,1661),"SEEN S3? COMMENT \"S3\" + WHEN + WHERE",B(40),INK,255*eo3(seg(lt,7.4,7.8)))
-    ka=eo3(seg(lt,9.0,9.6)); txt(d,(W/2,1760),"Verified info on S3? DM me. I will add it.",B(36),CREAM,255*ka)
-    txt(d,(W/2,1815),"Photos: Hitesh Chawla. Sources: WII, Wikipedia, news reports. Maps: Natural Earth.",BM(24),GREY,225*eo3(seg(lt,10.2,11.0)))
+    q=eo3(seg(lt,0.6,1.2)); txt(d,(W/2,1190),"ONE OF INDIA'S BIGGEST?",B(58),CREAM,255*q); w=eo3(seg(lt,1.8,2.4)); comp(img,glayer((W/2,1305),"CLAIMS SAY YES.",A(104),top=(255,250,240),bot=GOLD2),w,sc=lerp(1.3,1,eob(seg(lt,1.8,2.5),1.3)))
+    q=eo3(seg(lt,4.2,4.8)); txt(d,(W/2,1405),"WANT TO SEE HIM IN PERSON?",B(54),CREAM,255*q); w=eo3(seg(lt,5.4,6.0)); comp(img,glayer((W/2,1515),"JOIN ME IN PILIBHIT",A(92),top=(255,250,240),bot=GOLD2),w,sc=lerp(1.3,1,eob(seg(lt,5.4,6.1),1.3)))
+    btn=L(); ImageDraw.Draw(btn,"RGBA").rounded_rectangle((W/2-440,1570,W/2+440,1662),radius=46,fill=GOLD2+(250,)); ba=eo3(seg(lt,7.2,7.7)); comp(img,btn,ba,sc=lerp(0.6,1,eob(seg(lt,7.2,7.8))))
+    d=ImageDraw.Draw(img,"RGBA"); txt(d,(W/2,1632),"DURING MY PILIBHIT SAFARIS",B(44),INK,255*eo3(seg(lt,7.6,8.0)))
+    ka=eo3(seg(lt,9.0,9.6)); txt(d,(W/2,1730),"GET IN TOUCH ON INSTAGRAM",B(46),CREAM,255*ka); txt(d,(W/2,1790),"@thenaturalangle",A(54),GOLD2,255*eo3(seg(lt,9.6,10.2)))
+    txt(d,(W/2,1850),"Photos: Hitesh Chawla. Sources: WII, Wikipedia, local safari sources.",BM(23),GREY,225*eo3(seg(lt,11.0,11.8)))
     return img
 FN={"S1":S1,"S2":S2,"S3":S3,"S4":S4,"S5":S5,"S6":S6,"S7":S7,"S8":S8,"S9":S9}
 VIGN=None;GRN_=None

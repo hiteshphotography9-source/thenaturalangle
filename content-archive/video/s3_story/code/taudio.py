@@ -103,10 +103,10 @@ sfx+=riser(AT("S1",0.1),AT("S1",0.6),-16)+boom(AT("S1",0.6),-8)+thump(AT("S1",1.
 # S2
 sfx+=tick(AT("S2",0.1),-13)
 for i in range(6):
-    t0=1.2+i*1.5
-    sfx+=tick(AT("S2",t0),-12)+(ping(AT("S2",t0+0.1),1480,-15) if i<3 else popf(AT("S2",t0+0.1),420,-12))
+    t0=1.2+i*1.7
+    sfx+=tick(AT("S2",t0),-12)+(ping(AT("S2",t0+0.1),1480,-15) if i<2 else (ping(AT("S2",t0+0.1),1050,-16) if i<4 else popf(AT("S2",t0+0.1),420,-12)))
 for i in range(10): sfx+=tick2(AT("S2",0.4+i*0.08),2100,-22)
-sfx+=pluck(AT("S2",10.2),196,-15)
+sfx+=pluck(AT("S2",12.0),196,-15)
 # S3
 sfx+=tick(AT("S3",0.1),-13)+riser(AT("S3",2.8),AT("S3",3.4),-16)+whoosh(AT("S3",3.4),1.4,-11)
 sfx+=riser(AT("S3",4.4),AT("S3",5.0),-16)
@@ -122,23 +122,24 @@ sfx+=ping(AT("S4",5.4),1568,-12)+riser(AT("S4",6.0),AT("S4",6.4),-15)+boom(AT("S
 sfx+=tick(AT("S5",0.1),-13)+tick(AT("S5",0.8),-14)
 for i in range(4):
     t0=1.6+i*1.7; sfx+=thump(AT("S5",t0),-13)+riser(AT("S5",t0+0.3),AT("S5",t0+1.4),-22)+ping(AT("S5",t0+1.4),1050+i*120,-14)
-s0=1.6+4*1.7; sfx+=popf(AT("S5",s0),300,-12)+glitch(AT("S5",s0+0.2),-17,0.5)+pluck(AT("S5",10.0),220,-14)
+s0=1.6+4*1.7; sfx+=popf(AT("S5",s0),600,-12)+glitch(AT("S5",s0+0.2),-17,0.5)+pluck(AT("S5",9.4),220,-14)
 for t_ in (8.8,9.3): sfx+=thump(AT("S5",t_),-17)
 # S6
-sfx+=tick(AT("S6",0.1),-13)+tick(AT("S6",1.0),-13)
-for t_ in (2.4,4.4): sfx+=slam(AT("S6",t_),-14)+tick2(AT("S6",t_+0.05),3200,-12)
-sfx+=riser(AT("S6",5.6),AT("S6",6.2),-15)+boom(AT("S6",6.2),-9)+pluck(AT("S6",7.2),329.6,-15)
+sfx+=tick(AT("S6",0.1),-13)+ping(AT("S6",0.9),880,-13)
+x_=tt(0,AT("S6",4.2)-AT("S6",2.6)); sfx+=place(lp(nz(len(x_)),220)*np.sin(np.pi*x_/(x_[-1]+1e-6)),AT("S6",2.6),-15)
+sfx+=thump(AT("S6",4.2),-9)+tick(AT("S6",4.6),-12)+riser(AT("S6",5.2),AT("S6",5.6),-15)+boom(AT("S6",5.6),-8)+tick(AT("S6",6.6),-12)+tick(AT("S6",7.2),-12)
 # S7
-sfx+=tick(AT("S7",0.1),-13)+ping(AT("S7",0.9),880,-13)+ping(AT("S7",1.7),1175,-17)
-x_=tt(0,AT("S7",4.6)-AT("S7",3.0)); sfx+=place(lp(nz(len(x_)),220)*np.sin(np.pi*x_/(x_[-1]+1e-6)),AT("S7",3.0),-15)
-sfx+=thump(AT("S7",4.6),-9)+whoosh(AT("S7",5.2),0.9,-11)+riser(AT("S7",6.6),AT("S7",7.0),-15)+boom(AT("S7",7.0),-8)+tick(AT("S7",8.0),-12)+tick(AT("S7",8.6),-12)
+sfx+=tick(AT("S7",0.1),-13)+riser(AT("S7",1.2),AT("S7",1.8),-14)+slam(AT("S7",1.8),-6)+glitch(AT("S7",1.8),-14,0.5)+whoosh(AT("S7",1.8),0.6,-10)
+for t_ in np.arange(3.6,5.4,0.9): sfx+=thump(AT("S7",t_),-11)
+sfx+=boom(AT("S7",3.6),-9)+ping(AT("S7",5.4),1175,-12)+pluck(AT("S7",5.5),293.7,-14)+tick(AT("S7",6.4),-12)
+sfx+=riser(AT("S7",7.0),AT("S7",9.4),-18)+boom(AT("S7",9.4),-8)+chord(AT("S7",9.5),[220,277.2,329.6],-14,3.0)+tick(AT("S7",10.6),-12)
 # S8
 sfx+=tick(AT("S8",0.1),-13)
 for t_ in (1.4,3.2,5.0): sfx+=popf(AT("S8",t_),900,-13)+ping(AT("S8",t_+0.05),1320,-15)
-sfx+=pluck(AT("S8",6.2),261.6,-14)+boom(AT("S8",6.2),-12)
+sfx+=pluck(AT("S8",6.2),261.6,-14)
 # S9
-sfx+=tick(AT("S9",0.1),-13)+tick(AT("S9",0.6),-12)+slam(AT("S9",1.8),-8)+glitch(AT("S9",1.8),-16,0.4)+tick(AT("S9",3.8),-12)+pluck(AT("S9",5.0),440,-13)+chord(AT("S9",5.0),[220,277.2,329.6],-15,3.0)
-sfx+=riser(AT("S9",6.6),AT("S9",7.0),-16)+tick(AT("S9",7.0),-11)+tick(AT("S9",7.4),-12)+chord(AT("S9",9.0),[220,329.6,440],-16,3.5)
+sfx+=tick(AT("S9",0.1),-13)+tick(AT("S9",0.6),-12)+slam(AT("S9",1.8),-9)+tick(AT("S9",4.2),-12)+pluck(AT("S9",5.4),440,-13)+chord(AT("S9",5.4),[220,277.2,329.6],-15,3.0)
+sfx+=riser(AT("S9",6.8),AT("S9",7.2),-16)+tick(AT("S9",7.2),-11)+tick(AT("S9",7.6),-12)+ping(AT("S9",9.0),1320,-13)+tick(AT("S9",9.6),-12)+chord(AT("S9",10.4),[220,329.6,440],-16,3.5)
 x=np.arange(N)/SR
 def r_(a): return np.sqrt((a**2).mean())+1e-9
 if VO:

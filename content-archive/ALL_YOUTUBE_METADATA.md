@@ -261,3 +261,10 @@ YouTube has no carousel format for Shorts. If your channel has the Community tab
 ## 16. Desert Fox: A Night in the Thar (97.6 s, with VO) | READY
 **File:** video/desert_fox/DesertFox_Final_HQ.mp4
 Full title options, description, tags and pinned comment: video/desert_fox/DESERT_FOX_METADATA.md
+
+
+---
+
+## 17. S3 (Surai 3 / Manag) of Pilibhit (94 s, no VO yet) | NEEDS VO
+**File:** video/s3_story/S3_NoVO_HQ.mp4
+Titles, description, tags, pinned comment: video/s3_story/S3_METADATA.md
