@@ -533,3 +533,10 @@ Caption, hashtags and cover: video/desert_fox/DESERT_FOX_METADATA.md
 ## S3 (Surai 3 / Monarch) Reel (57.8 s, with VO) | READY
 **File:** video/s3_story/S3_Final_HQ.mp4
 Caption and cover: video/s3_story/S3_METADATA.md
+
+
+---
+
+## Great Hornbill Reel (90 s, with VO) | READY
+**File:** video/great_hornbill/Hornbill_Final_HQ.mp4
+Caption and cover: video/great_hornbill/HORNBILL_METADATA.md
