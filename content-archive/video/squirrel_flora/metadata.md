@@ -38,3 +38,6 @@ Cover: cover.jpg  | Share to Facebook Reel with same caption.
 - Title says 10 jeeps, his spoken line is 3 to 4 jeeps. Align before posting (title to "Jeeps" or fix the number).
 - Squirrel itself appears only as text/SFX. Real reveal exists in podcast 7:55 to 8:13: send that clip to upgrade.
 - Font: Inter Bold (Poppins not installed). Podcast owner credit: his call; written OK advised.
+
+## FINAL (v4): Squirrel_Flora_FINAL_HQ.mp4, cover_final.jpg
+v3 plus 3 cutaways (user images): gypsy line x2 (tagged AI-GENERATED · ILLUSTRATIVE), forest track x1. Metadata from v3 section applies.
