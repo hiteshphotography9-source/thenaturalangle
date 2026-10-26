@@ -41,3 +41,6 @@ Cover: cover.jpg  | Share to Facebook Reel with same caption.
 
 ## FINAL (v4): Squirrel_Flora_FINAL_HQ.mp4, cover_final.jpg
 v3 plus 3 cutaways (user images): gypsy line x2 (tagged AI-GENERATED · ILLUSTRATIVE), forest track x1. Metadata from v3 section applies.
+
+## V5 FINAL: Squirrel_Flora_V5_HQ.mp4, cover_v5.jpg
+Effects from reference reel: chapter tracker, snap zoom, checklist pop, news-banner storm, camera viewfinder on leopard photo, zoom-through-cut, comment-BOOK CTA (needs Auto-DM keyword BOOK). Fixes: title cover plate, reveal ring overlap, photo watermark visible.
