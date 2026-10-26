@@ -4,14 +4,17 @@ Files: Squirrel_Flora_Final_HQ.mp4 (upload this), Squirrel_Flora_Final_share.mp4
 Added: VFX (jeep-gap diagram, alarm-call rings, tension darkening, flash at reveal), SFX (chirps, risers, thumps, boom, pings), music bed, motion headlines, captions, end-card CTA.
 Voice: Hitesh's own podcast voice, dead air removed. SFX -7.5 dB under voice, music -20 dB.
 
-## V2 (latest, 57.4 s): use Squirrel_Flora_v2_HQ.mp4
+## V3 FINAL (57.8 s): Squirrel_Flora_v3_HQ.mp4, cover_v3.jpg
+New hook: leopard+cub photo in frame 1, 'EVERY JEEP STOPPED. WHO WAS CALLING?'. '10 jeeps' claim removed everywhere (matches spoken 3 to 4). Metadata in chat reply is current; titles below that say 10 jeeps are superseded.
+
+## V2 (previous, 57.4 s): use Squirrel_Flora_v2_HQ.mp4
 Photo inserted at 42.3 to 44.75 s. Reveal clip (whose call was it? just a squirrel's call) at 47.6 to 52.2 s before the end card. Captions enlarged (62 px, wider box, bigger headlines). Reveal caption wording is my read of the audio, verify.
 
 ## (v1 note) LEOPARD PHOTO SLOT
 Output time 42.3 s to 44.75 s (2.45 s) = line "Flora, with the cub in her mouth". Drop the photo full-screen on a track above this video in that window (CapCut/InShot), 1.00 to 1.06 slow zoom, keep captions off the animal. Send me the photo and I will re-render with the VFX baked in.
 
 ## YOUTUBE SHORT
-Title: A Squirrel Stopped 10 Jeeps. Then the Leopard Came.
+Title: Every Jeep Stopped. Who Was Calling? (Jhalana Leopard)
 Description:
 One squirrel alarm call. 10 jeeps frozen. Then Flora, a leopard at Jhalana, walked out with her cub in her mouth.
 Listen first. Camera later.
