@@ -44,3 +44,5 @@ v3 plus 3 cutaways (user images): gypsy line x2 (tagged AI-GENERATED · ILLUSTRA
 
 ## V5 FINAL: Squirrel_Flora_V5_HQ.mp4, cover_v5.jpg
 Effects from reference reel: chapter tracker, snap zoom, checklist pop, news-banner storm, camera viewfinder on leopard photo, zoom-through-cut, comment-BOOK CTA (needs Auto-DM keyword BOOK). Fixes: title cover plate, reveal ring overlap, photo watermark visible.
+
+## V6: Squirrel_Flora_V6_HQ.mp4. Jeep diagram: leopard icon replaces red dot, WALK?/CARRY? label moved clear of US jeep, GAP label inside box. Otherwise = V5.
