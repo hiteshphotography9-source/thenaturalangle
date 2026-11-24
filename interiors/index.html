@@ -146,6 +146,17 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .tag.b{left:12px;background:rgba(0,0,0,.6);color:#fff}
 .tag.a{right:12px;background:var(--coral);color:#fff}
 .ba-note{margin-top:10px;font-size:13px;color:var(--muted)}
+.ba-note b{color:var(--fg)}
+.ba img{transition:opacity .35s ease}
+.ba.swap img{opacity:.25}
+.ba-nav{display:flex;align-items:center;gap:10px;margin-top:16px}
+.ba-tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0;padding-block:2px}
+.ba-tabs::-webkit-scrollbar{display:none}
+.ba-tab{flex:none;font:700 14px var(--body);min-height:42px;padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--muted);cursor:pointer}
+.ba-tab[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ba-arrow{flex:none;min-height:44px;min-width:44px;padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--fg);font:800 15px var(--body);cursor:pointer}
+.ba-arrow.next{background:var(--coral);border-color:var(--coral);color:#fff;padding-inline:20px}
+@media (max-width:640px){.ba-nav{flex-wrap:wrap}.ba-tabs{order:-1;flex-basis:100%}.ba-arrow{flex:1}}
 
 /* benefits */
 .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
@@ -380,16 +391,21 @@ footer a{color:var(--teal-l);font-weight:700;text-decoration:none}
           <span class="eyebrow">The fix</span>
           <h2 class="mt">Same room. <span class="hl">Completely different booking.</span></h2>
         </div>
-        <p class="lead" style="max-width:38ch">Drag the slider. This is what a guest sees before and after a professional shoot.</p>
+        <p class="lead" style="max-width:40ch">Drag the slider, then tap Next. Six different spaces, from a small room to a resort exterior.</p>
       </div>
       <div class="ba reveal" id="ba" style="--pos:50%">
-        <img src="img/ba-before.jpg" alt="Typical phone-style photo of a hotel suite: dim, tilted and yellow" loading="lazy">
-        <img class="after" src="img/ba-after.jpg" alt="Professional photo of the same Gold Souk suite: bright, straight and true colour" loading="lazy">
+        <img id="ba-b" src="img/ba-small-before.jpg" alt="Phone-style photo: dim, tilted and yellow" loading="lazy">
+        <img id="ba-a" class="after" src="img/ba-small-after.jpg" alt="Professional photo of the same space" loading="lazy">
         <span class="tag b">Phone photo</span><span class="tag a">Professional</span>
         <div class="bar"></div><div class="knob" aria-hidden="true">⇆</div>
         <input type="range" id="ba-range" min="0" max="100" value="50" aria-label="Compare phone photo and professional photo">
       </div>
-      <p class="ba-note">Left side is a simulated phone-style version of the same frame, made for illustration.</p>
+      <div class="ba-nav">
+        <button class="ba-arrow" id="ba-prev" aria-label="Previous space">←</button>
+        <div class="ba-tabs" id="ba-tabs" role="tablist" aria-label="Choose a space"></div>
+        <button class="ba-arrow next" id="ba-next" aria-label="Next space">Next →</button>
+      </div>
+      <p class="ba-note"><b id="ba-cap">Small room</b> · <span id="ba-num">1 / 6</span> · Left side is a simulated phone-style version of the same frame, made for illustration.</p>
 
       <div class="benefits">
         <div class="benefit reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3v18M18 3v18"/></svg></div><h3>Straight, confident lines</h3><p>Walls stand upright, exactly the way your architect drew them. No warped corners.</p></div>
@@ -641,6 +657,18 @@ document.addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key==='Escape')
 let tx=null;li.addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});
 li.addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>40)step(dx<0?1:-1);tx=null});
 
+// before / after: 6 spaces
+const BA=[["small","Small room"],["suite","Suite"],["lobby","Lobby"],["dining","Restaurant"],["pool","Pool at night"],["ext","Exterior"]];
+let bi=0;const tabs=document.getElementById('ba-tabs');
+tabs.innerHTML=BA.map((x,i)=>`<button class="ba-tab" role="tab" aria-selected="${i===0}" data-i="${i}">${x[1]}</button>`).join('');
+BA.forEach(x=>{new Image().src=`img/ba-${x[0]}-after.jpg`});
+function goBA(i){bi=(i+BA.length)%BA.length;const box=document.getElementById('ba');box.classList.add('swap');
+  setTimeout(()=>{document.getElementById('ba-b').src=`img/ba-${BA[bi][0]}-before.jpg`;document.getElementById('ba-a').src=`img/ba-${BA[bi][0]}-after.jpg`;box.classList.remove('swap');setPos(50)},180);
+  tabs.querySelectorAll('.ba-tab').forEach((t,k)=>{t.setAttribute('aria-selected',k===bi);if(k===bi)t.scrollIntoView({block:'nearest',inline:'center'})});
+  document.getElementById('ba-cap').textContent=BA[bi][1];document.getElementById('ba-num').textContent=`${bi+1} / ${BA.length}`}
+tabs.addEventListener('click',e=>{const t=e.target.closest('.ba-tab');if(t)goBA(+t.dataset.i)});
+document.getElementById('ba-next').onclick=()=>goBA(bi+1);
+document.getElementById('ba-prev').onclick=()=>goBA(bi-1);
 // before / after: range input plus direct touch drag
 const ba=document.getElementById('ba'),rng=document.getElementById('ba-range');
 const setPos=v=>{v=Math.max(0,Math.min(100,v));rng.value=v;ba.style.setProperty('--pos',v+'%')};
