@@ -363,6 +363,7 @@ footer a{color:var(--teal-l);font-weight:700;text-decoration:none}
 
 </head>
 <body>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=4619491964991167&amp;ev=PageView&amp;noscript=1"></noscript>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <header class="nav">
   <div class="wrap">
@@ -834,7 +835,7 @@ form.addEventListener('input',build);form.addEventListener('submit',e=>e.prevent
 })();
 
 // ===== tracking hooks: paste IDs to switch on =====
-const FB_PIXEL_ID='';   // Meta Pixel ID from Meta Events Manager
+const FB_PIXEL_ID='4619491964991167';   // Meta Pixel ID from Meta Events Manager
 const GA_ID='';         // Google Analytics 4 ID, e.g. G-XXXXXXX
 if(FB_PIXEL_ID){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',FB_PIXEL_ID);fbq('track','PageView')}
 if(GA_ID){const g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(g);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',GA_ID)}
