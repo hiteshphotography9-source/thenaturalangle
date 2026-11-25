@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0E0F0D">
+<title>Watch · The Natural Angle</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+.pi{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;display:block}
+body{margin:0;background:#0B0C0A}
+a{color:#C9A45C;text-decoration:none}a:hover{color:#E2C68C}
+.s{width:390px;min-height:844px;background:#0E0F0D;color:#EDE8DF;font-family:Barlow,'Helvetica Neue',Helvetica,sans-serif;font-size:15px;line-height:1.45;display:flex;flex-direction:column;position:relative;overflow:hidden;-webkit-font-smoothing:antialiased}
+.s *{box-sizing:border-box}
+.k{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#A9A498;margin:0}
+.kg{color:#C9A45C}
+.d2{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:28px;line-height:1.1;letter-spacing:-.01em;margin:0}
+.d3{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:21px;line-height:1.2;margin:0}
+.h3{font-size:16px;font-weight:600;line-height:1.3;margin:0;color:#EDE8DF}
+.h4{font-size:14px;font-weight:600;line-height:1.3;margin:0;color:#EDE8DF}
+.sm{font-size:13px;line-height:1.4}
+.mut{color:#A9A498}
+.m{font-family:'DM Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.02em}
+.ph{position:relative;overflow:hidden;background:#1B1E19;flex:none;display:block}
+.t1{background:radial-gradient(130% 95% at 68% 32%,#4E6040 0%,#29331F 46%,#121510 100%)}
+.t2{background:radial-gradient(130% 95% at 32% 38%,#9A7442 0%,#523E23 44%,#17130D 100%)}
+.t3{background:radial-gradient(130% 95% at 60% 26%,#566A70 0%,#2B363A 48%,#101315 100%)}
+.t4{background:radial-gradient(130% 95% at 48% 42%,#857447 0%,#433D27 48%,#151410 100%)}
+.t5{background:radial-gradient(130% 95% at 40% 30%,#7A4A32 0%,#3E2A1E 46%,#140F0C 100%)}
+.t6{background:radial-gradient(130% 95% at 50% 30%,#3D4A44 0%,#222A26 50%,#0F1211 100%)}
+.pl{position:absolute;left:12px;top:12px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(237,232,223,.75);z-index:2}
+.scb{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,15,13,0) 40%,rgba(14,15,13,.92) 100%);pointer-events:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border-radius:12px;border:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;text-decoration:none;white-space:nowrap}
+.bp{background:#C9A45C;color:#15120B}.bp:hover{background:#D6B46E;color:#15120B}
+.bs{background:transparent;color:#EDE8DF;box-shadow:inset 0 0 0 1px #3C4039}.bs:hover{color:#EDE8DF;box-shadow:inset 0 0 0 1px #6B6F66}
+.chip{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:999px;border:0;font-family:Barlow,sans-serif;font-size:13px;font-weight:500;color:#D8D2C6;background:#181A16;box-shadow:inset 0 0 0 1px #2C302A;white-space:nowrap;cursor:pointer;flex:none}
+.chip:hover{color:#EDE8DF}
+.chip.on{background:#EDE8DF;color:#0E0F0D;box-shadow:none}
+.bd{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:rgba(14,15,13,.75);color:#EDE8DF;white-space:nowrap}
+.bdg{background:#C9A45C;color:#15120B}
+.dur{font-family:'DM Mono',monospace;letter-spacing:0}
+.card{display:block;background:#161815;border-radius:16px;overflow:hidden;color:#EDE8DF;box-shadow:inset 0 0 0 1px rgba(237,232,223,.05),0 14px 32px rgba(0,0,0,.35)}
+a.card:hover{color:#EDE8DF;background:#1A1C18}
+.sec{padding:0 20px;display:flex;flex-direction:column;gap:14px}
+.sh{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.more{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;color:#C9A45C;min-height:44px;display:inline-flex;align-items:center;white-space:nowrap}
+.hs{display:flex;gap:12px;overflow-x:auto;padding:0 20px;scrollbar-width:none}
+.hs::-webkit-scrollbar{display:none}
+.ib{width:44px;height:44px;flex:none;border-radius:999px;border:0;display:inline-flex;align-items:center;justify-content:center;background:#161815;color:#EDE8DF;cursor:pointer}
+.ib:hover{color:#EDE8DF;background:#1F221E}
+.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.top{padding:26px 20px 4px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.ttl{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:30px;letter-spacing:.12em;margin:0}
+.tabs{display:flex;gap:26px;border-bottom:1px solid #23261F;padding:0 20px}
+.tabs button{padding:12px 0;min-height:46px;background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.16em;color:#85817A;cursor:pointer}
+.tabs button:hover{color:#EDE8DF}
+.tabs button.on{color:#EDE8DF;border-color:#C9A45C}
+.play{position:absolute;left:50%;top:50%;width:60px;height:60px;margin:-30px;border-radius:99px;background:rgba(14,15,13,.6);box-shadow:inset 0 0 0 1.5px rgba(237,232,223,.7);display:flex;align-items:center;justify-content:center}
+.play svg{width:24px;height:24px;fill:#EDE8DF;margin-left:3px}
+.wl{display:inline-flex;align-items:center;gap:6px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;color:#C9A45C}
+.wl svg{width:12px;height:12px;fill:#C9A45C}
+.nav{margin-top:auto;position:sticky;bottom:0;z-index:5;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:6px 6px 30px;background:rgba(11,12,10,.97);border-top:1px solid #20231E}
+.nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:54px;color:#85817A;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.16em}
+.nav a:hover{color:#EDE8DF}
+.nav a.on{color:#EDE8DF}.nav a.on .ic{stroke:#C9A45C}
+.pod{display:flex;gap:14px;padding:14px;align-items:flex-start}
+</style>
+<style>
+html,body{background:#0B0C0A}
+body{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}
+.s{width:100% !important;max-width:480px;margin:0 auto;min-height:100vh !important}
+.nav{padding-bottom:calc(8px + env(safe-area-inset-bottom)) !important}
+button[aria-label^="Search"],button[aria-label="Settings"]{display:none !important}
+a,button{touch-action:manipulation}
+</style>
+<link rel="stylesheet" href="site.css">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<template id="tpl">
+<div class="s" style="width: 390px; min-height: 1770px; gap: 24px">
+<div class="top">
+<h1 class="ttl">WATCH</h1>
+<div style="display: flex; gap: 8px">
+<button class="ib" type="button" aria-label="Search videos"><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></button>
+<a class="ib" href="Profile.html" aria-label="My Natural Angle"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20.5c1.4-3.6 4.2-5.5 7.5-5.5s6.1 1.9 7.5 5.5"/></svg></a>
+</div>
+</div>
+<div class="tabs" role="tablist" style="margin-top: -16px">
+<button type="button" role="tab" class="{{ytCls}}" onClick="{{toYt}}">YOUTUBE</button>
+<button type="button" role="tab" class="{{shCls}}" onClick="{{toSh}}">SHORTS</button>
+<button type="button" role="tab" class="{{rlCls}}" onClick="{{toRl}}">REELS</button>
+</div>
+
+<sc-if value="{{isYt}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<section class="sec">
+<a class="card" href="https://www.youtube.com/watch?v=u8ZMOaUrFNM">
+<div class="ph t5" style="height: 197px"><img class="pi" src="assets/img/4de231b5f51a63c96cdaff44465eff11.jpg" alt="Video thumbnail: Panna Tiger Reserve, 3 Dry Safaris Before This Happened" style="object-position: 50% 50%"><span class="bd bdg" style="position: absolute; left: 12px; bottom: 12px">New</span><span class="bd dur" style="position: absolute; right: 12px; bottom: 12px">7:18</span><span class="play"><svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z"/></svg></span></div>
+<div style="padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px">
+<span class="k kg" style="font-size: 11px">Safari stories · 2 Oct 2026</span>
+<span class="d3">Panna Tiger Reserve: 3 Dry Safaris Before This Happened</span>
+</div>
+</a>
+</section>
+<section style="display: flex; flex-direction: column; gap: 12px">
+<div class="sec"><div class="sh"><h2 class="k kg">Photography tips</h2><a href="https://www.youtube.com/@thenaturalangle/videos" class="more">SEE ALL →</a></div></div>
+<div class="hs">
+<a class="card" href="VideoDetail.html" style="width: 260px; flex: none"><div class="ph t3" style="height: 146px"><img class="pi" src="assets/img/bc1358a30b8967420b8459da4ee7c190.jpg" alt="Video thumbnail: Why Wildlife Photographers Always Miss the Best Shots (It's Not What You Think)" style="object-position: 50% 50%"><span class="bd dur" style="position: absolute; right: 10px; bottom: 10px">5:43</span></div><div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px"><span class="k kg" style="font-size: 11px">Photography tips</span><span class="h4">Why Wildlife Photographers Always Miss the Best Shots (It's Not What You Think)</span><span class="wl" style="margin-top: 4px"><svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z"/></svg>WATCH</span></div></a>
+<a class="card" href="https://www.youtube.com/watch?v=JnFx6vevGFQ" style="width: 260px; flex: none"><div class="ph t3" style="height: 146px"><img class="pi" src="assets/img/b6953597cb7d54f53498992939039c5e.jpg" alt="Video thumbnail: Blurry Tiger Photos? Your ONE Setting Is Wrong — Fix It on Safari" style="object-position: 50% 50%"><span class="bd dur" style="position: absolute; right: 10px; bottom: 10px">7:49</span></div><div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px"><span class="k kg" style="font-size: 11px">Photography tips</span><span class="h4">Blurry Tiger Photos? Your ONE Setting Is Wrong — Fix It on Safari</span><span class="wl" style="margin-top: 4px"><svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z"/></svg>WATCH</span></div></a>
+</div>
+</section>
+<section style="display: flex; flex-direction: column; gap: 12px">
+<div class="sec"><div class="sh"><h2 class="k kg">Safari stories</h2><a href="https://www.youtube.com/@thenaturalangle/videos" class="more">SEE ALL →</a></div></div>
+<div class="hs">
+<a class="card" href="https://www.youtube.com/watch?v=qNEXZQjQOqo" style="width: 260px; flex: none"><div class="ph t3" style="height: 146px"><img class="pi" src="assets/img/debb3e469a6df92d52fe843de79e0637.jpg" alt="Video thumbnail: Panna Tiger Reserve: 5 Predators in One Safari — What Most Miss" style="object-position: 50% 50%"><span class="bd dur" style="position: absolute; right: 10px; bottom: 10px">11:29</span></div><div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px"><span class="k kg" style="font-size: 11px">Safari stories</span><span class="h4">Panna Tiger Reserve: 5 Predators in One Safari — What Most Miss</span><span class="wl" style="margin-top: 4px"><svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z"/></svg>WATCH</span></div></a>
+<a class="card" href="https://www.youtube.com/watch?v=1jbxVj2H4MQ" style="width: 260px; flex: none"><div class="ph t3" style="height: 146px"><img class="pi" src="assets/img/a8562de19b29170e3af5f50193377438.jpg" alt="Video thumbnail: Leopard Cub Alone for 2 Days in Rajaji. Did We Find Her Mother?" style="object-position: 50% 50%"><span class="bd dur" style="position: absolute; right: 10px; bottom: 10px">7:37</span></div><div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px"><span class="k kg" style="font-size: 11px">Safari stories</span><span class="h4">Leopard Cub Alone for 2 Days in Rajaji. Did We Find Her Mother?</span><span class="wl" style="margin-top: 4px"><svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z"/></svg>WATCH</span></div></a>
+</div>
+</section>
+<section style="display: flex; flex-direction: column; gap: 12px">
+<div class="sec"><div class="sh"><h2 class="k kg">Camera settings</h2><a href="https://www.youtube.com/@thenaturalangle/videos" class="more">SEE ALL →</a></div></div>
+<div class="hs">
+<a class="card" href="https://www.youtube.com/watch?v=T-gLR02kLFw" style="width: 260px; flex: none"><div class="ph t3" style="height: 146px"><img class="pi" src="assets/img/0b7e839620ff9b548ed0a85df50982e1.jpg" alt="Video thumbnail: Canon Menu Trick: My Wildlife Settings That Save Time on Safari" style="object-position: 50% 50%"><span class="bd dur" style="position: absolute; right: 10px; bottom: 10px">4:37</span></div><div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px"><span class="k kg" style="font-size: 11px">Camera settings</span><span class="h4">Canon Menu Trick: My Wildlife Settings That Save Time on Safari</span><span class="wl" style="margin-top: 4px"><svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z"/></svg>WATCH</span></div></a>
+<a class="card" href="https://www.youtube.com/watch?v=vFpnTl881vs" style="width: 260px; flex: none"><div class="ph t3" style="height: 146px"><img class="pi" src="assets/img/c3735b6a9394c13cc34138cede84f6f7.jpg" alt="Video thumbnail: Wildlife Photography Mistake I Blamed on My Lens (It Was My Settings)" style="object-position: 50% 50%"><span class="bd dur" style="position: absolute; right: 10px; bottom: 10px">7:23</span></div><div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px"><span class="k kg" style="font-size: 11px">Camera settings</span><span class="h4">Wildlife Photography Mistake I Blamed on My Lens (It Was My Settings)</span><span class="wl" style="margin-top: 4px"><svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z"/></svg>WATCH</span></div></a>
+</div>
+</section>
+</div>
+</sc-if>
+
+<sc-if value="{{isSh}}" hint-placeholder-val="{{ false }}">
+<section class="sec">
+<p class="sm mut" style="margin: 0">Tap to play full screen. Swipe up for the next one.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<a class="card" href="https://www.youtube.com/shorts/j6ORROD4VM8"><div class="ph t1" style="height: 300px"><img class="pi" src="assets/img/5db637558dbce137b24f1dc770166b7e.jpg" alt="Short: 500lb Tiger vs. Our Gypsy: Who Blinks First?" style="object-position: 50% 50%"><div class="scb"></div><div style="position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 4px; z-index: 2"><span class="h4">500lb Tiger vs. Our Gypsy: Who Blinks First?</span><span class="m mut">0:29</span></div></div></a>
+<a class="card" href="https://www.youtube.com/shorts/3dW8gFP5MNQ"><div class="ph t1" style="height: 300px"><img class="pi" src="assets/img/6f4d4bdfeb49378f1e2909633234305f.jpg" alt="Short: You Won't Believe the Size of These Tigers! (S3 vs P663)" style="object-position: 50% 50%"><div class="scb"></div><div style="position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 4px; z-index: 2"><span class="h4">You Won't Believe the Size of These Tigers! (S3 vs P663)</span><span class="m mut">0:21</span></div></div></a>
+<a class="card" href="https://www.youtube.com/shorts/hcZgkOfr8XE"><div class="ph t1" style="height: 300px"><img class="pi" src="assets/img/e8bde9f9caad48af4506ba56ae92812d.jpg" alt="Short: Meet India's Most Famous Tigers: S3 vs Rocket" style="object-position: 50% 50%"><div class="scb"></div><div style="position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 4px; z-index: 2"><span class="h4">Meet India's Most Famous Tigers: S3 vs Rocket</span><span class="m mut">0:41</span></div></div></a>
+<a class="card" href="https://www.youtube.com/shorts/Nb9TdZzal4E"><div class="ph t1" style="height: 300px"><img class="pi" src="assets/img/d8bc489c086459c1f7ccf423faf74f2b.jpg" alt="Short: The secret to finding tigers: Listen to the forest" style="object-position: 50% 50%"><div class="scb"></div><div style="position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 4px; z-index: 2"><span class="h4">The secret to finding tigers: Listen to the forest</span><span class="m mut">0:41</span></div></div></a>
+<a class="card" href="https://www.youtube.com/shorts/pJpcjEvQ0qI"><div class="ph t1" style="height: 300px"><img class="pi" src="assets/img/b7892be79d09f1ef065119337d3d8c82.jpg" alt="Short: Why I Never Take Just One Shot" style="object-position: 50% 50%"><div class="scb"></div><div style="position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 4px; z-index: 2"><span class="h4">Why I Never Take Just One Shot</span><span class="m mut">0:54</span></div></div></a>
+<a class="card" href="https://www.youtube.com/shorts/90Y-lBcolS0"><div class="ph t1" style="height: 300px"><img class="pi" src="assets/img/612c32481852d6138a806d666eb155d2.jpg" alt="Short: A Tigress, 3 Cubs, and Ken River. Panna Tiger Reserve" style="object-position: 50% 50%"><div class="scb"></div><div style="position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 4px; z-index: 2"><span class="h4">A Tigress, 3 Cubs, and Ken River. Panna Tiger Reserve</span><span class="m mut">0:58</span></div></div></a>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{isRl}}" hint-placeholder-val="{{ false }}">
+<section class="sec">
+<p class="sm mut" style="margin: 0">Tap a reel to watch it on Instagram.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<a class="card" href="https://www.instagram.com/reel/DdtCZt3kf4s/"><div class="ph t1" style="height: 250px"><img class="pi" src="assets/img/363d1950493e558365386dbef07e4c0b.jpg" alt="Reel: P-141 and her 3 cubs: 4 tigers, 1 shot" style="object-position: 50% 50%"></div><div style="padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 6px"><span class="h4">P-141 and her 3 cubs: 4 tigers, 1 shot</span><span class="m mut">PANNA · 0:58</span></div></a>
+<a class="card" href="https://www.instagram.com/reel/Ddxpd7OEeG7/"><div class="ph t1" style="height: 250px"><img class="pi" src="assets/img/70e3a946c4d6da6291e953582fe0b255.jpg" alt="Reel: Rocket growls, then walks toward our jeep" style="object-position: 50% 50%"></div><div style="padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 6px"><span class="h4">Rocket growls, then walks toward our jeep</span><span class="m mut">PILIBHIT · 0:56</span></div></a>
+<a class="card" href="https://www.instagram.com/reel/Dd3IbM7R9x6/"><div class="ph t1" style="height: 250px"><img class="pi" src="assets/img/e992bfc674c4dee699ae446bfa3360a5.jpg" alt="Reel: Two male tigers in one frame" style="object-position: 50% 50%"></div><div style="padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 6px"><span class="h4">Two male tigers in one frame</span><span class="m mut">PILIBHIT · 1:11</span></div></a>
+<a class="card" href="https://www.instagram.com/reel/DdvBUhCDUQM/"><div class="ph t1" style="height: 250px"><img class="pi" src="assets/img/b095e1601bcd2a61f9b3033b314557f9.jpg" alt="Reel: This is what Bharatpur actually looks like" style="object-position: 50% 50%"></div><div style="padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 6px"><span class="h4">This is what Bharatpur actually looks like</span><span class="m mut">BHARATPUR · 0:35</span></div></a>
+<a class="card" href="https://www.instagram.com/reel/Dd_YZvDFAQ9/"><div class="ph t1" style="height: 250px"><img class="pi" src="assets/img/98bab84e3598dfd8eded28ca21db7d74.jpg" alt="Reel: The rare pair: hedgehogs at Jhalana" style="object-position: 50% 50%"></div><div style="padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 6px"><span class="h4">The rare pair: hedgehogs at Jhalana</span><span class="m mut">JHALANA · 0:48</span></div></a>
+<a class="card" href="https://www.instagram.com/reel/Dd8zrrZjPII/"><div class="ph t1" style="height: 250px"><img class="pi" src="assets/img/a1127e8102021fb99aea93e989e04406.jpg" alt="Reel: Desert fox, one of the boldest I have seen" style="object-position: 50% 50%"></div><div style="padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 6px"><span class="h4">Desert fox, one of the boldest I have seen</span><span class="m mut">JHALANA · 0:45</span></div></a>
+</div>
+<a class="btn bs bw" href="https://www.instagram.com/thenaturalangle/reels/">All reels on Instagram ↗</a>
+</section>
+</sc-if>
+
+
+
+
+<div style="height: 8px"></div>
+<nav class="nav" aria-label="Main">
+<a href="Home.html"><svg class="ic" viewBox="0 0 24 24"><path d="M3.5 10.5 12 3.5l8.5 7V20.5h-5.5v-6h-6v6H3.5z"/></svg>HOME</a>
+<a href="Watch.html" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10.5 9.5v5l4-2.5z"/></svg>WATCH</a>
+<a href="Learn.html"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 8.2l3.3 1.9v3.8L12 15.8l-3.3-1.9v-3.8z"/></svg>LEARN</a>
+<a href="Tours.html"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>TOURS</a>
+<a href="Shop.html"><svg class="ic" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12.5H6.2z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>SHOP</a>
+</nav>
+</div>
+</template>
+<div id="app"></div>
+<script src="dc-lite.js?v=1.0.0"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tab: 'yt' };
+  }
+  renderVals() {
+    const t = this.state.tab;
+    return {
+      isYt: t === 'yt', isSh: t === 'sh', isRl: t === 'rl', isPd: t === 'pd',
+      ytCls: t === 'yt' ? 'on' : '', shCls: t === 'sh' ? 'on' : '', rlCls: t === 'rl' ? 'on' : '', pdCls: t === 'pd' ? 'on' : '',
+      toYt: () => this.setState({ tab: 'yt' }),
+      toSh: () => this.setState({ tab: 'sh' }),
+      toRl: () => this.setState({ tab: 'rl' }),
+      toPd: () => this.setState({ tab: 'pd' })
+    };
+  }
+}
+
+DC.mount(Component, {}, null);
+</script>
+<script src="app.js?v=1.0.0"></script>
+</body>
+</html>

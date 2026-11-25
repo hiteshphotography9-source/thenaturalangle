@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0E0F0D">
+<title>How I Shot This · The Natural Angle</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0C0A}
+a{color:#C9A45C;text-decoration:none}a:hover{color:#E2C68C}
+.s *{box-sizing:border-box}
+.k{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#A9A498;margin:0}
+.kg{color:#C9A45C}
+.t2{background:radial-gradient(130% 95% at 32% 38%,#9A7442 0%,#523E23 44%,#17130D 100%)}
+.pf{position:absolute;left:0;top:0;width:390px;height:844px;transform-origin:50% 0;transition:transform .6s cubic-bezier(.2,.7,.2,1),border-radius .6s;overflow:hidden}
+.pf.open{transform:translateY(54px) scale(.84);border-radius:18px}
+.pl{position:absolute;left:24px;top:120px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(237,232,223,.75)}
+.pi{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;display:block}
+.afb{position:absolute;left:284px;top:334px;width:52px;height:52px;border:1.5px solid #C9A45C;border-radius:3px}
+.sc{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,15,13,.55) 0%,rgba(14,15,13,0) 22%,rgba(14,15,13,0) 52%,rgba(14,15,13,.96) 100%);transition:opacity .4s}
+.pf.open .sc{opacity:.35}
+.ib{width:44px;height:44px;flex:none;border-radius:999px;border:0;display:inline-flex;align-items:center;justify-content:center;background:rgba(14,15,13,.6);color:#EDE8DF;cursor:pointer}
+.ib:hover{color:#EDE8DF;background:rgba(14,15,13,.85)}
+.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 20px;border-radius:12px;border:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;text-decoration:none;white-space:nowrap}
+.bp{background:#C9A45C;color:#15120B}.bp:hover{background:#D6B46E;color:#15120B}
+.bar{position:absolute;left:0;right:0;height:0;background:#000;z-index:20;pointer-events:none}
+.bar.a{top:0}.bar.b{bottom:0}
+.shut .bar{animation:shut .36s ease-in-out}
+@keyframes shut{0%{height:0}50%{height:422px}100%{height:0}}
+.callout{position:absolute;display:flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;color:#EDE8DF;background:rgba(14,15,13,.82);padding:6px 9px;border-radius:7px;white-space:nowrap;animation:fade .5s .3s both}
+.callout i{display:block;width:6px;height:6px;border-radius:9px;background:#C9A45C}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.sheet{position:absolute;left:0;right:0;bottom:0;height:420px;background:#141613;border-radius:24px 24px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.55);transform:translateY(100%);transition:transform .55s cubic-bezier(.2,.7,.2,1);padding:12px 20px 34px;display:flex;flex-direction:column;gap:16px;z-index:10}
+.sheet.open{transform:none}
+.grab{width:40px;height:4px;border-radius:4px;background:#3C4039;align-self:center}
+.ex{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#23261F;border-radius:14px;overflow:hidden}
+.ex>div{background:#181A16;padding:10px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.ex span{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A9A498}
+.ex b{font-family:'DM Mono',monospace;font-weight:500;font-size:13px;color:#EDE8DF;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ex .w2{grid-column:span 2}
+.closed-ui{transition:opacity .3s}
+.closed-ui.hide{opacity:0;pointer-events:none}
+</style>
+<style>
+html,body{background:#0B0C0A}
+body{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}
+.s{width:100% !important;max-width:480px;margin:0 auto;min-height:100vh !important}
+.nav{padding-bottom:calc(8px + env(safe-area-inset-bottom)) !important}
+button[aria-label^="Search"],button[aria-label="Settings"]{display:none !important}
+a,button{touch-action:manipulation}
+</style>
+<link rel="stylesheet" href="site.css">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<template id="tpl">
+<div class="s {{shutCls}}" style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #0B0C0A; color: #EDE8DF; font-family: Barlow, 'Helvetica Neue', sans-serif">
+<div class="pf t2 {{pfCls}}">
+<img class="pi" src="assets/img/adc1d489dde3cf95ed0b33211adf814b.jpg" alt="Tern diving at a darter holding a fish" style="object-position: 50% 50%">
+<div class="sc"></div>
+</div>
+<div class="bar a"></div><div class="bar b"></div>
+
+<sc-if value="{{open}}" hint-placeholder-val="{{ false }}">
+<div class="callout" style="left: 172px; top: 318px"><i></i>TERN COMMITS TO THE DIVE</div>
+<div class="callout" style="left: 32px; top: 166px"><i></i>1/1600 FREEZES BOTH BIRDS</div>
+<div class="callout" style="left: 24px; top: 486px"><i></i>DARTER SURFACES FIRST</div>
+</sc-if>
+
+<div style="position: absolute; left: 20px; right: 20px; top: 22px; display: flex; justify-content: space-between; z-index: 12">
+<sc-if value="{{open}}" hint-placeholder-val="{{ false }}">
+<button class="ib" type="button" onClick="{{toggle}}" aria-label="Back to photo"><svg class="ic" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+</sc-if>
+<sc-if value="{{closed}}" hint-placeholder-val="{{ true }}">
+<a class="ib" href="Home.html" aria-label="Close"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></a>
+</sc-if>
+<button class="ib" type="button" aria-label="Save breakdown"><svg class="ic" viewBox="0 0 24 24"><path d="M6.5 3.5h11v17l-5.5-4-5.5 4z"/></svg></button>
+</div>
+
+<div class="closed-ui {{uiCls}}" style="position: absolute; left: 20px; right: 20px; bottom: 40px; display: flex; flex-direction: column; gap: 14px; z-index: 5">
+<span class="k kg">Shot of the week · Week 40</span>
+<h1 style="margin: 0; font-family: Newsreader, Georgia, serif; font-weight: 400; font-size: 44px; line-height: 1">Tern vs Darter</h1>
+<span style="font-family: 'DM Mono', monospace; font-size: 13px; color: #CFC9BD">1/1600s · f/7.1 · ISO 250 · 400mm</span>
+<button class="btn bp" type="button" onClick="{{toggle}}" style="margin-top: 6px">How I shot this</button>
+</div>
+
+<div class="sheet {{sheetCls}}" role="dialog" aria-label="Shot breakdown">
+<div class="grab"></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span class="k kg">How I shot this</span><span style="font-family: 'DM Mono', monospace; font-size: 11px; color: #8E8A80">1 / 6</span></div>
+<div class="ex">
+<div class="w2"><span>DATE</span><b>6 Feb 2022 · 11:36</b></div>
+<div class="w2"><span>SPECIES</span><b>Tern + Oriental darter</b></div>
+<div class="w2"><span>CAMERA</span><b>Canon EOS M50</b></div>
+<div class="w2"><span>LENS</span><b>EF 100-400mm L</b></div>
+<div><span>SHUTTER</span><b>1/1600</b></div>
+<div><span>APERTURE</span><b>f/7.1</b></div>
+<div><span>ISO</span><b>250</b></div>
+<div><span>FOCAL</span><b>400mm</b></div>
+</div>
+<p style="margin: 0; font-family: Newsreader, Georgia, serif; font-style: italic; font-size: 17px; line-height: 1.45; color: #E4DED3">“The darter had already surfaced with the fish before the tern committed to the dive.”</p>
+<a class="btn bp" href="ShotBreakdown.html" style="margin-top: auto">Story, light + what I’d change →</a>
+</div>
+</div>
+</template>
+<div id="app"></div>
+<script src="dc-lite.js?v=1.0.0"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { open: null, shut: false };
+  }
+  renderVals() {
+    const open = this.state.open === null ? !!this.props.showBreakdown : this.state.open;
+    return {
+      open: open,
+      closed: !open,
+      pfCls: open ? 'open' : '',
+      sheetCls: open ? 'open' : '',
+      uiCls: open ? 'hide' : '',
+      shutCls: this.state.shut ? 'shut' : '',
+      toggle: () => {
+        this.setState({ open: !open, shut: false });
+        setTimeout(() => this.setState({ shut: true }), 0);
+      }
+    };
+  }
+}
+
+DC.mount(Component, {"showBreakdown": false}, null);
+</script>
+<script src="app.js?v=1.0.0"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0E0F0D">
+<title>Learn · The Natural Angle</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+.pi{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;display:block}
+body{margin:0;background:#0B0C0A}
+a{color:#C9A45C;text-decoration:none}a:hover{color:#E2C68C}
+.s{width:390px;min-height:844px;background:#0E0F0D;color:#EDE8DF;font-family:Barlow,'Helvetica Neue',Helvetica,sans-serif;font-size:15px;line-height:1.45;display:flex;flex-direction:column;position:relative;overflow:hidden;-webkit-font-smoothing:antialiased}
+.s *{box-sizing:border-box}
+.k{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#A9A498;margin:0}
+.kg{color:#C9A45C}
+.d1{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:36px;line-height:1.04;letter-spacing:-.015em;margin:0}
+.d2{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:28px;line-height:1.1;letter-spacing:-.01em;margin:0}
+.d3{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:21px;line-height:1.2;margin:0}
+.h3{font-size:16px;font-weight:600;line-height:1.3;margin:0;color:#EDE8DF}
+.h4{font-size:14px;font-weight:600;line-height:1.3;margin:0;color:#EDE8DF}
+.sm{font-size:13px;line-height:1.4}
+.mut{color:#A9A498}
+.m{font-family:'DM Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.02em}
+.ph{position:relative;overflow:hidden;background:#1B1E19;flex:none;display:block}
+.t1{background:radial-gradient(130% 95% at 68% 32%,#4E6040 0%,#29331F 46%,#121510 100%)}
+.t2{background:radial-gradient(130% 95% at 32% 38%,#9A7442 0%,#523E23 44%,#17130D 100%)}
+.t3{background:radial-gradient(130% 95% at 60% 26%,#566A70 0%,#2B363A 48%,#101315 100%)}
+.t4{background:radial-gradient(130% 95% at 48% 42%,#857447 0%,#433D27 48%,#151410 100%)}
+.t5{background:radial-gradient(130% 95% at 40% 30%,#7A4A32 0%,#3E2A1E 46%,#140F0C 100%)}
+.t6{background:radial-gradient(130% 95% at 50% 30%,#3D4A44 0%,#222A26 50%,#0F1211 100%)}
+.pl{position:absolute;left:12px;top:12px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(237,232,223,.75);z-index:2}
+.vf::before{content:'';position:absolute;inset:16px;pointer-events:none;opacity:.5;z-index:1;background:linear-gradient(#EDE8DF,#EDE8DF) 0 0/16px 1px no-repeat,linear-gradient(#EDE8DF,#EDE8DF) 0 0/1px 16px no-repeat,linear-gradient(#EDE8DF,#EDE8DF) 100% 0/16px 1px no-repeat,linear-gradient(#EDE8DF,#EDE8DF) 100% 0/1px 16px no-repeat,linear-gradient(#EDE8DF,#EDE8DF) 0 100%/16px 1px no-repeat,linear-gradient(#EDE8DF,#EDE8DF) 0 100%/1px 16px no-repeat,linear-gradient(#EDE8DF,#EDE8DF) 100% 100%/16px 1px no-repeat,linear-gradient(#EDE8DF,#EDE8DF) 100% 100%/1px 16px no-repeat}
+.af::after{content:'';position:absolute;left:58%;top:40%;width:40px;height:40px;margin:-20px 0 0 -20px;border:1.5px solid #C9A45C;border-radius:3px;pointer-events:none;z-index:1}
+.scb{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,15,13,0) 40%,rgba(14,15,13,.92) 100%);pointer-events:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border-radius:12px;border:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;text-decoration:none;white-space:nowrap}
+.bp{background:#C9A45C;color:#15120B}.bp:hover{background:#D6B46E;color:#15120B}
+.bw{width:100%}
+.bd{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:rgba(14,15,13,.75);color:#EDE8DF;white-space:nowrap}
+.bdl{background:transparent;box-shadow:inset 0 0 0 1px #3C4039;color:#A9A498}
+.card{display:block;background:#161815;border-radius:16px;overflow:hidden;color:#EDE8DF;box-shadow:inset 0 0 0 1px rgba(237,232,223,.05),0 14px 32px rgba(0,0,0,.35)}
+a.card:hover{color:#EDE8DF;background:#1A1C18}
+.sec{padding:0 20px;display:flex;flex-direction:column;gap:14px}
+.sh{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.more{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;color:#C9A45C;min-height:44px;display:inline-flex;align-items:center;white-space:nowrap}
+.hs{display:flex;gap:12px;overflow-x:auto;padding:0 20px;scrollbar-width:none}
+.hs::-webkit-scrollbar{display:none}
+.ib{width:44px;height:44px;flex:none;border-radius:999px;border:0;display:inline-flex;align-items:center;justify-content:center;background:#161815;color:#EDE8DF;cursor:pointer}
+.ib:hover{color:#EDE8DF;background:#1F221E}
+.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.top{padding:26px 20px 4px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.ttl{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:30px;letter-spacing:.12em;margin:0}
+.ex{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#23261F;border-radius:12px;overflow:hidden}
+.ex>div{background:#141613;padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.ex b{font-family:'DM Mono',monospace;font-weight:500;font-size:13px;color:#EDE8DF}
+.pg{height:3px;border-radius:3px;background:#2C302A;overflow:hidden}.pg i{display:block;height:3px;border-radius:3px;background:#6E9A7C}
+.trk{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:60px;padding:0 14px;border-radius:12px;background:#161815;box-shadow:inset 0 0 0 1px #23261F;color:#EDE8DF;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.12em}
+.trk:hover{color:#EDE8DF;background:#1A1C18}
+.trk span{font-family:'DM Mono',monospace;font-weight:400;font-size:11px;letter-spacing:0;color:#8E8A80}
+.trk.beg{box-shadow:inset 0 0 0 1px #C9A45C}
+.lc{display:flex;gap:14px;align-items:center;padding:12px;color:#EDE8DF}
+.nav{margin-top:auto;position:sticky;bottom:0;z-index:5;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:6px 6px 30px;background:rgba(11,12,10,.97);border-top:1px solid #20231E}
+.nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:54px;color:#85817A;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.16em}
+.nav a:hover{color:#EDE8DF}
+.nav a.on{color:#EDE8DF}.nav a.on .ic{stroke:#C9A45C}
+</style>
+<style>
+html,body{background:#0B0C0A}
+body{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}
+.s{width:100% !important;max-width:480px;margin:0 auto;min-height:100vh !important}
+.nav{padding-bottom:calc(8px + env(safe-area-inset-bottom)) !important}
+button[aria-label^="Search"],button[aria-label="Settings"]{display:none !important}
+a,button{touch-action:manipulation}
+</style>
+<link rel="stylesheet" href="site.css">
+<meta name="robots" content="noindex">
+</head>
+<body>
+
+<div class="s" style="width: 390px; min-height: 2665px; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div class="top">
+<h1 class="ttl">LEARN</h1>
+<div style="display: flex; gap: 8px">
+<button class="ib" type="button" aria-label="Search lessons"><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></button>
+<a class="ib" href="Profile.html" aria-label="My Natural Angle"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20.5c1.4-3.6 4.2-5.5 7.5-5.5s6.1 1.9 7.5 5.5"/></svg></a>
+</div>
+</div>
+<div class="sec" style="gap: 6px">
+<h2 class="d1">Learn wildlife photography</h2>
+<p class="mut" style="margin: 0; font-family: Newsreader, Georgia, serif; font-style: italic; font-size: 18px">Practical lessons from the field.</p>
+</div>
+</div>
+
+<section class="sec">
+<a class="card" href="https://www.instagram.com/thenaturalangle/" style="padding: 18px; display: flex; flex-direction: column; gap: 14px; background: #161815">
+<div style="display: flex; gap: 12px; align-items: center">
+<div style="width: 52px; height: 52px; border-radius: 99px; overflow: hidden; position: relative; flex: none; box-shadow: inset 0 0 0 1.5px #C9A45C"><img class="pi" src="assets/img/deaf0ee2daaf7dd8e289d1bdbea87139.jpg" alt="Hitesh Chawla, Instagram profile photo" style="object-position: 50% 30%"></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><span class="h4">@thenaturalangle</span><span class="sm mut">Daily wildlife and photo tips</span></div>
+</div>
+<span class="d3">Swipe-to-learn carousels</span>
+<span class="sm" style="color: #CFC9BD">Settings, fieldcraft and composition, one slide at a time. Made to be read, saved and used on your next safari.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 6px"><span class="bd bdl">Camera settings</span><span class="bd bdl">Fieldcraft</span><span class="bd bdl">Composition</span><span class="bd bdl">Birds</span><span class="bd bdl">Editing</span></div>
+<span class="btn bp bw">Read on Instagram ↗</span>
+</a>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 14px">
+<div class="sec" style="gap: 6px">
+<div class="sh"><h2 class="k kg">The series</h2><span class="bd bdl">Save these</span></div>
+<span class="d2">Wait. Watch. Shoot.</span>
+<p class="sm mut" style="margin: 0">My field routine as three checklists. Also in the Safari Toolkit, tickable and offline.</p>
+</div>
+<div class="hs" id="tnaFeedCarousels">
+<a class="card" href="https://www.instagram.com/thenaturalangle/" style="width: 210px; flex: none"><div class="ph" style="height: 210px"><img class="pi" src="assets/img/93e8dc15f7d76910f2a3f03296e26975.jpg" alt="Carousel slide: The WAIT checklist"></div><div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 3px"><span class="k kg" style="font-size: 11px">Part 1</span><span class="h4">Run it before every sighting</span><span class="sm mut">Read on Instagram ↗</span></div></a>
+<a class="card" href="https://www.instagram.com/thenaturalangle/" style="width: 210px; flex: none"><div class="ph" style="height: 210px"><img class="pi" src="assets/img/af3a61f550dae068aa0a8d0df3531a69.jpg" alt="Carousel slide: The WATCH checklist"></div><div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 3px"><span class="k kg" style="font-size: 11px">Part 2</span><span class="h4">Read it before you raise the camera</span><span class="sm mut">Read on Instagram ↗</span></div></a>
+<a class="card" href="https://www.instagram.com/thenaturalangle/" style="width: 210px; flex: none"><div class="ph" style="height: 210px"><img class="pi" src="assets/img/cbf9ca22264a454351ee52c3600c36c9.jpg" alt="Carousel slide: The SHOOT checklist"></div><div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 3px"><span class="k kg" style="font-size: 11px">Part 3</span><span class="h4">Run it the moment the action starts</span><span class="sm mut">Read on Instagram ↗</span></div></a>
+</div>
+</section>
+
+<section class="sec">
+<a class="card" href="https://www.instagram.com/thenaturalangle/">
+<div class="ph" style="height: 300px"><img class="pi" src="assets/img/ea094febf2f83025f98beeac3a4c7cb6.jpg" alt="Nilgai walking down a forest track under a tree canopy" style="object-position: 50% 50%"><div class="scb"></div>
+<div style="position: absolute; left: 18px; right: 18px; bottom: 16px; display: flex; flex-direction: column; gap: 4px; z-index: 2"><span class="k kg" style="font-size: 11px">Composition · 6 slides</span><span class="d2">Zoom out. See the context.</span></div>
+</div>
+<div style="padding: 14px; display: flex; justify-content: space-between; align-items: center; gap: 12px"><span class="sm mut">Sometimes the wider frame says more.</span><span class="more">READ ↗</span></div>
+</a>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 14px">
+<div class="sec">
+<div class="sh"><h2 class="k kg">How I shot this</h2><span class="bd bdl">5 breakdowns</span></div>
+<p class="sm mut" style="margin: 0">One photograph, taken apart: the settings, the light and the wait.</p>
+</div>
+<div class="sec">
+<a class="card" href="HowIShotThis.html">
+<div class="ph t2 vf" style="height: 330px"><img class="pi" src="assets/img/adc1d489dde3cf95ed0b33211adf814b.jpg" alt="Tern diving at a darter holding a fish" style="object-position: 50% 45%"><div class="scb"></div>
+<div style="position: absolute; left: 18px; right: 18px; bottom: 16px; display: flex; flex-direction: column; gap: 4px; z-index: 2"><span class="k kg" style="font-size: 11px">Shot of the week</span><span class="d2">Tern vs Darter</span></div>
+</div>
+<div style="padding: 14px; display: flex; flex-direction: column; gap: 12px">
+<div class="ex"><div><span class="k" style="font-size: 10px">Shutter</span><b>1/1600</b></div><div><span class="k" style="font-size: 10px">Aperture</span><b>f/7.1</b></div><div><span class="k" style="font-size: 10px">ISO</span><b>250</b></div></div>
+<span class="btn bp bw">Open breakdown →</span>
+</div>
+</a>
+</div>
+<div class="hs">
+<a class="card" href="ShotBreakdownTigress.html" style="width: 150px; flex: none"><div class="ph t3" style="height: 180px"><img class="pi" src="assets/img/373363fb4bbab9b7e00d124b61512afe.jpg" alt="Tigress mid-yawn in Panna" style="object-position: 40% 50%"><div class="scb"></div><span class="h4" style="position: absolute; left: 12px; right: 12px; bottom: 10px">The yawn before the walk</span></div></a>
+<a class="card" href="ShotBreakdownCover.html" style="width: 150px; flex: none"><div class="ph t3" style="height: 180px"><img class="pi" src="assets/img/0dcb0097ebf57d56932aad2cf5b61830.jpg" alt="Tiger face framed by dark branches" style="object-position: 50% 40%"><div class="scb"></div><span class="h4" style="position: absolute; left: 12px; right: 12px; bottom: 10px">Eyes through the branches</span></div></a>
+<a class="card" href="ShotBreakdownJackal.html" style="width: 150px; flex: none"><div class="ph t3" style="height: 180px"><img class="pi" src="assets/img/aa3db2bdcefb21cf5e3fed839b1904fe.jpg" alt="Jackal in a tunnel of trees" style="object-position: 30% 55%"><div class="scb"></div><span class="h4" style="position: absolute; left: 12px; right: 12px; bottom: 10px">Jackal in the tunnel</span></div></a>
+<a class="card" href="ShotBreakdownKingfisher.html" style="width: 150px; flex: none"><div class="ph t3" style="height: 180px"><img class="pi" src="assets/img/26d791c05f28471ebbb75e944de4fa5b.jpg" alt="Common kingfisher on a dark perch in low light" style="object-position: 50% 40%"><div class="scb"></div><span class="h4" style="position: absolute; left: 12px; right: 12px; bottom: 10px">Kingfisher at last light</span></div></a>
+</div>
+</section>
+
+<section class="sec">
+<div class="sh"><h2 class="k kg">Field tools</h2></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<a class="card" href="CameraSettings.html" style="padding: 16px; display: flex; flex-direction: column; gap: 10px; min-height: 150px">
+<svg class="ic" style="color: #C9A45C; width: 26px; height: 26px" viewBox="0 0 24 24"><path d="M4 8h3.5L9 5.5h6L16.5 8H20v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
+<span class="h4">Camera Settings tool</span><span class="sm mut">Subject + light + action → a starting point.</span>
+</a>
+<a class="card" href="SafariToolkit.html" style="padding: 16px; display: flex; flex-direction: column; gap: 10px; min-height: 150px">
+<svg class="ic" style="color: #C9A45C; width: 26px; height: 26px" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/><rect x="3" y="3" width="18" height="18" rx="4"/></svg>
+<span class="h4">Safari Toolkit</span><span class="sm mut">Checklists that work with no signal.</span>
+</a>
+</div>
+<a class="card lc" href="Resources.html">
+<svg class="ic" style="color: #C9A45C; margin-left: 4px" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+<div style="display: flex; flex-direction: column; gap: 2px; flex: 1"><span class="h4">Free field guides</span><span class="sm mut">One lesson each, from real sightings</span></div>
+<span class="m" style="color: #C9A45C; padding-right: 4px">14 →</span>
+</a>
+</section>
+
+<div style="height: 8px"></div>
+<nav class="nav" aria-label="Main">
+<a href="Home.html"><svg class="ic" viewBox="0 0 24 24"><path d="M3.5 10.5 12 3.5l8.5 7V20.5h-5.5v-6h-6v6H3.5z"/></svg>HOME</a>
+<a href="Watch.html"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10.5 9.5v5l4-2.5z"/></svg>WATCH</a>
+<a href="Learn.html" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 8.2l3.3 1.9v3.8L12 15.8l-3.3-1.9v-3.8z"/></svg>LEARN</a>
+<a href="Tours.html"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>TOURS</a>
+<a href="Shop.html"><svg class="ic" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12.5H6.2z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>SHOP</a>
+</nav>
+</div>
+
+<script src="app.js?v=1.0.0"></script>
+</body>
+</html>

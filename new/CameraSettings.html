@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0E0F0D">
+<title>Camera Settings tool · The Natural Angle</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0C0A}
+a{color:#C9A45C;text-decoration:none}a:hover{color:#E2C68C}
+.s{width:390px;min-height:844px;background:#0E0F0D;color:#EDE8DF;font-family:Barlow,'Helvetica Neue',Helvetica,sans-serif;font-size:15px;line-height:1.45;display:flex;flex-direction:column;position:relative;overflow:hidden;-webkit-font-smoothing:antialiased}
+.s *{box-sizing:border-box}
+.k{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#A9A498;margin:0}
+.kg{color:#C9A45C}
+.d1{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:34px;line-height:1.05;letter-spacing:-.015em;margin:0}
+.sm{font-size:13px;line-height:1.45}
+.mut{color:#A9A498}
+.m{font-family:'DM Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.02em}
+.bd{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.bdl{background:transparent;box-shadow:inset 0 0 0 1px #3C4039;color:#A9A498}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border-radius:12px;border:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;text-decoration:none;white-space:nowrap}
+.bs{background:transparent;color:#EDE8DF;box-shadow:inset 0 0 0 1px #3C4039}.bs:hover{color:#EDE8DF;box-shadow:inset 0 0 0 1px #6B6F66}
+.sec{padding:0 20px;display:flex;flex-direction:column;gap:12px}
+.ib{width:44px;height:44px;flex:none;border-radius:999px;border:0;display:inline-flex;align-items:center;justify-content:center;background:#161815;color:#EDE8DF;cursor:pointer}
+.ib:hover{color:#EDE8DF;background:#1F221E}
+.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.opt{min-height:48px;border:0;border-radius:12px;background:#161815;box-shadow:inset 0 0 0 1px #2C302A;color:#D8D2C6;font-family:Barlow,sans-serif;font-size:14px;font-weight:500;cursor:pointer;padding:0 12px}
+.opt:hover{color:#EDE8DF;box-shadow:inset 0 0 0 1px #5B5F56}
+.opt.on{background:#EDE8DF;color:#0E0F0D;box-shadow:none}
+.o3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.res{background:#141613;border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:14px;box-shadow:inset 0 0 0 1px #C9A45C}
+.big{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#262922;border-radius:14px;overflow:hidden}
+.big>div{background:#181A16;padding:14px 10px;display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center}
+.big b{font-family:'DM Mono',monospace;font-weight:500;font-size:16px;line-height:1.25;color:#EDE8DF;animation:tick .4s cubic-bezier(.2,.7,.2,1)}
+@keyframes tick{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ln{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid #23261F}
+.ln b{font-family:'DM Mono',monospace;font-weight:500;font-size:13px;color:#EDE8DF;text-align:right}
+.nav{margin-top:auto;position:sticky;bottom:0;z-index:5;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:6px 6px 30px;background:rgba(11,12,10,.97);border-top:1px solid #20231E}
+.nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:54px;color:#85817A;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.16em}
+.nav a:hover{color:#EDE8DF}
+.nav a.on{color:#EDE8DF}.nav a.on .ic{stroke:#C9A45C}
+</style>
+<style>
+html,body{background:#0B0C0A}
+body{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}
+.s{width:100% !important;max-width:480px;margin:0 auto;min-height:100vh !important}
+.nav{padding-bottom:calc(8px + env(safe-area-inset-bottom)) !important}
+button[aria-label^="Search"],button[aria-label="Settings"]{display:none !important}
+a,button{touch-action:manipulation}
+</style>
+<link rel="stylesheet" href="site.css">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<template id="tpl">
+<div class="s" style="width: 390px; min-height: 1560px; gap: 24px">
+<div style="padding: 26px 20px 0; display: flex; justify-content: space-between; align-items: center">
+<a class="ib" href="Learn.html" aria-label="Back"><svg class="ic" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></a>
+</div>
+<div class="sec" style="gap: 8px">
+<span class="k kg">Camera Settings tool</span>
+<h1 class="d1">What are you pointing at?</h1>
+</div>
+
+<section class="sec">
+<span class="k">Subject</span>
+<div class="opts">
+<sc-for list="{{subjects}}" as="o" hint-placeholder-count="4"><button type="button" class="opt {{o.cls}}" onClick="{{o.pick}}" aria-pressed="{{o.pressed}}">{{o.label}}</button></sc-for>
+</div>
+</section>
+<section class="sec">
+<span class="k">Light</span>
+<div class="opts o3">
+<sc-for list="{{lights}}" as="o" hint-placeholder-count="3"><button type="button" class="opt {{o.cls}}" onClick="{{o.pick}}" aria-pressed="{{o.pressed}}">{{o.label}}</button></sc-for>
+</div>
+</section>
+<section class="sec">
+<span class="k">Action</span>
+<div class="opts">
+<sc-for list="{{actions}}" as="o" hint-placeholder-count="4"><button type="button" class="opt {{o.cls}}" onClick="{{o.pick}}" aria-pressed="{{o.pressed}}">{{o.label}}</button></sc-for>
+</div>
+</section>
+
+<section class="sec">
+<div class="res" aria-live="polite">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span class="k kg">Start here</span><span class="m mut">MANUAL + AUTO ISO</span></div>
+<div class="big" key="{{key}}">
+<div><span class="k" style="font-size: 10px">Shutter</span><b style="font-size: 12px; letter-spacing: -0.03em; white-space: nowrap">{{shutter}}</b></div>
+<div><span class="k" style="font-size: 10px">Aperture</span><b style="font-size: 12px; letter-spacing: -0.03em; white-space: nowrap">{{aperture}}</b></div>
+<div><span class="k" style="font-size: 10px">ISO range</span><b style="font-size: 12px; letter-spacing: -0.03em; white-space: nowrap">{{iso}}</b></div>
+</div>
+<div style="display: flex; flex-direction: column">
+<div class="ln"><span class="k" style="font-size: 11px">AF mode</span><b>{{af}}</b></div>
+<div class="ln"><span class="k" style="font-size: 11px">Drive</span><b>{{drive}}</b></div>
+</div>
+<sc-if value="{{hasTip}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; gap: 10px; padding: 12px; border-radius: 12px; background: #1C1612"><svg class="ic" style="width: 18px; height: 18px; color: #E08A72; margin-top: 2px" viewBox="0 0 24 24"><path d="M12 4 2.5 20h19z"/><path d="M12 10v4M12 17v.01"/></svg><span class="sm" style="color: #CFC9BD">{{tip}}</span></div>
+</sc-if>
+</div>
+<p class="sm mut" style="margin: 0; text-align: center; font-family: Newsreader, Georgia, serif; font-style: italic; font-size: 15px">These are starting points, not fixed rules.</p>
+<p class="sm" style="margin: 0; text-align: center; color: #8E8A80">Built on the settings quick-reference in <a href="BookDetail.html">The Natural Angle</a>, Appendix B.</p>
+<a class="btn bs" href="BookDetail.html">Why these numbers? Appendix B →</a>
+</section>
+
+<div style="height: 8px"></div>
+<nav class="nav" aria-label="Main">
+<a href="Home.html"><svg class="ic" viewBox="0 0 24 24"><path d="M3.5 10.5 12 3.5l8.5 7V20.5h-5.5v-6h-6v6H3.5z"/></svg>HOME</a>
+<a href="Watch.html"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10.5 9.5v5l4-2.5z"/></svg>WATCH</a>
+<a href="Learn.html" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 8.2l3.3 1.9v3.8L12 15.8l-3.3-1.9v-3.8z"/></svg>LEARN</a>
+<a href="Tours.html"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>TOURS</a>
+<a href="Shop.html"><svg class="ic" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12.5H6.2z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>SHOP</a>
+</nav>
+</div>
+</template>
+<div id="app"></div>
+<script src="dc-lite.js?v=1.0.0"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { subject: 'predator', light: 'overcast', action: 'static' };
+  }
+  renderVals() {
+    const st = this.state;
+    const mk = (key, list) => list.map(([id, label]) => ({
+      label,
+      cls: st[key] === id ? 'on' : '',
+      pressed: st[key] === id ? 'true' : 'false',
+      pick: () => this.setState({ [key]: id })
+    }));
+    const T = {
+      static: { bright: ['1/500–1/800', 'f/5.6–8', '200–800'], overcast: ['1/500–1/800', 'Widest', '800–1600'], low: ['1/250–1/500', 'Widest', '1600–6400'] },
+      walking: { bright: ['1/1000–1/1250', 'f/5.6–8', '400–800'], overcast: ['1/1000', 'Widest', '800–1600'], low: ['1/500–1/800', 'Widest', '1600–3200'] },
+      running: { bright: ['1/2000+', 'Widest–f/5.6', '800–3200'], overcast: ['1/2000+', 'Widest', '800–3200'], low: ['1/2000+', 'Widest', '3200+'] },
+      flying: { bright: ['1/2000+', 'f/5.6–8', '400–800'], overcast: ['1/2000+', 'Widest', '800–1600'], low: ['1/2000+', 'Widest', '1600–3200'] }
+    };
+    const act = st.subject === 'bif' ? 'flying' : st.action;
+    const row = T[act][st.light];
+    const shutter = row[0], aperture = row[1], iso = row[2];
+    const moving = st.action !== 'static' || st.subject === 'bif';
+    const af = st.subject === 'bif' || st.action === 'flying' ? 'Servo · Tracking · Animal'
+      : moving ? 'Servo · Zone · Eye detect' : 'Servo · Spot/Zone · Eye detect';
+    const drive = st.action === 'static' && st.subject !== 'bif' ? 'Low-speed burst' : 'Fastest burst';
+    let tip = '';
+    if (st.light === 'low' && moving) tip = 'Fast action in low light: keep the shutter, accept the noise. A sharp noisy frame beats a clean blurred one.';
+    else if (st.subject === 'predator' && st.action === 'static') tip = 'Resting cats move without warning. If the light allows, go faster than the table so you are ready when it stands.';
+    else if (drive === 'Fastest burst') tip = 'Electronic shutter is fastest, but watch for rolling-shutter bend on wings and fast pans.';
+    return {
+      subjects: mk('subject', [['bird', 'Bird'], ['mammal', 'Mammal'], ['predator', 'Predator'], ['bif', 'Bird in flight']]),
+      lights: mk('light', [['bright', 'Bright'], ['overcast', 'Overcast'], ['low', 'Low light']]),
+      actions: mk('action', [['static', 'Static'], ['walking', 'Walking'], ['running', 'Running'], ['flying', 'Flying']]),
+      shutter, aperture, iso, af, drive, tip, hasTip: !!tip,
+      key: st.subject + st.light + st.action
+    };
+  }
+}
+
+DC.mount(Component, {}, null);
+</script>
+<script src="app.js?v=1.0.0"></script>
+</body>
+</html>

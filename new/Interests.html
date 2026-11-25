@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0E0F0D">
+<title>Choose interests · The Natural Angle</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0C0A}
+a{color:#C9A45C;text-decoration:none}a:hover{color:#E2C68C}
+.s *{box-sizing:border-box}
+.t1{background:radial-gradient(130% 95% at 68% 32%,#4E6040 0%,#29331F 46%,#121510 100%)}
+.t2{background:radial-gradient(130% 95% at 32% 38%,#9A7442 0%,#523E23 44%,#17130D 100%)}
+.t3{background:radial-gradient(130% 95% at 60% 26%,#566A70 0%,#2B363A 48%,#101315 100%)}
+.t4{background:radial-gradient(130% 95% at 48% 42%,#857447 0%,#433D27 48%,#151410 100%)}
+.t5{background:radial-gradient(130% 95% at 40% 30%,#7A4A32 0%,#3E2A1E 46%,#140F0C 100%)}
+.t6{background:radial-gradient(130% 95% at 50% 30%,#3D4A44 0%,#222A26 50%,#0F1211 100%)}
+.tile{position:relative;height:118px;border-radius:14px;overflow:hidden;border:0;padding:0;cursor:pointer;text-align:left;color:#EDE8DF;font:inherit;box-shadow:inset 0 0 0 1px rgba(237,232,223,.06)}
+.tile .sc{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,15,13,0) 30%,rgba(14,15,13,.9) 100%)}
+.tile .lb{position:absolute;left:14px;bottom:12px;right:44px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.1em;text-transform:uppercase;line-height:1.1}
+.tile .ck{position:absolute;right:10px;top:10px;width:26px;height:26px;border-radius:99px;box-shadow:inset 0 0 0 1.5px rgba(237,232,223,.6);display:flex;align-items:center;justify-content:center;background:rgba(14,15,13,.35)}
+.tile .ck svg{width:15px;height:15px;fill:none;stroke:#15120B;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:0}
+.tile.on{box-shadow:inset 0 0 0 2px #C9A45C}
+.tile.on .ck{background:#C9A45C;box-shadow:none}
+.tile.on .ck svg{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 22px;border-radius:12px;border:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+.bp{background:#C9A45C;color:#15120B}.bp:hover{background:#D6B46E;color:#15120B}
+.link{min-height:44px;display:inline-flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:.16em;color:#A9A498}
+.link:hover{color:#EDE8DF}
+</style>
+<style>
+html,body{background:#0B0C0A}
+body{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}
+.s{width:100% !important;max-width:480px;margin:0 auto;min-height:100vh !important}
+.nav{padding-bottom:calc(8px + env(safe-area-inset-bottom)) !important}
+button[aria-label^="Search"],button[aria-label="Settings"]{display:none !important}
+a,button{touch-action:manipulation}
+</style>
+<link rel="stylesheet" href="site.css">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<template id="tpl">
+<div class="s" style="width: 390px; height: 844px; box-sizing: border-box; background: #0E0F0D; color: #EDE8DF; font-family: Barlow, 'Helvetica Neue', sans-serif; display: flex; flex-direction: column; padding: 34px 20px 34px; gap: 22px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .18em; color: #C9A45C">OPTIONAL · TAKES 5 SECONDS</span>
+<h1 style="margin: 0; font-family: Newsreader, Georgia, serif; font-weight: 400; font-size: 32px; line-height: 1.08">What do you want to get better at?</h1>
+<p style="margin: 0; font-size: 15px; color: #A9A498">Pick any. Home will lead with these. Change them anytime.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<sc-for list="{{items}}" as="item" hint-placeholder-count="6">
+<button type="button" class="tile {{item.cls}}" onClick="{{item.pick}}" aria-pressed="{{item.pressed}}">
+<span class="sc"></span>
+<span class="lb">{{item.label}}</span>
+<span class="ck"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+</button>
+</sc-for>
+</div>
+<div style="margin-top: auto; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0 0 6px; font-size: 13px; color: #A9A498; text-align: center">{{summary}}</p>
+<a class="btn bp" href="Home.html" style="width: 100%">Continue</a>
+<a class="link" href="Home.html">SKIP FOR NOW</a>
+</div>
+</div>
+</template>
+<div id="app"></div>
+<script src="dc-lite.js?v=1.0.0"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { picked: ['Wildlife Photography', 'Fieldcraft'] };
+  }
+  renderVals() {
+    const all = [
+      { label: 'Wildlife Photography', tone: 't2' },
+      { label: 'Bird Photography', tone: 't3' },
+      { label: 'Safari', tone: 't4' },
+      { label: 'Camera Gear', tone: 't6' },
+      { label: 'Editing', tone: 't5' },
+      { label: 'Fieldcraft', tone: 't1' }
+    ];
+    const picked = this.state.picked;
+    const items = all.map((x) => {
+      const on = picked.indexOf(x.label) > -1;
+      return {
+        label: x.label,
+        cls: x.tone + (on ? ' on' : ''),
+        pressed: on ? 'true' : 'false',
+        pick: () => this.setState({ picked: on ? picked.filter((p) => p !== x.label) : picked.concat([x.label]) })
+      };
+    });
+    const summary = picked.length ? 'Home will lead with ' + picked.join(', ') + '.' : 'Nothing picked: you’ll get the full Home.';
+    return { items, summary };
+  }
+}
+
+DC.mount(Component, {}, "tna_interests");
+</script>
+<script src="app.js?v=1.0.0"></script>
+</body>
+</html>

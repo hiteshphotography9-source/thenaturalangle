@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0E0F0D">
+<title>Shop · The Natural Angle</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+.pi{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;display:block}
+body{margin:0;background:#0B0C0A}
+a{color:#C9A45C;text-decoration:none}a:hover{color:#E2C68C}
+.s{width:390px;min-height:844px;background:#0E0F0D;color:#EDE8DF;font-family:Barlow,'Helvetica Neue',Helvetica,sans-serif;font-size:15px;line-height:1.45;display:flex;flex-direction:column;position:relative;overflow:hidden;-webkit-font-smoothing:antialiased}
+.s *{box-sizing:border-box}
+.k{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#A9A498;margin:0}
+.kg{color:#C9A45C}
+.d1{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:36px;line-height:1.04;letter-spacing:-.015em;margin:0}
+.h4{font-size:15px;font-weight:600;line-height:1.3;margin:0;color:#EDE8DF}
+.sm{font-size:13px;line-height:1.4}
+.mut{color:#A9A498}
+.m{font-family:'DM Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.02em}
+.ph{position:relative;overflow:hidden;background:#1B1E19;flex:none;display:block}
+.t2{background:radial-gradient(130% 95% at 32% 38%,#9A7442 0%,#523E23 44%,#17130D 100%)}
+.t3{background:radial-gradient(130% 95% at 60% 26%,#566A70 0%,#2B363A 48%,#101315 100%)}
+.t5{background:radial-gradient(130% 95% at 40% 30%,#7A4A32 0%,#3E2A1E 46%,#140F0C 100%)}
+.prod{background:#1A1C18;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;color:#8E8A80;text-transform:uppercase;text-align:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;border-radius:12px;border:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;text-decoration:none;white-space:nowrap}
+.bp{background:#C9A45C;color:#15120B}.bp:hover{background:#D6B46E;color:#15120B}
+.bs{background:transparent;color:#EDE8DF;box-shadow:inset 0 0 0 1px #3C4039}.bs:hover{color:#EDE8DF;box-shadow:inset 0 0 0 1px #6B6F66}
+.chip{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:999px;border:0;font-family:Barlow,sans-serif;font-size:13px;font-weight:500;color:#D8D2C6;background:#181A16;box-shadow:inset 0 0 0 1px #2C302A;white-space:nowrap;cursor:pointer;flex:none}
+.chip.on{background:#EDE8DF;color:#0E0F0D;box-shadow:none}
+.bd{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.bdl{background:transparent;box-shadow:inset 0 0 0 1px #3C4039;color:#A9A498}
+.bdg{background:#C9A45C;color:#15120B}
+.card{display:block;background:#161815;border-radius:16px;overflow:hidden;color:#EDE8DF;box-shadow:inset 0 0 0 1px rgba(237,232,223,.05),0 14px 32px rgba(0,0,0,.35)}
+a.card:hover{color:#EDE8DF;background:#1A1C18}
+.sec{padding:0 20px;display:flex;flex-direction:column;gap:14px}
+.ib{width:44px;height:44px;flex:none;border-radius:999px;border:0;display:inline-flex;align-items:center;justify-content:center;background:#161815;color:#EDE8DF;cursor:pointer}
+.ib:hover{color:#EDE8DF;background:#1F221E}
+.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.top{padding:26px 20px 4px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.ttl{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:30px;letter-spacing:.12em;margin:0}
+.seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:4px;border-radius:14px;background:#161815;box-shadow:inset 0 0 0 1px #23261F}
+.seg button{min-height:44px;border:0;border-radius:10px;background:transparent;color:#A9A498;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:.12em;cursor:pointer;line-height:1.1;padding:0 4px}
+.seg button:hover{color:#EDE8DF}
+.seg button.on{background:#EDE8DF;color:#0E0F0D}
+.gi{display:flex;gap:14px;padding:12px;color:#EDE8DF}
+.nav{margin-top:auto;position:sticky;bottom:0;z-index:5;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:6px 6px 30px;background:rgba(11,12,10,.97);border-top:1px solid #20231E}
+.nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:54px;color:#85817A;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.16em}
+.nav a:hover{color:#EDE8DF}
+.nav a.on{color:#EDE8DF}.nav a.on .ic{stroke:#C9A45C}
+</style>
+<style>
+html,body{background:#0B0C0A}
+body{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}
+.s{width:100% !important;max-width:480px;margin:0 auto;min-height:100vh !important}
+.nav{padding-bottom:calc(8px + env(safe-area-inset-bottom)) !important}
+button[aria-label^="Search"],button[aria-label="Settings"]{display:none !important}
+a,button{touch-action:manipulation}
+</style>
+<link rel="stylesheet" href="site.css">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<template id="tpl">
+<div class="s" style="width: 390px; min-height: 1050px; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div class="top">
+<h1 class="ttl">SHOP</h1>
+<a class="ib" href="Profile.html" aria-label="My Natural Angle"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20.5c1.4-3.6 4.2-5.5 7.5-5.5s6.1 1.9 7.5 5.5"/></svg></a>
+</div>
+<div class="sec" style="gap: 8px">
+<h2 class="d1">Kit I trust.<br>Books I wrote.</h2>
+<p class="mut" style="margin: 0">Only gear I’ve carried into the field, with the honest cons.</p>
+</div>
+</div>
+
+<div class="sec">
+<div class="seg" role="tablist">
+<button type="button" role="tab" class="{{c1}}" onClick="{{go1}}">BOOKS</button>
+<button type="button" role="tab" class="{{c2}}" onClick="{{go2}}">CAMERA GEAR</button>
+<button type="button" role="tab" class="{{c3}}" onClick="{{go3}}">FIELD GEAR</button>
+<button type="button" role="tab" class="{{c4}}" onClick="{{go4}}">DIGITAL</button>
+</div>
+</div>
+
+<sc-if value="{{isBooks}}" hint-placeholder-val="{{ false }}">
+<section class="sec">
+<a class="card gi" href="BookDetail.html"><div class="ph" style="width: 92px; height: 119px; border-radius: 4px; background: #fff"><img class="pi" src="assets/img/ab9bec5e51d45fd7c7ff00fed81cdf2a.jpg" alt="Cover of The Natural Angle: Mastering Wildlife Photography from Panna to the Himalayas"></div><div style="display: flex; flex-direction: column; gap: 6px; min-width: 0"><span class="bd bdg" style="align-self: flex-start">New</span><span class="h4">The Natural Angle: Mastering Wildlife Photography</span><span class="sm mut">Kindle · Paperback · Google Play</span><span class="k kg">Read free chapter →</span></div></a>
+<div class="card gi" aria-label="Coming soon"><div class="prod" style="width: 92px; height: 119px; border-radius: 4px"><svg class="ic" style="width:34px;height:34px;color:#C9A45C;stroke-width:1.4" viewBox="0 0 24 24"><path d="M5 4.5h11.5a2 2 0 0 1 2 2V20H7a2 2 0 0 1-2-2z"/><path d="M5 18a2 2 0 0 1 2-2h11.5"/></svg></div><div style="display: flex; flex-direction: column; gap: 6px; min-width: 0"><span class="bd bdl" style="align-self: flex-start">Coming soon</span><span class="h4">The Untold Jungle Tales</span><span class="sm mut">My next book. Stories from the field.</span></div></div>
+</section>
+</sc-if>
+
+<sc-if value="{{isCam}}" hint-placeholder-val="{{ true }}">
+<section style="display: flex; flex-direction: column; gap: 14px">
+<div class="sec">
+<a class="card gi" href="https://www.amazon.in/shop/thenaturalangle?ref=ac_inf_tb_vh"><div class="prod" style="width: 104px; height: 104px; border-radius: 10px"><svg class="ic" style="width:34px;height:34px;color:#C9A45C;stroke-width:1.4" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="3"/><circle cx="12" cy="13" r="3.4"/><path d="M8.5 7l1.2-2.5h4.6L15.5 7"/></svg></div><div style="display: flex; flex-direction: column; gap: 5px; min-width: 0; flex: 1"><div style="display: flex; justify-content: space-between; gap: 8px"><span class="k" style="font-size: 10px">Camera</span><span class="bd bdl">In my bag</span></div><span class="h4">Canon EOS R7</span><span class="sm mut"><b style="color: #CFC9BD; font-weight: 600">Why I use it:</b> crop reach and Animal Eye AF that holds through grass.</span><span class="k kg">View gear →</span></div></a>
+<a class="card gi" href="ProductDetail.html"><div class="prod" style="width: 104px; height: 104px; border-radius: 10px"><svg class="ic" style="width:34px;height:34px;color:#C9A45C;stroke-width:1.4" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1.2"/></svg></div><div style="display: flex; flex-direction: column; gap: 5px; min-width: 0; flex: 1"><div style="display: flex; justify-content: space-between; gap: 8px"><span class="k" style="font-size: 10px">Lenses</span><span class="bd bdl">In my bag</span></div><span class="h4">Canon RF 100-400mm</span><span class="sm mut"><b style="color: #CFC9BD; font-weight: 600">Why I use it:</b> hand-holdable all day, sharp enough at 400.</span><span class="k kg">View gear →</span></div></a>
+<div style="display: flex; gap: 12px; padding: 14px 16px; border-radius: 14px; background: #121411; box-shadow: inset 0 0 0 1px #23261F"><span class="k" style="font-size: 10px; flex: none; padding-top: 2px">Previous kit</span><span class="sm mut">Canon EOS M50 + EF 100-400mm f/4.5-5.6L. The tern, kingfisher and heron frames in the app were shot on it.</span></div>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{isField}}" hint-placeholder-val="{{ false }}">
+<section class="sec">
+<a class="card gi" href="https://www.amazon.in/shop/thenaturalangle?ref=ac_inf_tb_vh"><div class="prod" style="width: 104px; height: 104px; border-radius: 10px"><svg class="ic" style="width:34px;height:34px;color:#C9A45C;stroke-width:1.4" viewBox="0 0 24 24"><path d="M5 17c0-5 2-9 7-9s7 4 7 9z"/><path d="M4 17h16v2.5H4z"/></svg></div><div style="display: flex; flex-direction: column; gap: 5px; min-width: 0; flex: 1"><span class="k" style="font-size: 10px">Support</span><span class="h4">Beanbag</span><span class="sm mut"><b style="color: #CFC9BD; font-weight: 600">Why I use it:</b> steadier than a monopod on a jeep door.</span><span class="k kg">View gear →</span></div></a>
+<a class="card gi" href="https://www.amazon.in/shop/thenaturalangle?ref=ac_inf_tb_vh"><div class="prod" style="width: 104px; height: 104px; border-radius: 10px"><svg class="ic" style="width:34px;height:34px;color:#C9A45C;stroke-width:1.4" viewBox="0 0 24 24"><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6z"/><path d="M18.5 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg></div><div style="display: flex; flex-direction: column; gap: 5px; min-width: 0; flex: 1"><span class="k" style="font-size: 10px">Cleaning</span><span class="h4">Camera cleaning kit</span><span class="sm mut"><b style="color: #CFC9BD; font-weight: 600">Why I use it:</b> safari tracks put dust on everything.</span><span class="k kg">View gear →</span></div></a>
+</section>
+</sc-if>
+
+<sc-if value="{{isDigital}}" hint-placeholder-val="{{ false }}">
+<section class="sec">
+<a class="card gi" href="guides/g-b75187d4aa4f72.pdf"><div class="prod" style="width: 80px; height: 104px; border-radius: 8px">PDF</div><div style="display: flex; flex-direction: column; gap: 5px; min-width: 0; flex: 1"><span class="bd bdl" style="align-self: flex-start">Free</span><span class="h4">I Used One Lens for 10 Years. Then I Switched.</span><span class="sm mut">EF 100-400 L to RF 100-400: what actually mattered.</span></div></a>
+<a class="card gi" href="guides/g-b3ddd5fe9ae996.pdf"><div class="prod" style="width: 80px; height: 104px; border-radius: 8px">PDF</div><div style="display: flex; flex-direction: column; gap: 5px; min-width: 0; flex: 1"><span class="bd bdl" style="align-self: flex-start">Free</span><span class="h4">Your ₹2 Lakh Camera Won’t Fix This Mistake.</span><span class="sm mut">Four questions to ask before you blame your gear.</span></div></a>
+</section>
+</sc-if>
+
+<section class="sec">
+<div style="display: flex; gap: 12px; padding: 14px 16px; border-radius: 14px; background: #121411; box-shadow: inset 0 0 0 1px #23261F">
+<svg class="ic" style="width: 18px; height: 18px; color: #A9A498; margin-top: 2px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8v.01"/></svg>
+<p style="margin: 0; font-size: 12px; line-height: 1.5; color: #A9A498">Some links may be affiliate links. I may earn a small commission at no additional cost to you. It never decides what I recommend. <a href="https://www.amazon.in/shop/thenaturalangle?ref=ac_inf_tb_vh">See my full Amazon storefront ↗</a></p>
+</div>
+</section>
+
+<div style="height: 8px"></div>
+<nav class="nav" aria-label="Main">
+<a href="Home.html"><svg class="ic" viewBox="0 0 24 24"><path d="M3.5 10.5 12 3.5l8.5 7V20.5h-5.5v-6h-6v6H3.5z"/></svg>HOME</a>
+<a href="Watch.html"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10.5 9.5v5l4-2.5z"/></svg>WATCH</a>
+<a href="Learn.html"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 8.2l3.3 1.9v3.8L12 15.8l-3.3-1.9v-3.8z"/></svg>LEARN</a>
+<a href="Tours.html"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>TOURS</a>
+<a href="Shop.html" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12.5H6.2z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>SHOP</a>
+</nav>
+</div>
+</template>
+<div id="app"></div>
+<script src="dc-lite.js?v=1.0.0"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tab: 2 };
+  }
+  renderVals() {
+    const t = this.state.tab;
+    const set = (n) => () => this.setState({ tab: n });
+    return {
+      isBooks: t === 1, isCam: t === 2, isField: t === 3, isDigital: t === 4,
+      c1: t === 1 ? 'on' : '', c2: t === 2 ? 'on' : '', c3: t === 3 ? 'on' : '', c4: t === 4 ? 'on' : '',
+      go1: set(1), go2: set(2), go3: set(3), go4: set(4)
+    };
+  }
+}
+
+DC.mount(Component, {}, null);
+</script>
+<script src="app.js?v=1.0.0"></script>
+</body>
+</html>

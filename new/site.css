@@ -1,0 +1,16 @@
+/* Website layer on top of the app screens: desktop layout, top navigation. */
+@media (min-width:900px){
+  html,body{background:#0B0C0A}
+  .s{max-width:780px !important;box-shadow:0 0 0 1px #1B1E19}
+  body #tnaNav{top:0 !important;bottom:auto !important;border-top:0 !important;border-bottom:1px solid #20231E !important;padding-bottom:0 !important}
+  body #tnaNav .in{max-width:1000px !important;display:flex !important;justify-content:center;gap:6px;padding:0 12px !important}
+  body #tnaNav a{flex-direction:row !important;min-height:58px !important;padding:0 20px;gap:8px !important;font-size:13px !important}
+  body{padding-top:58px !important;padding-bottom:0 !important}
+  body.tna-cta{padding-bottom:96px !important}
+  .cta{bottom:0 !important;max-width:780px !important}
+  #tnaToast{bottom:40px !important}
+}
+@media (min-width:1280px){ .s{max-width:860px !important} }
+.skip{position:absolute;left:-999px}
+.s [style*="width: 390px"]{width:100% !important}
+@media (min-width:900px){ .s>.ph:first-child,.s>a.ph:first-child{height:560px !important} }
