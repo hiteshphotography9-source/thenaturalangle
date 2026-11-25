@@ -37,7 +37,7 @@ def page(fn, title, desc, active, body, img="assets/img/22789f77a00bc6d5113807b4
 <meta name="theme-color" content="#0E0F0D"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon-192.png">
 {head_links}
 {"".join(TRIPS_LD[1:]) if fn=="Tours.html" else ""}
-<link rel="stylesheet" href="home.css?v=10">
+<link rel="stylesheet" href="home.css?v=11">
 </head><body id="top" class="inner"><div class="prog" aria-hidden="true"></div>
 {h}
 {body}

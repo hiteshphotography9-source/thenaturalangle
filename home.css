@@ -304,3 +304,6 @@ mark.in{background-size:100% 100%;color:var(--ink)}
 .tq figcaption{font-family:var(--lab);font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
 .story{display:flex;flex-direction:column;background:var(--card)}
 .story .sc{position:static;padding:12px 14px 16px;background:none}
+
+@media (min-width:1100px){.sbg{grid-template-columns:repeat(5,1fr)}}
+.sb svg path{stroke:none}.sb[href*="share.google"] svg path,.fso a[href*="share.google"] svg path{fill:var(--c)}
