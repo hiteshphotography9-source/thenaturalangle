@@ -33,3 +33,10 @@
     if(rl&&I.length){rl.innerHTML=I.slice(0,6).map(function(p){return '<a class="rl rv'+(p.thumb?' hasimg':'')+'" href="'+esc(p.permalink)+'">'+(p.thumb?'<img loading="lazy" src="'+esc(p.thumb)+'" alt="">':'')+'<span class="kick">'+(p.type==='VIDEO'?'Reel':'Post')+'</span><b>'+esc(p.caption)+'</b><span class="go">Open on Instagram ↗</span></a>';}).join('');seen(rl);}
   }).catch(function(){});
 })();
+(function(){
+  var pr=document.querySelector('.prog');
+  if(pr)addEventListener('scroll',function(){var h=document.documentElement;pr.style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight||1))+')';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -15% 0px'});
+    document.querySelectorAll('.pugs,.planner').forEach(function(el){io.observe(el);});}
+  else document.querySelectorAll('.pugs,.planner').forEach(function(el){el.classList.add('in');});
+})();
