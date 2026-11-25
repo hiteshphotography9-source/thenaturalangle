@@ -307,3 +307,4 @@ mark.in{background-size:100% 100%;color:var(--ink)}
 
 @media (min-width:1100px){.sbg{grid-template-columns:repeat(5,1fr)}}
 .sb[href*="share.google"] svg path,.fso a[href*="share.google"] svg path{fill:var(--c);stroke:none}
+@media (min-width:1100px){.sbg{grid-template-columns:repeat(5,minmax(0,1fr))}.sbg .sb{grid-template-columns:48px minmax(0,1fr);gap:6px 12px;padding:18px}.sbg .sb svg{width:48px;height:48px;padding:10px;grid-row:1/3}.sbg .sb b{font-size:23px}.sbg .sb small{font-size:14px}.sbg .sb em{grid-column:2;font-size:14px}}
