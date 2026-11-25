@@ -14,3 +14,10 @@
 .skip{position:absolute;left:-999px}
 .s [style*="width: 390px"]{width:100% !important}
 @media (min-width:900px){ .s>.ph:first-child,.s>a.ph:first-child{height:560px !important} }
+#tnaFoot{margin:24px 20px 8px;padding:22px 0 8px;border-top:1px solid #23261F;display:flex;flex-direction:column;gap:14px;font-family:Barlow,sans-serif}
+#tnaFoot .wa{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;border-radius:12px;background:#C9A45C;color:#15120B;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:17px;letter-spacing:.08em;text-decoration:none}
+#tnaFoot .wa .ic{stroke:#15120B}
+#tnaFoot .ln{display:flex;flex-wrap:wrap;gap:6px 18px}
+#tnaFoot .ln a{color:#A9A498;font-size:14px;min-height:32px;display:inline-flex;align-items:center}
+#tnaFoot .ln a:hover{color:#EDE8DF}
+#tnaFoot p{margin:0;color:#6E6B63;font-size:12px}

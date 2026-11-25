@@ -116,8 +116,18 @@
     else copy();
   }
 
+
+  function injectFoot() {
+    if (NOCHROME[base] || document.getElementById('tnaFoot')) return;
+    var host = document.querySelector('.s'); if (!host) return;
+    var f = document.createElement('footer'); f.id = 'tnaFoot';
+    f.innerHTML = '<a class="wa" href="https://wa.me/919899114998?text=' + encodeURIComponent('Hi Hitesh') + '"><svg class="ic" viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8z"/></svg>WhatsApp +91 98991 14998</a>'
+      + '<div class="ln"><a href="https://www.instagram.com/thenaturalangle/">Instagram</a><a href="https://www.youtube.com/@thenaturalangle/videos">YouTube</a><a href="/interiors/">Hotel photography</a><a href="privacy.html">Privacy</a></div>'
+      + '<p>© Hitesh Chawla · The Natural Angle</p>';
+    var nav = host.querySelector('.nav'); if (nav) host.insertBefore(f, nav); else host.appendChild(f);
+  }
   function enhance() {
-    injectNav();
+    injectNav(); injectFoot();
     // External links open outside the app shell.
     document.querySelectorAll('a[href^="http"]').forEach(function (a) {
       if (a.host !== location.host) { a.target = '_blank'; a.rel = 'noopener'; }
@@ -126,7 +136,7 @@
     document.querySelectorAll('a[href*="wa.me/"]').forEach(function (a) {
       if (a.__wa) return; a.__wa = 1;
       var h = a.getAttribute('href');
-      a.setAttribute('href', h.indexOf('?text=') > -1 ? h + '%20(via%20app)' : h.replace(/\?.*$/, '') + '?text=' + encodeURIComponent('Hi Hitesh (via app)'));
+      a.setAttribute('href', h.indexOf('?text=') > -1 ? h + '%20(via%20website)' : h.replace(/\?.*$/, '') + '?text=' + encodeURIComponent('Hi Hitesh (via website)'));
     });
     // Guides download as files in the installed app.
     document.querySelectorAll('a[href$=".pdf"]').forEach(function (a) {
