@@ -166,3 +166,53 @@ mark.in{background-size:100% 100%;color:var(--ink)}
 #amb{bottom:calc(86px + env(safe-area-inset-bottom))!important}@media (min-width:980px){#amb{bottom:24px!important}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.ani{opacity:1;transform:none}.map .rt{stroke-dashoffset:0}mark{background-size:100% 100%;color:var(--ink)}.bird{display:none}}
 .tp b:only-child,.tp b{white-space:nowrap}.tc .tp b{font-size:clamp(22px,2.4vw,28px)}
+/* logo box */
+.logo .lg{flex:none;width:64px;height:50px;border-radius:12px;background:#fff;display:grid;place-items:center;padding:3px 5px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.logo .lg img{width:100%;height:100%;object-fit:contain;border-radius:0;background:none}
+.logo>img{display:none}
+@media (max-width:420px){.logo{font-size:19px}.logo .lg{width:56px;height:44px}}
+/* connect */
+.connect{background:radial-gradient(900px 400px at 80% 0%,#1B2B22,transparent 70%),var(--bg)}
+.sbg{display:grid;gap:14px}@media (min-width:700px){.sbg{grid-template-columns:repeat(2,1fr)}}@media (min-width:1100px){.sbg{grid-template-columns:repeat(4,1fr)}}
+.sb{display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:14px;padding:20px;border-radius:18px;background:var(--card);box-shadow:inset 0 0 0 1px #2A2E26;transition:transform .25s,box-shadow .25s}
+.sb:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 2px var(--c)}
+.sb svg{width:56px;height:56px;padding:12px;border-radius:14px;background:#0E0F0D;fill:none;stroke:var(--c);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sb b{display:block;font-family:var(--disp);font-weight:400;font-size:26px;line-height:1.1}.sb small{color:var(--mut);font-size:16px}
+.sb em{font-style:normal;font-family:var(--lab);font-weight:600;font-size:16px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+/* bigger footer */
+.ft{padding:64px 0 34px}.ft p{font-size:18px}.ft h4{font-family:var(--lab);font-weight:600;font-size:17px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 12px}
+.ft nav a{font-size:19px;padding:8px 0}.ft .logo{font-size:28px}
+.fwa{margin-top:20px}
+.fso{display:flex;gap:12px;margin-top:20px}.fso a{width:54px;height:54px;border-radius:14px;background:#151713;display:grid;place-items:center;box-shadow:inset 0 0 0 1px #2A2E26;transition:transform .2s}
+.fso a:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 2px var(--c)}
+.fso svg{width:28px;height:28px;fill:none;stroke:var(--c);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cp{font-size:16px!important;color:#8E8A80!important}
+/* instagram with thumbs */
+.rl.hasimg{padding:0;overflow:hidden}.rl.hasimg img{width:100%;aspect-ratio:1;object-fit:cover}.rl.hasimg .kick,.rl.hasimg b,.rl.hasimg .go{margin:0 18px}.rl.hasimg .go{margin-bottom:18px}
+/* music prompt */
+#amb.wait{animation:ap 1.6s ease-in-out infinite}@keyframes ap{50%{box-shadow:inset 0 0 0 1px #3C5A46,0 0 0 8px rgba(201,164,92,.25)}}
+/* flip hero so the tiger sits clear of the headline */
+@media (min-width:900px){.hbg{animation-name:kbf}}
+@keyframes kbf{from{transform:scaleX(-1) scale(1.03)}to{transform:scaleX(-1) scale(1.14) translate(1.5%,1%)}}
+@media (min-width:900px){.hbg{object-position:30% 45%}}
+@media (prefers-reduced-motion:reduce) and (min-width:900px){.hbg{transform:scaleX(-1)}}
+
+/* forest sound button */
+#amb{position:fixed;left:14px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:60;display:flex;align-items:center;gap:8px;height:44px;padding:0 14px 0 10px;border:0;border-radius:999px;background:rgba(19,32,26,.92);color:#EDE8DF;box-shadow:inset 0 0 0 1px #3C5A46,0 10px 26px rgba(0,0,0,.45);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:.12em;cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+#amb .eq{display:flex;gap:2px;align-items:flex-end;height:14px}
+#amb .eq i{width:3px;height:4px;background:#C9A45C;border-radius:1px}
+#amb.on .eq i{animation:eq 1s ease-in-out infinite}
+#amb.on .eq i:nth-child(2){animation-delay:.2s}
+#amb.on .eq i:nth-child(3){animation-delay:.4s}
+@keyframes eq{0%,100%{height:4px}50%{height:14px}
+#amb{bottom:24px;left:24px}
+#amb{padding:0;width:44px;justify-content:center}
+#amb .lb{display:none}
+#amb{bottom:calc(92px + env(safe-area-inset-bottom)) !important}
+#amb{bottom:24px !important}
+#amb.wait{animation:ap 1.6s ease-in-out infinite}
+@keyframes ap{50%{box-shadow:inset 0 0 0 1px #3C5A46,0 0 0 8px rgba(201,164,92,.25)}}
+#amb.wait{width:auto;padding:0 14px 0 10px}
+#amb.wait .lb{display:inline}
+#amb .lb{white-space:nowrap}
+#amb{bottom:calc(86px + env(safe-area-inset-bottom))!important}@media (min-width:980px){#amb{bottom:24px!important;left:24px}}

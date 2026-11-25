@@ -16,3 +16,20 @@
   if('IntersectionObserver' in window){var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id='#'+e.target.id;links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===id||(id==='#top'&&a.getAttribute('href')==='#top'));});}});},{rootMargin:'-45% 0px -50% 0px'});
     ['tours','watch','learn','ebooks'].forEach(function(i){var s=document.getElementById(i);if(s)so.observe(s);});}
 })();
+/* Live feed: YouTube + Instagram from data/feed.json (refreshed every 3 hours by GitHub Actions) */
+(function(){
+  function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function dt(s){try{return new Date(s).toLocaleDateString('en-IN',{day:'numeric',month:'short'});}catch(e){return '';}}
+  function th(id,q){return 'https://i.ytimg.com/vi/'+id+'/'+(q||'hqdefault')+'.jpg';}
+  function seen(root){ if(!('IntersectionObserver' in window)){root.querySelectorAll('.rv,mark').forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});});root.querySelectorAll('.rv').forEach(function(e){io.observe(e);}); }
+  fetch('data/feed.json?t='+Math.floor(Date.now()/600000)).then(function(r){return r.json();}).then(function(d){
+    var y=d.youtube||{},L=y.long||[],S=y.shorts||[],wg=document.querySelector('.wg'),sh=document.querySelector('.shorts'),rl=document.querySelector('.rlg');
+    if(wg&&L.length){var f=L[0];
+      wg.innerHTML='<a class="feat" href="https://www.youtube.com/watch?v='+f.id+'"><img src="'+th(f.id,'maxresdefault')+'" onerror="this.src=\''+th(f.id)+'\'" alt="'+esc(f.title)+'"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><div class="fcap"><span class="chip">New · '+dt(f.published)+'</span><h3>'+esc(f.title)+'</h3></div></a><div class="vlist">'+
+      L.slice(1,4).map(function(v){return '<a class="vrow rv" href="https://www.youtube.com/watch?v='+v.id+'"><img loading="lazy" src="'+th(v.id,'mqdefault')+'" alt=""><span><b>'+esc(v.title)+'</b><small>Video · '+dt(v.published)+'</small></span></a>';}).join('')+'</div>';seen(wg);}
+    if(sh&&S.length){sh.innerHTML=S.slice(0,8).map(function(v){return '<a class="short rv" href="https://www.youtube.com/shorts/'+v.id+'"><img loading="lazy" src="'+th(v.id)+'" alt=""><span>'+esc(v.title)+'</span></a>';}).join('');seen(sh);}
+    var I=d.instagram||[];
+    if(rl&&I.length){rl.innerHTML=I.slice(0,6).map(function(p){return '<a class="rl rv'+(p.thumb?' hasimg':'')+'" href="'+esc(p.permalink)+'">'+(p.thumb?'<img loading="lazy" src="'+esc(p.thumb)+'" alt="">':'')+'<span class="kick">'+(p.type==='VIDEO'?'Reel':'Post')+'</span><b>'+esc(p.caption)+'</b><span class="go">Open on Instagram ↗</span></a>';}).join('');seen(rl);}
+  }).catch(function(){});
+})();

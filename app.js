@@ -122,7 +122,7 @@
     var host = document.querySelector('.s'); if (!host) return;
     var f = document.createElement('footer'); f.id = 'tnaFoot';
     f.innerHTML = '<a class="wa" href="https://wa.me/919899114998?text=' + encodeURIComponent('Hi Hitesh') + '"><svg class="ic" viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8z"/></svg>WhatsApp +91 98991 14998</a>'
-      + '<div class="ln"><a href="https://www.instagram.com/thenaturalangle/">Instagram</a><a href="https://www.youtube.com/@thenaturalangle/videos">YouTube</a><a href="/interiors/">Hotel photography</a><a href="privacy.html">Privacy</a></div>'
+      + '<div class="so"><a href="https://www.instagram.com/thenaturalangle/">Instagram</a><a href="https://www.youtube.com/@thenaturalangle">YouTube</a><a href="https://x.com/thenaturalangle">X</a><a href="https://www.facebook.com/thenaturalangle">Facebook</a></div><p class="hn">@thenaturalangle everywhere</p>' + '<div class="ln"><a href="/">Home</a><a href="Tours.html">Tours</a><a href="/#ebooks">Ebooks</a><a href="/interiors/">Hotel photography</a><a href="privacy.html">Privacy</a></div>'
       + '<p>© Hitesh Chawla · The Natural Angle</p>';
     var nav = host.querySelector('.nav'); if (nav) host.insertBefore(f, nav); else host.appendChild(f);
   }

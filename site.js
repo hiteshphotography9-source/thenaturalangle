@@ -38,11 +38,19 @@
     var a=new Audio('assets/audio/forest.mp3'); a.loop=true; a.volume=0; a.preload='none';
     var fade; function to(v,done){clearInterval(fade);fade=setInterval(function(){var d=v-a.volume;if(Math.abs(d)<.02){a.volume=v;clearInterval(fade);done&&done();}else a.volume=Math.max(0,Math.min(1,a.volume+d*.15));},60);}
     function set(on){b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);try{localStorage.setItem('tna_amb',on?'1':'0');}catch(e){}}
-    function play(){ try{var t=+sessionStorage.getItem('tna_amb_t'); if(t) a.currentTime=t;}catch(e){} a.play().then(function(){set(true);to(.35);}).catch(function(){}); }
-    function stop(){ set(false); to(0,function(){a.pause();}); }
+    function play(){ try{var t=+sessionStorage.getItem('tna_amb_t'); if(t) a.currentTime=t;}catch(e){} a.play().then(function(){set(true);to(.35);b.classList.remove('wait');b.querySelector('.lb').textContent='FOREST SOUNDS';}).catch(function(){}); }
+    function stop(){ set(false); b.classList.remove('wait'); b.querySelector('.lb').textContent='FOREST SOUNDS'; to(0,function(){a.pause();}); }
     b.addEventListener('click',function(){ b.classList.contains('on')?stop():play(); });
-    var want=false; try{want=localStorage.getItem('tna_amb')==='1';}catch(e){}
-    if(want){ var go=function(){document.removeEventListener('pointerdown',go,true);if(!b.classList.contains('on'))play();}; document.addEventListener('pointerdown',go,true); b.classList.add('on'); }
+    // On by default. Browsers only allow sound after a visitor's first tap or key press,
+    // so we try straight away and otherwise start on the first interaction.
+    var want=true; try{want=localStorage.getItem('tna_amb')!=='0';}catch(e){}
+    if(want){
+      b.classList.add('wait'); b.querySelector('.lb').textContent='TAP FOR FOREST SOUNDS';
+      var evs=['pointerdown','keydown','touchstart'];
+      var go=function(e){ if(e&&e.target&&e.target.closest&&e.target.closest('#amb'))return; evs.forEach(function(t){document.removeEventListener(t,go,true);}); if(!b.classList.contains('on'))play(); };
+      a.preload='auto';
+      a.play().then(function(){set(true);to(.35);b.classList.remove('wait');}).catch(function(){evs.forEach(function(t){document.addEventListener(t,go,true);});});
+    }
     addEventListener('pagehide',function(){try{sessionStorage.setItem('tna_amb_t',a.currentTime||0);}catch(e){}});
   });
 })();

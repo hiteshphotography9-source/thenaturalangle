@@ -1,0 +1,28 @@
+name: Update YouTube and Instagram feed
+on:
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh feed
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: python scripts/update_feed.py
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain data)" ]; then
+            git config user.name "feed-bot"
+            git config user.email "feed-bot@users.noreply.github.com"
+            git add data
+            git commit -m "Update social feed"
+            git push
+          fi
