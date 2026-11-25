@@ -1,202 +1,37 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0E0F0D">
-<title>Watch · The Natural Angle</title>
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icons/icon-192.png">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<style>
-.pi{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;display:block}
-body{margin:0;background:#0B0C0A}
-a{color:#C9A45C;text-decoration:none}a:hover{color:#E2C68C}
-.s{width:390px;min-height:844px;background:#0E0F0D;color:#EDE8DF;font-family:Barlow,'Helvetica Neue',Helvetica,sans-serif;font-size:15px;line-height:1.45;display:flex;flex-direction:column;position:relative;overflow:hidden;-webkit-font-smoothing:antialiased}
-.s *{box-sizing:border-box}
-.k{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#A9A498;margin:0}
-.kg{color:#C9A45C}
-.d2{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:28px;line-height:1.1;letter-spacing:-.01em;margin:0}
-.d3{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:21px;line-height:1.2;margin:0}
-.h3{font-size:16px;font-weight:600;line-height:1.3;margin:0;color:#EDE8DF}
-.h4{font-size:14px;font-weight:600;line-height:1.3;margin:0;color:#EDE8DF}
-.sm{font-size:13px;line-height:1.4}
-.mut{color:#A9A498}
-.m{font-family:'DM Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.02em}
-.ph{position:relative;overflow:hidden;background:#1B1E19;flex:none;display:block}
-.t1{background:radial-gradient(130% 95% at 68% 32%,#4E6040 0%,#29331F 46%,#121510 100%)}
-.t2{background:radial-gradient(130% 95% at 32% 38%,#9A7442 0%,#523E23 44%,#17130D 100%)}
-.t3{background:radial-gradient(130% 95% at 60% 26%,#566A70 0%,#2B363A 48%,#101315 100%)}
-.t4{background:radial-gradient(130% 95% at 48% 42%,#857447 0%,#433D27 48%,#151410 100%)}
-.t5{background:radial-gradient(130% 95% at 40% 30%,#7A4A32 0%,#3E2A1E 46%,#140F0C 100%)}
-.t6{background:radial-gradient(130% 95% at 50% 30%,#3D4A44 0%,#222A26 50%,#0F1211 100%)}
-.pl{position:absolute;left:12px;top:12px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(237,232,223,.75);z-index:2}
-.scb{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,15,13,0) 40%,rgba(14,15,13,.92) 100%);pointer-events:none}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border-radius:12px;border:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;text-decoration:none;white-space:nowrap}
-.bp{background:#C9A45C;color:#15120B}.bp:hover{background:#D6B46E;color:#15120B}
-.bs{background:transparent;color:#EDE8DF;box-shadow:inset 0 0 0 1px #3C4039}.bs:hover{color:#EDE8DF;box-shadow:inset 0 0 0 1px #6B6F66}
-.chip{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:999px;border:0;font-family:Barlow,sans-serif;font-size:13px;font-weight:500;color:#D8D2C6;background:#181A16;box-shadow:inset 0 0 0 1px #2C302A;white-space:nowrap;cursor:pointer;flex:none}
-.chip:hover{color:#EDE8DF}
-.chip.on{background:#EDE8DF;color:#0E0F0D;box-shadow:none}
-.bd{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:rgba(14,15,13,.75);color:#EDE8DF;white-space:nowrap}
-.bdg{background:#C9A45C;color:#15120B}
-.dur{font-family:'DM Mono',monospace;letter-spacing:0}
-.card{display:block;background:#161815;border-radius:16px;overflow:hidden;color:#EDE8DF;box-shadow:inset 0 0 0 1px rgba(237,232,223,.05),0 14px 32px rgba(0,0,0,.35)}
-a.card:hover{color:#EDE8DF;background:#1A1C18}
-.sec{padding:0 20px;display:flex;flex-direction:column;gap:14px}
-.sh{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.more{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;color:#C9A45C;min-height:44px;display:inline-flex;align-items:center;white-space:nowrap}
-.hs{display:flex;gap:12px;overflow-x:auto;padding:0 20px;scrollbar-width:none}
-.hs::-webkit-scrollbar{display:none}
-.ib{width:44px;height:44px;flex:none;border-radius:999px;border:0;display:inline-flex;align-items:center;justify-content:center;background:#161815;color:#EDE8DF;cursor:pointer}
-.ib:hover{color:#EDE8DF;background:#1F221E}
-.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
-.top{padding:26px 20px 4px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.ttl{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:30px;letter-spacing:.12em;margin:0}
-.tabs{display:flex;gap:26px;border-bottom:1px solid #23261F;padding:0 20px}
-.tabs button{padding:12px 0;min-height:46px;background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.16em;color:#85817A;cursor:pointer}
-.tabs button:hover{color:#EDE8DF}
-.tabs button.on{color:#EDE8DF;border-color:#C9A45C}
-.play{position:absolute;left:50%;top:50%;width:60px;height:60px;margin:-30px;border-radius:99px;background:rgba(14,15,13,.6);box-shadow:inset 0 0 0 1.5px rgba(237,232,223,.7);display:flex;align-items:center;justify-content:center}
-.play svg{width:24px;height:24px;fill:#EDE8DF;margin-left:3px}
-.wl{display:inline-flex;align-items:center;gap:6px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;color:#C9A45C}
-.wl svg{width:12px;height:12px;fill:#C9A45C}
-.nav{margin-top:auto;position:sticky;bottom:0;z-index:5;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:6px 6px 30px;background:rgba(11,12,10,.97);border-top:1px solid #20231E}
-.nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:54px;color:#85817A;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.16em}
-.nav a:hover{color:#EDE8DF}
-.nav a.on{color:#EDE8DF}.nav a.on .ic{stroke:#C9A45C}
-.pod{display:flex;gap:14px;padding:14px;align-items:flex-start}
-</style>
-<style>
-html,body{background:#0B0C0A}
-body{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}
-.s{width:100% !important;max-width:480px;margin:0 auto;min-height:100vh !important}
-.nav{padding-bottom:calc(8px + env(safe-area-inset-bottom)) !important}
-button[aria-label^="Search"],button[aria-label="Settings"]{display:none !important}
-a,button{touch-action:manipulation}
-</style>
-<link rel="stylesheet" href="site.css?v=6">
-</head>
-<body>
-<template id="tpl">
-<div class="s" style="width: 390px; min-height: 1770px; gap: 24px">
-<div class="top">
-<h1 class="ttl">WATCH</h1>
-<div style="display: flex; gap: 8px">
-<button class="ib" type="button" aria-label="Search videos"><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></button>
-<a class="ib" href="Profile.html" aria-label="My Natural Angle"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20.5c1.4-3.6 4.2-5.5 7.5-5.5s6.1 1.9 7.5 5.5"/></svg></a>
-</div>
-</div>
-<div class="tabs" role="tablist" style="margin-top: -16px">
-<button type="button" role="tab" class="{{ytCls}}" onClick="{{toYt}}">YOUTUBE</button>
-<button type="button" role="tab" class="{{shCls}}" onClick="{{toSh}}">SHORTS</button>
-<button type="button" role="tab" class="{{rlCls}}" onClick="{{toRl}}">REELS</button>
-</div>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Watch · Wildlife Safari Videos and Shorts · The Natural Angle</title><meta name="description" content="Latest wildlife safari videos and Shorts from Hitesh Chawla: tigers, leopards, birds and field lessons from India&#x27;s forests.">
+<link rel="canonical" href="https://thenaturalangle.com/Watch.html">
+<meta property="og:title" content="Watch · Wildlife Safari Videos and Shorts · The Natural Angle"><meta property="og:description" content="Latest wildlife safari videos and Shorts from Hitesh Chawla: tigers, leopards, birds and field lessons from India&#x27;s forests."><meta property="og:image" content="https://thenaturalangle.com/assets/img/1b45e7829a45faa2bdcc8cf92fec74b7.webp"><meta property="og:url" content="https://thenaturalangle.com/Watch.html">
+<meta name="theme-color" content="#0E0F0D"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 
-<sc-if value="{{isYt}}" hint-placeholder-val="{{ true }}">
-<div style="display: flex; flex-direction: column; gap: 28px">
-<section style="display:flex;flex-direction:column;gap:14px"><div class="sec"><div class="sh"><h2 class="k kg">New on YouTube</h2><a href="https://www.youtube.com/@thenaturalangle/videos" class="more">CHANNEL ↗</a></div></div><div class="hs"><a class="card" href="https://www.youtube.com/watch?v=Fms0TKenlL0" style="width:280px;flex:none"><div class="ph" style="height:158px"><img class="pi" loading="lazy" src="https://i.ytimg.com/vi/Fms0TKenlL0/hqdefault.jpg" alt="Why Wildlife Photographers Fear High ISO (And Why You Shouldn&#x27;t)"><span class="bd" style="position:absolute;left:10px;bottom:10px;z-index:2">Long · 8:35</span></div><div style="padding:12px 14px 14px"><span class="h4">Why Wildlife Photographers Fear High ISO (And Why You Shouldn&#x27;t)</span></div></a><a class="card" href="https://www.youtube.com/watch?v=U4UX8nUEOu4" style="width:280px;flex:none"><div class="ph" style="height:158px"><img class="pi" loading="lazy" src="https://i.ytimg.com/vi/U4UX8nUEOu4/hqdefault.jpg" alt="How I Run Profitable Wildlife Tours (Without Huge Capital)"><span class="bd" style="position:absolute;left:10px;bottom:10px;z-index:2">Long · 22:12</span></div><div style="padding:12px 14px 14px"><span class="h4">How I Run Profitable Wildlife Tours (Without Huge Capital)</span></div></a><a class="card" href="https://www.youtube.com/watch?v=xwyim13Sq8k" style="width:280px;flex:none"><div class="ph" style="height:158px"><img class="pi" loading="lazy" src="https://i.ytimg.com/vi/xwyim13Sq8k/hqdefault.jpg" alt="Quit Job for Wildlife Photography? The Harsh Reality"><span class="bd" style="position:absolute;left:10px;bottom:10px;z-index:2">Long · 14:07</span></div><div style="padding:12px 14px 14px"><span class="h4">Quit Job for Wildlife Photography? The Harsh Reality</span></div></a><a class="card" href="https://www.youtube.com/watch?v=Ecdh9pO3bmc" style="width:280px;flex:none"><div class="ph" style="height:158px"><img class="pi" loading="lazy" src="https://i.ytimg.com/vi/Ecdh9pO3bmc/hqdefault.jpg" alt="A Squirrel Stopped 10 Jeeps. Then the Leopard Walked Out in Jhalana"><span class="bd" style="position:absolute;left:10px;bottom:10px;z-index:2">Long · 9:13</span></div><div style="padding:12px 14px 14px"><span class="h4">A Squirrel Stopped 10 Jeeps. Then the Leopard Walked Out in Jhalana</span></div></a><a class="card" href="https://www.youtube.com/watch?v=pdNxk4SuUYc" style="width:280px;flex:none"><div class="ph" style="height:158px"><img class="pi" loading="lazy" src="https://i.ytimg.com/vi/pdNxk4SuUYc/hqdefault.jpg" alt="Why Your Best Photos Lose Contests (And What Wins)"><span class="bd" style="position:absolute;left:10px;bottom:10px;z-index:2">Long · 4:48</span></div><div style="padding:12px 14px 14px"><span class="h4">Why Your Best Photos Lose Contests (And What Wins)</span></div></a><a class="card" href="https://www.youtube.com/watch?v=hSirzf-95UE" style="width:280px;flex:none"><div class="ph" style="height:158px"><img class="pi" loading="lazy" src="https://i.ytimg.com/vi/hSirzf-95UE/hqdefault.jpg" alt="Barahi Tigress, Rocket &amp; S3: 3 Real Tiger Stories from Pilibhit"><span class="bd" style="position:absolute;left:10px;bottom:10px;z-index:2">Long · 8:45</span></div><div style="padding:12px 14px 14px"><span class="h4">Barahi Tigress, Rocket &amp; S3: 3 Real Tiger Stories from Pilibhit</span></div></a></div></section><section style="display:flex;flex-direction:column;gap:14px"><div class="sec"><div class="sh"><h2 class="k kg">Latest Shorts</h2><a href="https://www.youtube.com/@thenaturalangle/shorts" class="more">ALL SHORTS ↗</a></div></div><div class="hs"><a class="card" href="https://www.youtube.com/shorts/mI9QMo8RBCE" style="width:180px;flex:none"><div class="ph" style="height:280px"><img class="pi" loading="lazy" src="https://i.ytimg.com/vi/mI9QMo8RBCE/hqdefault.jpg" alt="1 Crore Logon Ne Ye Tigress Dekhi | Arrowhead T-84"><span class="bd" style="position:absolute;left:10px;bottom:10px;z-index:2">Short</span></div><div style="padding:12px 14px 14px"><span class="h4">1 Crore Logon Ne Ye Tigress Dekhi | Arrowhead T-84</span></div></a><a class="card" href="https://www.youtube.com/shorts/oanb0q0m6og" style="width:180px;flex:none"><div class="ph" style="height:280px"><img class="pi" loading="lazy" src="https://i.ytimg.com/vi/oanb0q0m6og/hqdefault.jpg" alt="Collarwali: The Tigress With 29 Cubs"><span class="bd" style="position:absolute;left:10px;bottom:10px;z-index:2">Short</span></div><div style="padding:12px 14px 14px"><span class="h4">Collarwali: The Tigress With 29 Cubs</span></div></a><a class="card" href="https://www.youtube.com/shorts/abN-BAa_luc" style="width:180px;flex:none"><div class="ph" style="height:280px"><img class="pi" loading="lazy" src="https://i.ytimg.com/vi/abN-BAa_luc/hqdefault.jpg" alt="Why Every Indian Tiger Has a Number (T-16 Explained)"><span class="bd" style="position:absolute;left:10px;bottom:10px;z-index:2">Short</span></div><div style="padding:12px 14px 14px"><span class="h4">Why Every Indian Tiger Has a Number (T-16 Explained)</span></div></a><a class="card" href="https://www.youtube.com/shorts/ceDDE5aKF2s" style="width:180px;flex:none"><div class="ph" style="height:280px"><img class="pi" loading="lazy" src="https://i.ytimg.com/vi/ceDDE5aKF2s/hqdefault.jpg" alt="78 Saal Baad Kazakhstan Mein Bagh Wapas!"><span class="bd" style="position:absolute;left:10px;bottom:10px;z-index:2">Short</span></div><div style="padding:12px 14px 14px"><span class="h4">78 Saal Baad Kazakhstan Mein Bagh Wapas!</span></div></a><a class="card" href="https://www.youtube.com/shorts/4mfBs5H5biM" style="width:180px;flex:none"><div class="ph" style="height:280px"><img class="pi" loading="lazy" src="https://i.ytimg.com/vi/4mfBs5H5biM/hqdefault.jpg" alt="4 Foot Concrete Ke Neeche Se Surang Khodkar Bhagi Baghin"><span class="bd" style="position:absolute;left:10px;bottom:10px;z-index:2">Short</span></div><div style="padding:12px 14px 14px"><span class="h4">4 Foot Concrete Ke Neeche Se Surang Khodkar Bhagi Baghin</span></div></a><a class="card" href="https://www.youtube.com/shorts/6Q3fnORs6mM" style="width:180px;flex:none"><div class="ph" style="height:280px"><img class="pi" loading="lazy" src="https://i.ytimg.com/vi/6Q3fnORs6mM/hqdefault.jpg" alt="Can a Tiger Swim Across the Sea?"><span class="bd" style="position:absolute;left:10px;bottom:10px;z-index:2">Short</span></div><div style="padding:12px 14px 14px"><span class="h4">Can a Tiger Swim Across the Sea?</span></div></a></div></section>
-<section class="sec">
-<a class="card" href="https://www.youtube.com/watch?v=u8ZMOaUrFNM">
-<div class="ph t5" style="height: 197px"><img class="pi" src="assets/img/4de231b5f51a63c96cdaff44465eff11.jpg" alt="Video thumbnail: Panna Tiger Reserve, 3 Dry Safaris Before This Happened" style="object-position: 50% 50%"><span class="bd bdg" style="position: absolute; left: 12px; bottom: 12px">New</span><span class="bd dur" style="position: absolute; right: 12px; bottom: 12px">7:18</span><span class="play"><svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z"/></svg></span></div>
-<div style="padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px">
-<span class="k kg" style="font-size: 11px">Safari stories · 2 Oct 2026</span>
-<span class="d3">Panna Tiger Reserve: 3 Dry Safaris Before This Happened</span>
-</div>
-</a>
-</section>
-<section style="display: flex; flex-direction: column; gap: 12px">
-<div class="sec"><div class="sh"><h2 class="k kg">Photography tips</h2><a href="https://www.youtube.com/@thenaturalangle/videos" class="more">SEE ALL →</a></div></div>
-<div class="hs">
-<a class="card" href="VideoDetail.html" style="width: 260px; flex: none"><div class="ph t3" style="height: 146px"><img class="pi" src="assets/img/bc1358a30b8967420b8459da4ee7c190.jpg" alt="Video thumbnail: Why Wildlife Photographers Always Miss the Best Shots (It's Not What You Think)" style="object-position: 50% 50%"><span class="bd dur" style="position: absolute; right: 10px; bottom: 10px">5:43</span></div><div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px"><span class="k kg" style="font-size: 11px">Photography tips</span><span class="h4">Why Wildlife Photographers Always Miss the Best Shots (It's Not What You Think)</span><span class="wl" style="margin-top: 4px"><svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z"/></svg>WATCH</span></div></a>
-<a class="card" href="https://www.youtube.com/watch?v=JnFx6vevGFQ" style="width: 260px; flex: none"><div class="ph t3" style="height: 146px"><img class="pi" src="assets/img/b6953597cb7d54f53498992939039c5e.jpg" alt="Video thumbnail: Blurry Tiger Photos? Your ONE Setting Is Wrong — Fix It on Safari" style="object-position: 50% 50%"><span class="bd dur" style="position: absolute; right: 10px; bottom: 10px">7:49</span></div><div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px"><span class="k kg" style="font-size: 11px">Photography tips</span><span class="h4">Blurry Tiger Photos? Your ONE Setting Is Wrong — Fix It on Safari</span><span class="wl" style="margin-top: 4px"><svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z"/></svg>WATCH</span></div></a>
-</div>
-</section>
-<section style="display: flex; flex-direction: column; gap: 12px">
-<div class="sec"><div class="sh"><h2 class="k kg">Safari stories</h2><a href="https://www.youtube.com/@thenaturalangle/videos" class="more">SEE ALL →</a></div></div>
-<div class="hs">
-<a class="card" href="https://www.youtube.com/watch?v=qNEXZQjQOqo" style="width: 260px; flex: none"><div class="ph t3" style="height: 146px"><img class="pi" src="assets/img/debb3e469a6df92d52fe843de79e0637.jpg" alt="Video thumbnail: Panna Tiger Reserve: 5 Predators in One Safari — What Most Miss" style="object-position: 50% 50%"><span class="bd dur" style="position: absolute; right: 10px; bottom: 10px">11:29</span></div><div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px"><span class="k kg" style="font-size: 11px">Safari stories</span><span class="h4">Panna Tiger Reserve: 5 Predators in One Safari — What Most Miss</span><span class="wl" style="margin-top: 4px"><svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z"/></svg>WATCH</span></div></a>
-<a class="card" href="https://www.youtube.com/watch?v=1jbxVj2H4MQ" style="width: 260px; flex: none"><div class="ph t3" style="height: 146px"><img class="pi" src="assets/img/a8562de19b29170e3af5f50193377438.jpg" alt="Video thumbnail: Leopard Cub Alone for 2 Days in Rajaji. Did We Find Her Mother?" style="object-position: 50% 50%"><span class="bd dur" style="position: absolute; right: 10px; bottom: 10px">7:37</span></div><div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px"><span class="k kg" style="font-size: 11px">Safari stories</span><span class="h4">Leopard Cub Alone for 2 Days in Rajaji. Did We Find Her Mother?</span><span class="wl" style="margin-top: 4px"><svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z"/></svg>WATCH</span></div></a>
-</div>
-</section>
-<section style="display: flex; flex-direction: column; gap: 12px">
-<div class="sec"><div class="sh"><h2 class="k kg">Camera settings</h2><a href="https://www.youtube.com/@thenaturalangle/videos" class="more">SEE ALL →</a></div></div>
-<div class="hs">
-<a class="card" href="https://www.youtube.com/watch?v=T-gLR02kLFw" style="width: 260px; flex: none"><div class="ph t3" style="height: 146px"><img class="pi" src="assets/img/0b7e839620ff9b548ed0a85df50982e1.jpg" alt="Video thumbnail: Canon Menu Trick: My Wildlife Settings That Save Time on Safari" style="object-position: 50% 50%"><span class="bd dur" style="position: absolute; right: 10px; bottom: 10px">4:37</span></div><div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px"><span class="k kg" style="font-size: 11px">Camera settings</span><span class="h4">Canon Menu Trick: My Wildlife Settings That Save Time on Safari</span><span class="wl" style="margin-top: 4px"><svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z"/></svg>WATCH</span></div></a>
-<a class="card" href="https://www.youtube.com/watch?v=vFpnTl881vs" style="width: 260px; flex: none"><div class="ph t3" style="height: 146px"><img class="pi" src="assets/img/c3735b6a9394c13cc34138cede84f6f7.jpg" alt="Video thumbnail: Wildlife Photography Mistake I Blamed on My Lens (It Was My Settings)" style="object-position: 50% 50%"><span class="bd dur" style="position: absolute; right: 10px; bottom: 10px">7:23</span></div><div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px"><span class="k kg" style="font-size: 11px">Camera settings</span><span class="h4">Wildlife Photography Mistake I Blamed on My Lens (It Was My Settings)</span><span class="wl" style="margin-top: 4px"><svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z"/></svg>WATCH</span></div></a>
-</div>
-</section>
-</div>
-</sc-if>
+<link rel="stylesheet" href="home.css?v=8">
+</head><body id="top" class="inner"><div class="prog" aria-hidden="true"></div>
+<header class="hd" id="hd"><div class="wrap hdi">
+<a class="logo" href="/" aria-label="The Natural Angle home"><span class="lg"><img src="assets/logo-sm.jpg" alt=""></span><span>The Natural Angle</span></a>
+<nav class="tn" aria-label="Main"><a href="Tours.html">Tours</a><a href="Watch.html" class="on">Watch</a><a href="Learn.html">Learn</a><a href="Shop.html">Shop</a><a href="/interiors/">Hotels</a></nav>
+<a class="btn gold sm hwa" href="https://wa.me/919899114998?text=Hi%20Hitesh">WhatsApp</a></div></header>
+<section class="phero"><img class="pbg" src="assets/img/1b45e7829a45faa2bdcc8cf92fec74b7.webp" alt=""><div class="hsh"></div>
+<div class="wrap phc"><span class="kick ani" style="--i:0">Watch</span><h1 class="ani" style="--i:1">Stories from the <span class="hl">safari track</span></h1><p class="hsub ani" style="--i:2">Safari stories, field lessons and tiger news from India's forests. New videos appear here on their own.</p><div class="hcta ani" style="--i:3"><a class="btn gold lg" href="https://www.youtube.com/@thenaturalangle?sub_confirmation=1">Subscribe on YouTube</a></div></div></section>
+<section class="sx" id="videos"><div class="wrap"><div class="shd"><div><span class="kick">Latest videos</span><h2 class="rv">Long-form <span class="hl">safari stories</span></h2></div><a class="more" href="https://www.youtube.com/@thenaturalangle/videos">All on YouTube ↗</a></div>
+<div class="vgrid" data-feed="long"><a class="vc rv" href="https://www.youtube.com/watch?v=Fms0TKenlL0"><div class="vt"><img loading="lazy" src="https://i.ytimg.com/vi/Fms0TKenlL0/hqdefault.jpg" alt=""><span class="pl2"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><b>Why Wildlife Photographers Fear High ISO (And Why You Shouldn&#x27;t)</b><small>24 Nov</small></a><a class="vc rv" href="https://www.youtube.com/watch?v=U4UX8nUEOu4"><div class="vt"><img loading="lazy" src="https://i.ytimg.com/vi/U4UX8nUEOu4/hqdefault.jpg" alt=""><span class="pl2"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><b>How I Run Profitable Wildlife Tours (Without Huge Capital</b><small>21 Nov</small></a><a class="vc rv" href="https://www.youtube.com/watch?v=xwyim13Sq8k"><div class="vt"><img loading="lazy" src="https://i.ytimg.com/vi/xwyim13Sq8k/hqdefault.jpg" alt=""><span class="pl2"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><b>Quit Job for Wildlife Photography? The Harsh Reality</b><small>17 Nov</small></a><a class="vc rv" href="https://www.youtube.com/watch?v=Ecdh9pO3bmc"><div class="vt"><img loading="lazy" src="https://i.ytimg.com/vi/Ecdh9pO3bmc/hqdefault.jpg" alt=""><span class="pl2"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><b>A Squirrel Stopped 10 Jeeps. Then the Leopard Walked Out in Jhalana</b><small>5 Nov</small></a><a class="vc rv" href="https://www.youtube.com/watch?v=pdNxk4SuUYc"><div class="vt"><img loading="lazy" src="https://i.ytimg.com/vi/pdNxk4SuUYc/hqdefault.jpg" alt=""><span class="pl2"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><b>Why Your Best Photos Lose Contests (And What Wins)</b><small>30 Oct</small></a><a class="vc rv" href="https://www.youtube.com/watch?v=hSirzf-95UE"><div class="vt"><img loading="lazy" src="https://i.ytimg.com/vi/hSirzf-95UE/hqdefault.jpg" alt=""><span class="pl2"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><b>Barahi Tigress, Rocket &amp; S3: 3 Real Tiger Stories from Pilibhit Tiger Reserve</b><small>29 Oct</small></a></div></div></section>
+<section class="sx alt" id="shorts"><div class="wrap"><div class="shd"><div><span class="kick">Shorts</span><h2 class="rv">60 seconds <span class="hl">in the wild</span></h2></div><a class="more" href="https://www.youtube.com/@thenaturalangle/shorts">All Shorts ↗</a></div>
+<div class="sgrid" data-feed="shorts"><a class="short rv" href="https://www.youtube.com/shorts/mI9QMo8RBCE"><img loading="lazy" src="https://i.ytimg.com/vi/mI9QMo8RBCE/hqdefault.jpg" alt=""><span>1 Crore Logon Ne Ye Tigress Dekhi | Arrowhead T-84 Ranthambore</span></a><a class="short rv" href="https://www.youtube.com/shorts/oanb0q0m6og"><img loading="lazy" src="https://i.ytimg.com/vi/oanb0q0m6og/hqdefault.jpg" alt=""><span>Collarwali: The Tigress With 29 Cubs (Pench&#x27;s Supermom)</span></a><a class="short rv" href="https://www.youtube.com/shorts/dwgo-1eHO4I"><img loading="lazy" src="https://i.ytimg.com/vi/dwgo-1eHO4I/hqdefault.jpg" alt=""><span>Karnataka mein 13 mahine, 52 haathi khoye</span></a><a class="short rv" href="https://www.youtube.com/shorts/abN-BAa_luc"><img loading="lazy" src="https://i.ytimg.com/vi/abN-BAa_luc/hqdefault.jpg" alt=""><span>Why Every Indian Tiger Has a Number (T-16 Explained)</span></a><a class="short rv" href="https://www.youtube.com/shorts/6g6II5GP_nI"><img loading="lazy" src="https://i.ytimg.com/vi/6g6II5GP_nI/hqdefault.jpg" alt=""><span>Dhoni&#x27;s Helicopter Shot vs the Bird That Actually Hovers</span></a><a class="short rv" href="https://www.youtube.com/shorts/Q-lo5A3aiDI"><img loading="lazy" src="https://i.ytimg.com/vi/Q-lo5A3aiDI/hqdefault.jpg" alt=""><span>Deputy Ranger Suspend, Par Kya Ped Wapas Aayenge? #Faridabad #SaveTrees</span></a><a class="short rv" href="https://www.youtube.com/shorts/ilLzLr5_MEM"><img loading="lazy" src="https://i.ytimg.com/vi/ilLzLr5_MEM/hqdefault.jpg" alt=""><span>Cruise Chali, Machhliyan Mari! Ye Saazish Thi?#yamuna #chhath</span></a><a class="short rv" href="https://www.youtube.com/shorts/ceDDE5aKF2s"><img loading="lazy" src="https://i.ytimg.com/vi/ceDDE5aKF2s/hqdefault.jpg" alt=""><span>78 Saal Baad Kazakhstan Mein Bagh Wapas! Umit Aur Amur Ki Kahani</span></a><a class="short rv" href="https://www.youtube.com/shorts/4mfBs5H5biM"><img loading="lazy" src="https://i.ytimg.com/vi/4mfBs5H5biM/hqdefault.jpg" alt=""><span>4 Foot Concrete Ke Neeche Se Surang Khodkar Bhagi Baghin! #dooarsrani #tiger</span></a><a class="short rv" href="https://www.youtube.com/shorts/RjO9Ienfb08"><img loading="lazy" src="https://i.ytimg.com/vi/RjO9Ienfb08/hqdefault.jpg" alt=""><span>Is Bird Ki Chonch Ne Bullet Train Ka Design Badal Diya</span></a><a class="short rv" href="https://www.youtube.com/shorts/IpUa4_SY1Dc"><img loading="lazy" src="https://i.ytimg.com/vi/IpUa4_SY1Dc/hqdefault.jpg" alt=""><span>Don’t Click Wildlife Photos for Contests</span></a><a class="short rv" href="https://www.youtube.com/shorts/6Q3fnORs6mM"><img loading="lazy" src="https://i.ytimg.com/vi/6Q3fnORs6mM/hqdefault.jpg" alt=""><span>Can a Tiger Swim Across the Sea? The Answer SHOCKED Me!</span></a></div></div></section>
+<section class="sx connect" id="connect"><div class="wrap">
+<div class="shd"><div><span class="kick">Connect</span><h2 class="rv">Follow <span class="hl">@thenaturalangle</span></h2><p class="lead">Same name everywhere. New safari stories, tips and reels every week.</p></div></div>
+<div class="sbg"><a class="sb rv" href="https://www.instagram.com/thenaturalangle/" style="--c:#E1306C" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span><b>Instagram</b><small>@thenaturalangle</small></span><em>Follow ↗</em></a><a class="sb rv" href="https://www.youtube.com/@thenaturalangle" style="--c:#FF3D3D" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg><span><b>YouTube</b><small>@thenaturalangle</small></span><em>Follow ↗</em></a><a class="sb rv" href="https://x.com/thenaturalangle" style="--c:#EDE8DF" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></svg><span><b>X</b><small>@thenaturalangle</small></span><em>Follow ↗</em></a><a class="sb rv" href="https://www.facebook.com/Thenaturalangle9" style="--c:#4C8DFF" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14.5 8H17V4.5h-2.5A4 4 0 0 0 10.5 8.5V11H8v3.5h2.5V21H14v-6.5h2.6l.4-3.5h-3V9a1 1 0 0 1 1-1z"/></svg><span><b>Facebook</b><small>@thenaturalangle</small></span><em>Follow ↗</em></a></div></div></section>
 
-<sc-if value="{{isSh}}" hint-placeholder-val="{{ false }}">
-<section class="sec">
-<p class="sm mut" style="margin: 0">Tap to play full screen. Swipe up for the next one.</p>
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
-<a class="card" href="https://www.youtube.com/shorts/j6ORROD4VM8"><div class="ph t1" style="height: 300px"><img class="pi" src="assets/img/5db637558dbce137b24f1dc770166b7e.jpg" alt="Short: 500lb Tiger vs. Our Gypsy: Who Blinks First?" style="object-position: 50% 50%"><div class="scb"></div><div style="position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 4px; z-index: 2"><span class="h4">500lb Tiger vs. Our Gypsy: Who Blinks First?</span><span class="m mut">0:29</span></div></div></a>
-<a class="card" href="https://www.youtube.com/shorts/3dW8gFP5MNQ"><div class="ph t1" style="height: 300px"><img class="pi" src="assets/img/6f4d4bdfeb49378f1e2909633234305f.jpg" alt="Short: You Won't Believe the Size of These Tigers! (S3 vs P663)" style="object-position: 50% 50%"><div class="scb"></div><div style="position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 4px; z-index: 2"><span class="h4">You Won't Believe the Size of These Tigers! (S3 vs P663)</span><span class="m mut">0:21</span></div></div></a>
-<a class="card" href="https://www.youtube.com/shorts/hcZgkOfr8XE"><div class="ph t1" style="height: 300px"><img class="pi" src="assets/img/e8bde9f9caad48af4506ba56ae92812d.jpg" alt="Short: Meet India's Most Famous Tigers: S3 vs Rocket" style="object-position: 50% 50%"><div class="scb"></div><div style="position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 4px; z-index: 2"><span class="h4">Meet India's Most Famous Tigers: S3 vs Rocket</span><span class="m mut">0:41</span></div></div></a>
-<a class="card" href="https://www.youtube.com/shorts/Nb9TdZzal4E"><div class="ph t1" style="height: 300px"><img class="pi" src="assets/img/d8bc489c086459c1f7ccf423faf74f2b.jpg" alt="Short: The secret to finding tigers: Listen to the forest" style="object-position: 50% 50%"><div class="scb"></div><div style="position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 4px; z-index: 2"><span class="h4">The secret to finding tigers: Listen to the forest</span><span class="m mut">0:41</span></div></div></a>
-<a class="card" href="https://www.youtube.com/shorts/pJpcjEvQ0qI"><div class="ph t1" style="height: 300px"><img class="pi" src="assets/img/b7892be79d09f1ef065119337d3d8c82.jpg" alt="Short: Why I Never Take Just One Shot" style="object-position: 50% 50%"><div class="scb"></div><div style="position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 4px; z-index: 2"><span class="h4">Why I Never Take Just One Shot</span><span class="m mut">0:54</span></div></div></a>
-<a class="card" href="https://www.youtube.com/shorts/90Y-lBcolS0"><div class="ph t1" style="height: 300px"><img class="pi" src="assets/img/612c32481852d6138a806d666eb155d2.jpg" alt="Short: A Tigress, 3 Cubs, and Ken River. Panna Tiger Reserve" style="object-position: 50% 50%"><div class="scb"></div><div style="position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 4px; z-index: 2"><span class="h4">A Tigress, 3 Cubs, and Ken River. Panna Tiger Reserve</span><span class="m mut">0:58</span></div></div></a>
-</div>
-</section>
-</sc-if>
-
-<sc-if value="{{isRl}}" hint-placeholder-val="{{ false }}">
-<section class="sec">
-<p class="sm mut" style="margin: 0">Tap a reel to watch it on Instagram.</p>
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
-<a class="card" href="https://www.instagram.com/reel/DdtCZt3kf4s/"><div class="ph t1" style="height: 250px"><img class="pi" src="assets/img/363d1950493e558365386dbef07e4c0b.jpg" alt="Reel: P-141 and her 3 cubs: 4 tigers, 1 shot" style="object-position: 50% 50%"></div><div style="padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 6px"><span class="h4">P-141 and her 3 cubs: 4 tigers, 1 shot</span><span class="m mut">PANNA · 0:58</span></div></a>
-<a class="card" href="https://www.instagram.com/reel/Ddxpd7OEeG7/"><div class="ph t1" style="height: 250px"><img class="pi" src="assets/img/70e3a946c4d6da6291e953582fe0b255.jpg" alt="Reel: Rocket growls, then walks toward our jeep" style="object-position: 50% 50%"></div><div style="padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 6px"><span class="h4">Rocket growls, then walks toward our jeep</span><span class="m mut">PILIBHIT · 0:56</span></div></a>
-<a class="card" href="https://www.instagram.com/reel/Dd3IbM7R9x6/"><div class="ph t1" style="height: 250px"><img class="pi" src="assets/img/e992bfc674c4dee699ae446bfa3360a5.jpg" alt="Reel: Two male tigers in one frame" style="object-position: 50% 50%"></div><div style="padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 6px"><span class="h4">Two male tigers in one frame</span><span class="m mut">PILIBHIT · 1:11</span></div></a>
-<a class="card" href="https://www.instagram.com/reel/DdvBUhCDUQM/"><div class="ph t1" style="height: 250px"><img class="pi" src="assets/img/b095e1601bcd2a61f9b3033b314557f9.jpg" alt="Reel: This is what Bharatpur actually looks like" style="object-position: 50% 50%"></div><div style="padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 6px"><span class="h4">This is what Bharatpur actually looks like</span><span class="m mut">BHARATPUR · 0:35</span></div></a>
-<a class="card" href="https://www.instagram.com/reel/Dd_YZvDFAQ9/"><div class="ph t1" style="height: 250px"><img class="pi" src="assets/img/98bab84e3598dfd8eded28ca21db7d74.jpg" alt="Reel: The rare pair: hedgehogs at Jhalana" style="object-position: 50% 50%"></div><div style="padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 6px"><span class="h4">The rare pair: hedgehogs at Jhalana</span><span class="m mut">JHALANA · 0:48</span></div></a>
-<a class="card" href="https://www.instagram.com/reel/Dd8zrrZjPII/"><div class="ph t1" style="height: 250px"><img class="pi" src="assets/img/a1127e8102021fb99aea93e989e04406.jpg" alt="Reel: Desert fox, one of the boldest I have seen" style="object-position: 50% 50%"></div><div style="padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 6px"><span class="h4">Desert fox, one of the boldest I have seen</span><span class="m mut">JHALANA · 0:45</span></div></a>
-</div>
-<a class="btn bs bw" href="https://www.instagram.com/thenaturalangle/reels/">All reels on Instagram ↗</a>
-</section>
-</sc-if>
-
-
-
-
-<div style="height: 8px"></div>
-<nav class="nav" aria-label="Main">
-<a href="Home.html"><svg class="ic" viewBox="0 0 24 24"><path d="M3.5 10.5 12 3.5l8.5 7V20.5h-5.5v-6h-6v6H3.5z"/></svg>HOME</a>
-<a href="Watch.html" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10.5 9.5v5l4-2.5z"/></svg>WATCH</a>
-<a href="Learn.html"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 8.2l3.3 1.9v3.8L12 15.8l-3.3-1.9v-3.8z"/></svg>LEARN</a>
-<a href="Tours.html"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>TOURS</a>
-<a href="Shop.html"><svg class="ic" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12.5H6.2z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>SHOP</a>
-</nav>
-</div>
-</template>
-<div id="app"></div>
-<script src="dc-lite.js?v=1.0.0"></script>
-<script>
-
-class Component extends DCLogic {
-  constructor(props) {
-    super(props);
-    this.state = { tab: 'yt' };
-  }
-  renderVals() {
-    const t = this.state.tab;
-    return {
-      isYt: t === 'yt', isSh: t === 'sh', isRl: t === 'rl', isPd: t === 'pd',
-      ytCls: t === 'yt' ? 'on' : '', shCls: t === 'sh' ? 'on' : '', rlCls: t === 'rl' ? 'on' : '', pdCls: t === 'pd' ? 'on' : '',
-      toYt: () => this.setState({ tab: 'yt' }),
-      toSh: () => this.setState({ tab: 'sh' }),
-      toRl: () => this.setState({ tab: 'rl' }),
-      toPd: () => this.setState({ tab: 'pd' })
-    };
-  }
-}
-
-DC.mount(Component, {}, null);
-</script>
-<script src="app.js?v=1.1.1"></script>
-<script src="site.js" defer></script>
-</body>
-</html>
+<footer class="ft"><div class="wrap fti">
+<div><a class="logo" href="/"><span class="lg"><img src="assets/logo-sm.jpg" alt="The Natural Angle logo"></span><span>The Natural Angle</span></a>
+<p>Wildlife safaris, field lessons and ebooks by Hitesh Chawla.</p>
+<a class="btn gold fwa" href="https://wa.me/919899114998?text=Hi%20Hitesh">WhatsApp +91 98991 14998</a>
+<div class="fso"><a href="https://www.instagram.com/thenaturalangle/" target="_blank" rel="noopener" aria-label="Instagram" style="--c:#E1306C"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a><a href="https://www.youtube.com/@thenaturalangle" target="_blank" rel="noopener" aria-label="YouTube" style="--c:#FF3D3D"><svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg></a><a href="https://x.com/thenaturalangle" target="_blank" rel="noopener" aria-label="X" style="--c:#EDE8DF"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></svg></a><a href="https://www.facebook.com/Thenaturalangle9" target="_blank" rel="noopener" aria-label="Facebook" style="--c:#4C8DFF"><svg viewBox="0 0 24 24"><path d="M14.5 8H17V4.5h-2.5A4 4 0 0 0 10.5 8.5V11H8v3.5h2.5V21H14v-6.5h2.6l.4-3.5h-3V9a1 1 0 0 1 1-1z"/></svg></a></div></div>
+<div><h4>Explore</h4><nav><a href="Tours.html">Safari tours</a><a href="Watch.html">Watch</a><a href="Learn.html">Learn</a><a href="Resources.html">Free field guides</a><a href="Shop.html">Gear &amp; shop</a></nav></div>
+<div><h4>More</h4><nav><a href="Shop.html#ebooks">Ebooks</a><a href="/interiors/">Hotel photography</a><a href="About.html">About Hitesh</a><a href="mailto:hiteshphotography9@gmail.com">Email</a><a href="privacy.html">Privacy</a></nav></div>
+</div><p class="cp wrap">© 2026 Hitesh Chawla · The Natural Angle · @thenaturalangle on Instagram, YouTube, X and Facebook</p></footer>
+<nav class="bn" aria-label="Main"><a href="/"><svg viewBox="0 0 24 24"><path d="M3.5 10.5 12 3.5l8.5 7V20.5h-5.5v-6h-6v6H3.5z"/></svg>Home</a><a href="Tours.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>Tours</a><a href="Watch.html" class="on"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10.5 9.5v5l4-2.5z"/></svg>Watch</a><a href="Learn.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 8.2l3.3 1.9v3.8L12 15.8l-3.3-1.9v-3.8z"/></svg>Learn</a><a href="Shop.html"><svg viewBox="0 0 24 24"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h10"/></svg>Shop</a><a href="/interiors/"><svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/></svg>Hotels</a></nav>
+<script src="home.js?v=4" defer></script><script src="site.js?v=4" defer></script>
+</body></html>

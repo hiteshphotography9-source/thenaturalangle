@@ -1,3 +1,17 @@
+/* Meta Pixel: page views + intent events (WhatsApp enquiry, community join, ebook checkout) */
+(function(){
+  if(window.fbq)return;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','4619491964991167'); fbq('track','PageView');
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href]'); if(!a)return; var h=a.href;
+    if(/wa\.me\//.test(h)) fbq('track','Lead',{content_name:(a.closest('[id^="t-"]')||{}).id||location.pathname});
+    else if(/chat\.whatsapp\.com/.test(h)) fbq('trackCustom','JoinCommunity');
+    else if(/superprofile\.bio/.test(h)) fbq('track','InitiateCheckout',{content_name:h.split('/').pop()});
+    else if(/\.pdf$/.test(h)) fbq('track','ViewContent',{content_name:h.split('/').pop(),content_category:'free_guide'});
+    else if(/youtube\.com|instagram\.com|x\.com|facebook\.com/.test(h)) fbq('trackCustom','SocialClick',{network:a.hostname});
+  },true);
+})();
 /* Website layer: scroll reveals, counters, map links, forest ambience. */
 (function(){
   var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;

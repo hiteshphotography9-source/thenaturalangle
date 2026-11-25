@@ -40,3 +40,14 @@
     document.querySelectorAll('.pugs,.planner').forEach(function(el){io.observe(el);});}
   else document.querySelectorAll('.pugs,.planner').forEach(function(el){el.classList.add('in');});
 })();
+/* Watch page: live grids from data/feed.json */
+(function(){
+  var lg=document.querySelector('[data-feed="long"]'),sg=document.querySelector('[data-feed="shorts"]'); if(!lg&&!sg)return;
+  function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function dt(s){try{return new Date(s).toLocaleDateString('en-IN',{day:'numeric',month:'short'});}catch(e){return '';}}
+  fetch('data/feed.json?t='+Math.floor(Date.now()/600000)).then(function(r){return r.json();}).then(function(d){
+    var y=d.youtube||{};
+    if(lg&&(y.long||[]).length) lg.innerHTML=y.long.map(function(v){return '<a class="vc in" href="https://www.youtube.com/watch?v='+v.id+'"><div class="vt"><img loading="lazy" src="https://i.ytimg.com/vi/'+v.id+'/hqdefault.jpg" alt=""><span class="pl2"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><b>'+esc(v.title)+'</b><small>'+dt(v.published)+'</small></a>';}).join('');
+    if(sg&&(y.shorts||[]).length) sg.innerHTML=y.shorts.map(function(v){return '<a class="short" href="https://www.youtube.com/shorts/'+v.id+'"><img loading="lazy" src="https://i.ytimg.com/vi/'+v.id+'/hqdefault.jpg" alt=""><span>'+esc(v.title)+'</span></a>';}).join('');
+  }).catch(function(){});
+})();

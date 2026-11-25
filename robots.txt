@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /content-archive/
+
+Sitemap: https://thenaturalangle.com/sitemap.xml
