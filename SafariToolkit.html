@@ -59,7 +59,7 @@ body{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}
 button[aria-label^="Search"],button[aria-label="Settings"]{display:none !important}
 a,button{touch-action:manipulation}
 </style>
-<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="site.css?v=4">
 </head>
 <body>
 <template id="tpl">
@@ -173,5 +173,6 @@ class Component extends DCLogic {
 DC.mount(Component, {}, "tna_toolkit");
 </script>
 <script src="app.js?v=1.0.0"></script>
+<script src="site.js" defer></script>
 </body>
 </html>
