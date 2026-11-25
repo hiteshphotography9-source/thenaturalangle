@@ -83,3 +83,32 @@ b.tx{color:#E2C68C;font-weight:600}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv-i{opacity:1;transform:none}.map .rt{stroke-dashoffset:0}}
 .map text{font-size:24px;stroke-width:5px}.map .base{font-size:20px}.map .cn{font-size:18px}
 @media (max-width:899px){#amb{padding:0;width:44px;justify-content:center}#amb .lb{display:none}}
+
+/* ===== Bigger, wider website layer for inner pages ===== */
+.s{font-size:16.5px !important}
+.s .k{font-size:13.5px !important}
+.s .sm{font-size:15px !important;line-height:1.45}
+.s .h4{font-size:17px !important}.s .h3{font-size:19px !important}
+.s .m{font-size:13px !important}
+.s .btn{font-size:16px !important;min-height:52px}
+.s .more{font-size:14px !important}
+.s .bd{font-size:12px !important;height:26px}
+#tnaNav a{font-size:12.5px !important;min-height:62px !important;gap:6px !important}
+#tnaNav .ic{width:26px !important;height:26px !important}
+body{padding-bottom:calc(80px + env(safe-area-inset-bottom)) !important}
+#amb{bottom:calc(92px + env(safe-area-inset-bottom)) !important}
+@media (min-width:900px){
+  .s{max-width:1180px !important;box-shadow:none !important}
+  .s .d1{font-size:52px !important}.s .d2{font-size:38px !important}.s .d3{font-size:26px !important}
+  .s .hs{flex-wrap:wrap;overflow:visible !important}
+  .s .sec{padding-left:28px !important;padding-right:28px !important}
+  .s .hs{padding-left:28px !important;padding-right:28px !important}
+  .s>.ph:first-child,.s>a.ph:first-child{height:620px !important}
+  body #tnaNav .in{max-width:1180px !important;justify-content:flex-end !important}
+  body #tnaNav a{font-size:17px !important;min-height:72px !important;padding:0 18px !important}
+  body #tnaNav .ic{width:22px !important;height:22px !important}
+  body #tnaNav::before{content:"The Natural Angle";position:absolute;left:max(24px,calc(50% - 570px));top:0;height:72px;display:flex;align-items:center;font-family:Newsreader,Georgia,serif;font-size:24px;color:#EDE8DF}
+  body{padding-top:72px !important;padding-bottom:0 !important}
+  #amb{bottom:24px !important}
+}
+@media (min-width:900px){.s .mapw{max-width:820px;margin-left:auto!important;margin-right:auto!important}}
