@@ -261,3 +261,7 @@ mark.in{background-size:100% 100%;color:var(--ink)}
 .kick.fg .hl{color:var(--ink);padding:0 .18em}
 .shd.sm .more{font-size:20px}
 @media (max-width:600px){.shd .kick,.tl .sticky>.kick,.sp-h .kick,.cbi .kick,.hti>.kick,.about .kick,.shd.sm .kick{font-size:24px}.shd.sm .kick.fg{font-size:38px}}
+
+.ta.one{grid-template-columns:1fr}.tp .ask-p{font-family:var(--lab);font-weight:600;font-size:20px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold2)}
+.tc.soon{background:linear-gradient(160deg,#16271d,#101812);justify-content:center;min-height:320px;box-shadow:inset 0 0 0 1.5px dashed #3C5A46;border:1.5px dashed #3C5A46}
+.tc.soon h3{font-size:34px}
