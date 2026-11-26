@@ -1,0 +1,13 @@
+{
+ "cover":  {"image": "reel/orig/gs02.jpg", "crop": [0.28, 0, 0.8133, 1], "title": "Rooms worth<br>a <i>second</i> look."},
+ "frames": [
+  {"image": "reel/orig/sh16.jpg", "crop": [0.12, 0, 0.6533, 1], "label": "Lobby",  "title": "Crystal, symmetry,<br>straight lines.", "meta": "11mm · f/8 · 0.1s · ISO 640"},
+  {"image": "reel/orig/gs10.jpg", "crop": [0.22, 0, 0.7533, 1], "label": "Room",   "title": "Straight verticals.<br>True colour.",   "meta": "11mm · f/8 · 1/5s · ISO 250"},
+  {"image": "reel/orig/gs02.jpg", "crop": [0.52, 0.45, 0.82, 0.825], "label": "Detail", "title": "The small things<br>guests screenshot.", "meta": "12mm · f/8 · 0.3s · ISO 250"}
+ ],
+ "closing": {"thumbs": [{"image": "drive/web/gs_08.jpg", "x": 0.40}, {"image": "drive/web/gs_12.jpg", "x": 0.35}, {"image": "drive/web/sh_20.jpg", "x": 0.45}],
+             "title": "Your property,<br>framed <i>like this.</i>",
+             "body": "Hotels, resorts, restaurants and offices.<br><b>Free photo audit:</b> send your listing link in DM.",
+             "line": "Delhi NCR · Across India · Since 2016"},
+ "post": {"image": "drive/web/sh_14.jpg", "crop": [0.23, 0, 0.8333, 1], "title": "Warm wood.<br>One clean frame.", "meta": "Room<br>11mm · f/7.1<br>1/5s · ISO 250"}
+}
