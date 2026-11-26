@@ -103,7 +103,7 @@ guides = [("g-2956a871146857","Reading the Signal Before the Move","Fieldcraft b
 ("g-5dde2ae7868bc8","Start Your Own Local Species List","One park and a reason to keep going back","Field guide")]
 gd = "".join(f'<a class="gd rv" href="guides/{g}.pdf" download><span class="kick">{c}</span><b>{E(t)}</b><span class="gs">{E(d)}</span><span class="dl">Free PDF ↓</span></a>' for g,t,d,c in guides)
 tools = re.search(r'<div class="tools">.*?</a></div>', idx, re.S).group(0)
-series = "".join(f'<a class="ser rv" href="https://www.instagram.com/thenaturalangle/"><img loading="lazy" src="assets/img/{i}.webp" alt="{E(a)}"><span class="kick">Part {n}</span><b>{E(t)}</b></a>' for n,(i,a,t) in enumerate([("93e8dc15f7d76910f2a3f03296e26975","The WAIT checklist","Run it before every sighting"),("af3a61f550dae068aa0a8d0df3531a69","The WATCH checklist","Read it before you raise the camera"),("cbf9ca22264a454351ee52c3600c36c9","The SHOOT checklist","Run it the moment the action starts")],1))
+series = "".join(f'<a class="ser rv" href="https://www.instagram.com/thenaturalangle/"><img loading="lazy" src="assets/img/{i}.webp" alt="{E(a)}"><span class="kick">Part {n}</span><b>{E(t)}</b></a>' for n,(i,a,t) in enumerate([("93e8dc15f7d76910f2a3f03296e26975","The WAIT checklist","Run it before every sighting"),("af3a61f550dae068aa0a8d0df3531a69","The WATCH checklist","Read it before you raise the camera"),("cbf9ca22264a454351ee52c3600c36c9","The CLICK checklist","Run it the moment the action starts")],1))
 learn_body = phero("Learn", 'Learn wildlife photography <span class="hl">in the field</span>', "Shot breakdowns, <mark>14 free field guides</mark>, a camera settings tool and checklists that work with no signal.",
     "assets/img/ce0ebd9b5cedc2d43efa390ca8fa86b5.webp",
     '<div class="hcta ani" style="--i:3"><a class="btn gold lg" href="#guides">Get the free guides</a><a class="btn ghost lg" href="#breakdowns">Shot breakdowns</a></div>') + f'''
@@ -111,7 +111,7 @@ learn_body = phero("Learn", 'Learn wildlife photography <span class="hl">in the 
 <p class="lead" style="margin-bottom:24px">One lesson each, from real sightings. Download once, read offline in the park.</p><div class="gdg">{gd}</div></div></section>
 <section class="sx alt" id="breakdowns"><div class="wrap"><div class="shd"><div><span class="kick">How I shot this</span><h2 class="rv">One photograph, <span class="hl">taken apart</span></h2></div></div><div class="bdg">{bdg}</div></div></section>
 <section class="sx" id="tools"><div class="wrap"><div class="shd"><div><span class="kick">Field tools</span><h2 class="rv">Use these <span class="hl">on safari</span></h2></div></div>{tools}
-<div class="shd sm"><h3 class="kick">The series · Wait. Watch. Shoot.</h3><a class="more" href="https://www.instagram.com/thenaturalangle/">On Instagram ↗</a></div><div class="sers">{series}</div></div></section>'''
+<div class="shd sm"><h3 class="kick">The series · Wait. Watch. Click.</h3><a class="more" href="https://www.instagram.com/thenaturalangle/">On Instagram ↗</a></div><div class="sers">{series}</div></div></section>'''
 page("Learn.html", "Learn Wildlife Photography · Free Field Guides · The Natural Angle",
      "14 free wildlife photography field guides, shot breakdowns with real settings, a camera settings tool and safari checklists by Hitesh Chawla.", "Learn.html", learn_body,
      "assets/img/ce0ebd9b5cedc2d43efa390ca8fa86b5.webp")

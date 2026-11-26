@@ -74,7 +74,7 @@ a,button{touch-action:manipulation}
 </div>
 
 <section class="sec" style="gap: 12px">
-<div style="display: flex; justify-content: space-between; align-items: baseline"><span class="k kg">Field checklists</span><span class="m mut">WAIT. WATCH. SHOOT.</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span class="k kg">Field checklists</span><span class="m mut">WAIT. WATCH. CLICK.</span></div>
 <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
 <sc-for list="{{tabs}}" as="t" hint-placeholder-count="3"><button type="button" class="chip {{t.cls}}" style="justify-content: center" onClick="{{t.pick}}">{{t.label}}</button></sc-for>
 </div>
@@ -145,7 +145,7 @@ class Component extends DCLogic {
       shoot: { sub: 'Run it the moment the action starts.', items: ['Single-point AF, right on the eye', 'Back-button focus. No re-hunting.', 'One bright patch? Meter for it', 'Even light? Read the whole frame', 'Burst the instant the behaviour starts', 'Keep shooting after the hero frame'] }
     };
     const mode = this.state.mode, fdone = this.state.fdone;
-    const tabs = [['wait', 'WAIT'], ['watch', 'WATCH'], ['shoot', 'SHOOT']].map(([k, label]) => ({ label, cls: k === mode ? 'on' : '', pick: () => this.setState({ mode: k }) }));
+    const tabs = [['wait', 'WAIT'], ['watch', 'WATCH'], ['shoot', 'CLICK']].map(([k, label]) => ({ label, cls: k === mode ? 'on' : '', pick: () => this.setState({ mode: k }) }));
     const fitems = F[mode].items.map((label, i) => { const id = mode + i; const on = !!fdone[id]; return { label, cls: on ? 'on' : '', pressed: on ? 'true' : 'false', toggle: () => this.setState({ fdone: Object.assign({}, fdone, { [id]: !on }) }) }; });
     const done = this.state.done;
     let total = 0, doneCount = 0;
