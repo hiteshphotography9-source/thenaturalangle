@@ -727,7 +727,6 @@ const PHOTOS=[
  ["joystreet-room","room","Joystreet · Room","Joystreet room with gold rose cushions and warm lighting"],
  ["shimla-room","room","Shimla Heritage · Family room","Shimla Heritage room with padded headboard wall and red accents"],
  ["parkblue-room","room","Park Blue · Deluxe","Park Blue deluxe room with blue accents and lounge chairs"],
- ["shanti-palace-lobby","lobby","Hotel Shanti Palace · Lobby","Bright hotel lobby with lounge seating and glass facade"],
  ["tara-palace-room","room","Hotel Tara Palace · Suite","Hotel Tara Palace room with stone feature wall and marble floor"],
  ["restaurant","lobby","Restaurant · Lounge bar","Warm-lit hotel restaurant with booth seating and hanging glassware"],
  ["mamra-room","room","Mamra · Room","Mamra hotel room with wooden floor and garden-facing windows"],
@@ -738,8 +737,7 @@ const PHOTOS=[
  ["office-conference","office","Glass boardroom","Glass-walled conference room with timber shelving"],
  ["residence-living","office","Residence · Living room","Living room with cream sofas, red cushions and TV unit"],
  ["office-reception","office","Office reception","Office reception with timber floors and glass partitions"],
- ["residence-dining","office","Residence · Dining","Residential living and dining space with gold wall art"],
- ["office-workstations","office","Open workstations","Open-plan workstations with orange panels"]
+ ["residence-dining","office","Residence · Dining","Residential living and dining space with gold wall art"]
 ];
 document.querySelectorAll('.chip').forEach(c=>{const f=c.dataset.f;const n=f==='all'?PHOTOS.length:PHOTOS.filter(p=>p[1]===f).length;c.insertAdjacentHTML('beforeend',` <span class="n">${n}</span>`)});
 const grid=document.getElementById('grid');
@@ -848,7 +846,7 @@ document.addEventListener('click',e=>{const a=e.target.closest('a[href*="wa.me"]
 
 // ===== testimonials: add real quotes here, section appears automatically =====
 const TESTIMONIALS=[
-  // {q:"Quote text", name:"Owner name", place:"Hotel name, Area"},
+  // {q:"Quote text", name:"Owner name", place:"Hotel name, Area"}
 ];
 if(TESTIMONIALS.length){const sec=document.getElementById('proof');sec.hidden=false;
   document.getElementById('quotes').innerHTML=TESTIMONIALS.map(t=>`<figure class="quote"><blockquote>${esc(t.q)}</blockquote><figcaption><b>${esc(t.name)}</b>${esc(t.place)}</figcaption></figure>`).join('')}
